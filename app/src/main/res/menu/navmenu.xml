@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/outline_home_24"
+        android:title="TODO" />
+
+    <item
+        android:id="@+id/navigation_projects"
+        android:icon="@drawable/outline_account_balance_24"
+        android:title="TODO" />
+
+    <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/outline_more_horiz_24"
+        android:title="TODO" />
+</menu>
+
+
