@@ -7,14 +7,13 @@
         android:title="TODO" />
 
     <item
-        android:id="@+id/navigation_projects"
+        android:id="@+id/navigation_treasury"
         android:icon="@drawable/outline_account_balance_24"
         android:title="TODO" />
 
     <item
-        android:id="@+id/navigation_more"
+        android:id="@+id/navigation_menu"
         android:icon="@drawable/outline_more_horiz_24"
         android:title="TODO" />
 </menu>
-
 
