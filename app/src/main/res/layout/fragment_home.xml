@@ -25,7 +25,7 @@
         android:fontFamily="@font/comfortaa"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit, a varius mi egestas vel."
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/navbar_devider2"
+        app:layout_constraintEnd_toEndOf="@+id/scroller_devider2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvQuestTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvQuestTitle" />
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/navbar_devider"
+        android:id="@+id/scroller_devider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -58,25 +58,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHomeTitle" />
 
-    <HorizontalScrollView
-        android:id="@+id/hsv_quests"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpQuest"
         android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_height="160dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbar_devider">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
-    </HorizontalScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/scroller_devider"
+        app:layout_constraintBottom_toTopOf="@id/scroller_devider2"
+        />
 
     <View
-        android:id="@+id/navbar_devider2"
+        android:id="@+id/scroller_devider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -85,7 +81,7 @@
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hsv_quests" />
+        app:layout_constraintTop_toBottomOf="@id/vpQuest" />
 
     <TextView
         android:id="@+id/tvQuestTitle"
@@ -95,8 +91,8 @@
         android:fontFamily="@font/comfortaa"
         android:text="Quest Name"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/navbar_devider2"
-        app:layout_constraintTop_toBottomOf="@+id/navbar_devider2" />
+        app:layout_constraintStart_toStartOf="@+id/scroller_devider2"
+        app:layout_constraintTop_toBottomOf="@+id/scroller_devider2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
