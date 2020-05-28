@@ -25,6 +25,7 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttPersistenceException;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
@@ -49,20 +50,19 @@ public class TreasuryFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_treasury, container,false);
-        this.clickamount = 0;
-        this.questions = new ArrayList<>();
-        this.collectedLetters = new ArrayList();
-        for (int i = 0; i < 6; i++){
-            this.collectedLetters.add(".");
-            letters += ". ";
-        }
-
-        this.textView = (TextView) view.findViewById(R.id.tvCollectedLetters);
-        this.textView.setText(letters);
-
+//        this.clickamount = 0;
+//        this.questions = new ArrayList<>();
+//        this.collectedLetters = new ArrayList();
+//        for (int i = 0; i < 6; i++){
+//            this.collectedLetters.add(".");
+//            letters += ". ";
+//        }
+//
+//        this.textView = (TextView) view.findViewById(R.id.tvCollectedLetters);
+//        this.textView.setText(letters);
 
         String clientId = MqttClient.generateClientId();
-        this.client = new MqttAndroidClient(getActivity().getApplicationContext(), "tcp://maxwell.bps-software.nl:1883", clientId);
+        client = new MqttAndroidClient(getActivity().getApplicationContext(),"tcp://maxwell.bps-software.nl:1883", clientId);
 
         try {
             MqttConnectOptions options = new MqttConnectOptions();
@@ -70,21 +70,27 @@ public class TreasuryFragment extends Fragment {
             options.setPassword("&FN+g$$Qhm7j".toCharArray());
             IMqttToken token = client.connect(options);
 
+            System.out.println("setActionCallback begin");
+
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
                     Log.d(TAG, "connected!");
+                    System.out.println("connected!");
                 }
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
                     Log.d(TAG, "connection failed! " + exception.getMessage());
+                    System.out.println("connection failed!");
                 }
             });
+            System.out.println("connectionTimeout: " + options.getConnectionTimeout());
+            System.out.println("setActionCallback end");
         } catch (MqttException e) {
             e.printStackTrace();
         }
-
+        System.out.println("buttonListener");
         this.buttonCheck = (Button) view.findViewById(R.id.buttonVerify);
         buttonCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +107,7 @@ public class TreasuryFragment extends Fragment {
 //        Intent intent = new Intent(getActivity(),SettingsMenuActivity.class);
 //        startActivity(intent);
         Toast.makeText(getActivity(), "Check", Toast.LENGTH_SHORT).show();
+        System.out.println("onButtonCheckClicked()");
         try {
             encodedPayload = payload.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);
