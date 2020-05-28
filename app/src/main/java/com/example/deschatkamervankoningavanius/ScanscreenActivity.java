@@ -22,10 +22,14 @@ public class ScanscreenActivity extends AppCompatActivity {
         ScanscreenActivity.this.startActivity(intent);
     }
 
+    public void onButtonNFCPressed(View view){
+        Intent intent = new Intent(ScanscreenActivity.this, NavActivityFragmentBase.class);
+        startActivity(intent);
+    }
 
-    //TODO: REMOVE after QR and NFC works.
+
     public void onButtonQRPressed(View v){
-        Intent intent = new Intent(ScanscreenActivity.this, NavFragmentBaseActivity.class);
+        Intent intent = new Intent(ScanscreenActivity.this, QR_code_scanner.class);
         startActivity(intent);
     }
 }
