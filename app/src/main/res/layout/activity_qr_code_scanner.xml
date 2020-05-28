@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScanscreenActivity">
+    tools:context=".QR_code_scanner">
 
     <TextView
         android:id="@+id/textView"
@@ -44,46 +44,13 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
-        android:text="Houd uw telefoon tegen de scanner van de gekozen moeilijkheid."
+        android:text="Make sure the camera sees the QR-code"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_devider" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="onButtonNFCPressed"
-        android:src="@drawable/nfc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ImageView
-        android:id="@+id/question"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/circle"
-        android:onClick="onIconQuestionClicked"
-        android:src="@drawable/outline_help_outline_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/qr_button"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="onButtonQRPressed"
-        android:src="@drawable/qr_code"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
