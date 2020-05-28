@@ -40,6 +40,7 @@
             android:theme="@style/AppTheme.ScanScreen"/>
         <activity android:name=".NavFragmentBaseActivity"/>
         <activity android:name=".HelpMenuActivity"/>
+        <activity android:name=".SettingsMenuActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
