@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.deschatkamervankoningavanius.HelpMenuActivity;
 import com.example.deschatkamervankoningavanius.R;
+import com.example.deschatkamervankoningavanius.SettingsMenuActivity;
 
 public class MenuFragment extends Fragment {
 
@@ -45,11 +46,11 @@ public class MenuFragment extends Fragment {
 
     public void onButtonSettingsClicked(View view){
         //TODO: Integrate function when settingsmenu is finished
-//        Intent intent = new Intent(getActivity(),SettingsMenuActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(getActivity(), SettingsMenuActivity.class);
+        startActivity(intent);
 
-        Toast.makeText(getActivity(), "Settings",
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Settings",
+//                Toast.LENGTH_SHORT).show();
     }
 
     public void onButtonHelpClicked(View view){
