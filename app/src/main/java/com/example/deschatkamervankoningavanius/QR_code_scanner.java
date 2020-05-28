@@ -1,11 +1,13 @@
 package com.example.deschatkamervankoningavanius;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,14 +26,17 @@ public class QR_code_scanner extends AppCompatActivity {
     SurfaceView surfaceView;
     TextView txtBarcodeValue;
     private CameraSource cameraSource;
+    String qrCodeValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_scanner);
 
-        txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
-        surfaceView = findViewById(R.id.surfaceView);
+        this.txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
+        this.surfaceView = findViewById(R.id.surfaceView);
+
+        this.qrCodeValue = "";
     }
 
 
@@ -86,10 +91,8 @@ public class QR_code_scanner extends AppCompatActivity {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
-                    String barcodeText;
-                    //todo here do something with the data
-                    barcodeText = barcodes.valueAt(0).displayValue;
-                    txtBarcodeValue.setText(barcodeText);
+                    qrCodeValue = barcodes.valueAt(0).displayValue;
+                    txtBarcodeValue.setText(qrCodeValue);
                 }
             }
         });
@@ -109,4 +112,9 @@ public class QR_code_scanner extends AppCompatActivity {
     }
 
 
+    public void onButtonChooseDifficultyPressed(View view) {
+        Intent intent = new Intent(this, NavActivityFragmentBase.class);
+        intent.putExtra("Difficulty",qrCodeValue);
+        startActivity(intent);
+    }
 }
