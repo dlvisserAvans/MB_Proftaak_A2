@@ -91,8 +91,13 @@ public class QR_code_scanner extends AppCompatActivity {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
-                    qrCodeValue = barcodes.valueAt(0).displayValue;
-                    txtBarcodeValue.setText(qrCodeValue);
+                    txtBarcodeValue.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            qrCodeValue = barcodes.valueAt(0).displayValue;
+                            txtBarcodeValue.setText(qrCodeValue);
+                        }
+                    });
                 }
             }
         });
@@ -114,7 +119,7 @@ public class QR_code_scanner extends AppCompatActivity {
 
     public void onButtonChooseDifficultyPressed(View view) {
         Intent intent = new Intent(this, NavActivityFragmentBase.class);
-        intent.putExtra("Difficulty",qrCodeValue);
+        intent.putExtra("Difficulty", qrCodeValue);
         startActivity(intent);
     }
 }
