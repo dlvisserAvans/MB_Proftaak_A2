@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.deschatkamervankoningavanius.HelpMenuActivity;
 import com.example.deschatkamervankoningavanius.R;
 
 public class MenuFragment extends Fragment {
@@ -53,11 +54,11 @@ public class MenuFragment extends Fragment {
 
     public void onButtonHelpClicked(View view){
         //TODO: Integrate function when helpmenu is finished
-//        Intent intent = new Intent(getActivity(),HelpMenuActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(getActivity(), HelpMenuActivity.class);
+        startActivity(intent);
 
-        Toast.makeText(getActivity(), "Help",
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Help",
+//                Toast.LENGTH_SHORT).show();
     }
 
 }

@@ -1,7 +1,6 @@
 package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.R;
-import com.example.deschatkamervankoningavanius.ViewPagerData.VPAdapter;
+import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

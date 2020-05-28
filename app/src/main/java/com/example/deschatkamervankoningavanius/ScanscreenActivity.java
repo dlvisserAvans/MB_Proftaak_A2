@@ -25,7 +25,7 @@ public class ScanscreenActivity extends AppCompatActivity {
 
     //TODO: REMOVE after QR and NFC works.
     public void onButtonQRPressed(View v){
-        Intent intent = new Intent(ScanscreenActivity.this,NavActivityFragmentBase.class);
+        Intent intent = new Intent(ScanscreenActivity.this, NavFragmentBaseActivity.class);
         startActivity(intent);
     }
 }
