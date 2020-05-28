@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/comfortaa"
         android:text="S, P, R, K, J, E"
@@ -54,7 +54,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
-        android:text="@string/Home_Title"
+        android:text="Treasury"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,11 +67,12 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTreasuryTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvTreasuryTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTreasury"
@@ -85,12 +86,17 @@
         app:layout_constraintTop_toBottomOf="@+id/scroller_devider3" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_treasury_check"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Button"
+        android:background="@drawable/rounded_button_selector"
+        android:fontFamily="@font/comfortaa"
+        android:text="Check"
+        android:textColor="@color/color_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
