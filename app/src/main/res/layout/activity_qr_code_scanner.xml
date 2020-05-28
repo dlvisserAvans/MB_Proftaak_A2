@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Choose"
+
         android:onClick="onButtonChooseDifficultyPressed"
         app:layout_constraintBottom_toBottomOf="@+id/surfaceView" />
 
