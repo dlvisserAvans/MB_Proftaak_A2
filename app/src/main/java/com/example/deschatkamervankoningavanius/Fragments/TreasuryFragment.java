@@ -100,25 +100,21 @@ public class TreasuryFragment extends Fragment {
         //TODO: Integrate function when Checkmenu is finished
 //        Intent intent = new Intent(getActivity(),SettingsMenuActivity.class);
 //        startActivity(intent);
-
-//        try {
-//            encodedPayload = payload.getBytes("UTF-8");
-//            MqttMessage message = new MqttMessage(encodedPayload);
-//            System.out.println(client);
-//            System.out.println(message.getPayload());
-//            client.publish(topic, message);
-//        } catch (UnsupportedEncodingException | MqttException e) {
-//            e.printStackTrace();
-//        }
-        if (clickamount > 5){
-            clickamount = 0;
-        } else {
-            clickamount++;
+        Toast.makeText(getActivity(), "Check", Toast.LENGTH_SHORT).show();
+        try {
+            encodedPayload = payload.getBytes("UTF-8");
+            MqttMessage message = new MqttMessage(encodedPayload);
+            client.publish(topic, message);
+        } catch (UnsupportedEncodingException | MqttException e) {
+            e.printStackTrace();
         }
-        changeLetterCollection("a", clickamount-1);
 
-        Toast.makeText(getActivity(), "Check",
-                Toast.LENGTH_SHORT).show();
+//        if (clickamount > 5){
+//            clickamount = 0;
+//        } else {
+//            clickamount++;
+//        }
+//        changeLetterCollection("a", clickamount-1);
     }
 
     public void changeLetterCollection(String letter, int position){
