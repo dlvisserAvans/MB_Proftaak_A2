@@ -1,4 +1,4 @@
-package com.example.deschatkamervankoningavanius.ViewPagerData;
+package com.example.deschatkamervankoningavanius.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

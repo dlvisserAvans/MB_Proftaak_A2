@@ -14,7 +14,7 @@ import com.example.deschatkamervankoningavanius.Fragments.MenuFragment;
 import com.example.deschatkamervankoningavanius.Fragments.TreasuryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NavActivityFragmentBase extends AppCompatActivity {
+public class NavFragmentBaseActivity extends AppCompatActivity {
 
     //TODO: Research to make sure the new home fragment changes when the orientation changes.
     private Fragment currentFragment = new HomeFragment();
