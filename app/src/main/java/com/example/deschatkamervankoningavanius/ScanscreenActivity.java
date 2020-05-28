@@ -23,7 +23,7 @@ public class ScanscreenActivity extends AppCompatActivity {
     }
 
     public void onButtonNFCPressed(View view){
-        Intent intent = new Intent(ScanscreenActivity.this, NavActivityFragmentBase.class);
+        Intent intent = new Intent(ScanscreenActivity.this, NavFragmentBaseActivity.class);
         startActivity(intent);
     }
 
