@@ -20,29 +20,32 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class QR_code_scanner extends AppCompatActivity {
 
     SurfaceView surfaceView;
-    TextView txtBarcodeValue;
+    TextView displayQRCodeValue;
     private CameraSource cameraSource;
     String qrCodeValue;
+    private ArrayList<String> correctValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_scanner);
 
-        this.txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
+        this.displayQRCodeValue = findViewById(R.id.displayQRCodeValue);
         this.surfaceView = findViewById(R.id.surfaceView);
 
         this.qrCodeValue = "";
+        this.correctValues = new ArrayList<>();
+        //maybe we can fill this array with a REST API
+        this.correctValues.add("Avanius");
     }
 
 
     private void initialiseDetectorsAndSources() {
-        Toast.makeText(getApplicationContext(), "Barcode scanner started", Toast.LENGTH_SHORT).show();
-
         BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.QR_CODE)
                 .build();
@@ -84,18 +87,24 @@ public class QR_code_scanner extends AppCompatActivity {
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
-                Toast.makeText(getApplicationContext(), "Barcode scanner stopped", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
-                    txtBarcodeValue.post(new Runnable() {
+                    displayQRCodeValue.post(new Runnable() {
                         @Override
                         public void run() {
                             qrCodeValue = barcodes.valueAt(0).displayValue;
-                            txtBarcodeValue.setText(qrCodeValue);
+                            displayQRCodeValue.setText(qrCodeValue);
+
+                            //todo check if the value is in the array with valid values
+                            if (correctValues.contains(qrCodeValue)) {
+                                //you could use this method for this
+                                difficultySelected();
+                            }
+
                         }
                     });
                 }
@@ -116,10 +125,14 @@ public class QR_code_scanner extends AppCompatActivity {
         initialiseDetectorsAndSources();
     }
 
-
-    public void onButtonChooseDifficultyPressed(View view) {
+    private void difficultySelected() {
         Intent intent = new Intent(this, NavActivityFragmentBase.class);
         intent.putExtra("Difficulty", qrCodeValue);
         startActivity(intent);
+    }
+
+
+    public void onButtonChooseDifficultyPressed(View view) {
+        difficultySelected();
     }
 }
