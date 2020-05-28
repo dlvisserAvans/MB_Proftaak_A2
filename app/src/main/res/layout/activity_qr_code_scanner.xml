@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:text="No QR-code Detected"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Choose"
-
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:onClick="onButtonChooseDifficultyPressed"
         app:layout_constraintBottom_toBottomOf="@+id/surfaceView" />
 
