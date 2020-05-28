@@ -112,9 +112,11 @@ public class TreasuryFragment extends Fragment {
             encodedPayload = payload.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);
             client.publish(topic, message);
+            client.disconnect();
         } catch (UnsupportedEncodingException | MqttException e) {
             e.printStackTrace();
         }
+
 
 //        if (clickamount > 5){
 //            clickamount = 0;
