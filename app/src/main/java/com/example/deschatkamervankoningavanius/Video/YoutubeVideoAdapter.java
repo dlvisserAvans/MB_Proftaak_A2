@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.deschatkamervankoningavanius.R;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import java.util.List;
 
@@ -22,14 +24,14 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeVideoAdapte
     private OnItemClickListener clickListener;
 
     public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        private YouTubePlayerView youtubeVideoView;
-        private TextView videoTextView;
+        public final TextView videoTitleTextView;
+        public final ImageView videoImageView;
 
         public YoutubeVideoViewHolder(View itemView, YoutubeVideoAdapter adapter){
             super(itemView);
-            youtubeVideoView = itemView.findViewById(R.id.youtubePlayerView);
-            videoTextView = itemView.findViewById(R.id.videoTitle);
+            videoTitleTextView = itemView.findViewById(R.id.videoTitle);
+            videoImageView = itemView.findViewById(R.id.videoImage);
+            itemView.setOnClickListener(this);
         }
 
         @Override
@@ -64,12 +66,8 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeVideoAdapte
         Log.d(LOGTAG, "onBindViewHolder() called for position " + position);
         YoutubeVideo youtubeVideo = youtubeVideos.get(position);
         Log.d(LOGTAG, "Video = " + youtubeVideo.getRef());
-        holder.videoTextView.setText(youtubeVideos.get(position).getVideoTitle());
-        holder.youtubeVideoView.getYouTubePlayerWhenReady(youTubePlayer -> {
-            youTubePlayer.cueVideo("25ZuKkbHdqM", 1f);
-        });
-
-        //TODO
+        holder.videoTitleTextView.setText(youtubeVideo.getVideoTitle());
+        holder.videoImageView.setImageResource(youtubeVideo.getVideoImageResourceId());
     }
 
     @Override
@@ -77,9 +75,4 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeVideoAdapte
         Log.d(LOGTAG, "getItemCount() called");
         return youtubeVideos.size();
     }
-
-    public void setFullScreen(YoutubeVideoViewHolder holder){
-        holder.youtubeVideoView.enterFullScreen();
-    }
-
 }
