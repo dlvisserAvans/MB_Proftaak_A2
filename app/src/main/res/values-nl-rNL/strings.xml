@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Home_Title">Opdrachten</string>
+    <string name="app_name">" De schatkamer van Koning Avanius"</string>
+    <string name="back">Terug</string>
+    <string name="check">Controleer</string>
+    <string name="treasure_room_found_letters">Gevonden letters</string>
+    <string name="language">Taal:</string>
+    <string name="menu">Menu</string>
+    <string name="placeholder">Text voorbeeld</string>
+    <string name="qr_code_page_no_qr_code_detected">Geen QR-code gevonden</string>
+    <string name="quest_name">Opdracht naam</string>
+    <string name="settings">Opties</string>
+    <string name="pop_up_help_text">Bevat uw telefoon de NFC functie niet, dan kan u ook de QR code scannen. Klik voor die functie op de knop hieronder.</string>
+    <string name="qr_code_page_choose">Kies</string>
+    <string name="welcome">Welkom</string>
+    <string name="language_setting">NL</string>
+    <string name="progress">Voortgang:</string>
+    <string name="help">Help</string>
+    <string name="treasure_room">Schatkamer</string>
+</resources>

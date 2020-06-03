@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Progress:"
+        android:text="@string/progress"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvQuestDesc" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit, a varius mi egestas vel."
+        android:text="@string/opdrachten_explanation"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/scroller_devider2"
         app:layout_constraintHorizontal_bias="1.0"
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Quest Name"
+        android:text="@string/quest_name"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/scroller_devider2"
         app:layout_constraintTop_toBottomOf="@+id/scroller_devider2" />
