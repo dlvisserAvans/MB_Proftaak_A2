@@ -9,13 +9,13 @@ public abstract class Quest {
     private String solution;
     private QuestionType questionType;
 
-    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution) {
+    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution, boolean finished) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
         this.questionType = questionType;
         this.solution = solution;
-        this.finished = false;
+        this.finished = finished;
     }
 
     public boolean isFinished() {
@@ -58,7 +58,5 @@ public abstract class Quest {
         return questionType;
     }
 
-    public void setQuestionType(QuestionType questionType) {
-        this.questionType = questionType;
-    }
+    public abstract String getButtonOption(String option);
 }

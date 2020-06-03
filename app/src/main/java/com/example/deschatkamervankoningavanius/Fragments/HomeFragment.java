@@ -1,6 +1,5 @@
 package com.example.deschatkamervankoningavanius.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,17 +28,16 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    ViewPager viewPager;
-    VPAdapter vpAdapter;
-    List<Quest> questList;
-    ProgressBar progressBar;
-    int progress = 0;
-    int progress_step;
-    TextView tvProgress;
-    int correctAnswers = 0;
-
-
-    private Fragment currentFragment = new OpenQuestionFragment();
+    private ViewPager viewPager;
+    private VPAdapter vpAdapter;
+    private List<Quest> questList;
+    private ProgressBar progressBar;
+    private int progress = 0;
+    private int progress_step;
+    private TextView tvProgress;
+    private int correctAnswers = 0;
+    private Bundle bundle;
+    private Fragment currentFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
 
     @Nullable
@@ -47,13 +45,23 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         questList = new ArrayList<>();
-        questList.add(new OpenQuestionQuest(R.drawable.brochure,"Test1","", "solution"));
-        questList.add(new MultipleChoiceQuest(R.drawable.sticker,"Test2","", "A"));
-        questList.add(new OpenQuestionQuest(R.drawable.poster,"Test3","", "solution"));
-        questList.add(new MultipleChoiceQuest(R.drawable.namecard,"Test4","", "D"));
+        questList.add(new MultipleChoiceQuest(R.drawable.namecard, "Test0", "", "1", "0", "1", "2", "3", false));
+        questList.add(new OpenQuestionQuest(R.drawable.brochure,"Test1","", "solution1", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.sticker,"Test2","", "A", "A", "B", "C", "D", false));
+        questList.add(new OpenQuestionQuest(R.drawable.poster,"Test3","", "solution2", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.namecard,"Test4","", "F", "E", "F", "G", "H", false));
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
+
+        this.bundle = new Bundle();
+        this.bundle.putString("solution", questList.get(0).getSolution());
+        bundle.putString("optionA", questList.get(0).getButtonOption("A"));
+        bundle.putString("optionB", questList.get(0).getButtonOption("B"));
+        bundle.putString("optionC", questList.get(0).getButtonOption("C"));
+        bundle.putString("optionD", questList.get(0).getButtonOption("D"));
+        this.currentFragment = new MultipleChoiceFragment();
+        this.currentFragment.setArguments(this.bundle);
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -78,20 +86,24 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(final int position) {
-//                questList.get(position).setFinished(true);
-                System.out.println(questList.get(position).isFinished());
-                       switch (questList.get(position).getQuestionType()){
-                           case OPENQUESTION:
-                               currentFragment = new OpenQuestionFragment();
-                               break;
-                           case MULTIPLECHOICE:
-                               currentFragment = new MultipleChoiceFragment();
-                               Intent intent = new Intent();
-                               intent.putExtra("solution", questList.get(position).getSolution());
-                               break;
-                       }
-//                        setProgressBar();
-                        getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
+                System.out.println("Position: " + position);
+                switch (questList.get(position).getQuestionType()) {
+                    case OPENQUESTION:
+                        bundle.putString("solution", questList.get(position).getSolution());
+                        currentFragment = new OpenQuestionFragment();
+                        currentFragment.setArguments(bundle);
+                        break;
+                    case MULTIPLECHOICE:
+                        bundle.putString("solution", questList.get(position).getSolution());
+                        bundle.putString("optionA", questList.get(position).getButtonOption("A"));
+                        bundle.putString("optionB", questList.get(position).getButtonOption("B"));
+                        bundle.putString("optionC", questList.get(position).getButtonOption("C"));
+                        bundle.putString("optionD", questList.get(position).getButtonOption("D"));
+                        currentFragment = new MultipleChoiceFragment();
+                        currentFragment.setArguments(bundle);
+                        break;
+                }
+                getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
             }
 
             @Override
@@ -99,8 +111,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-
 
         return rootView;
     }
