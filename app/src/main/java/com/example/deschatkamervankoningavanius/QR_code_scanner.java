@@ -47,11 +47,11 @@ public class QR_code_scanner extends AppCompatActivity {
         //initialise the rest of the attributes
         this.qrCodeValue = "";
         this.correctValues = new HashMap<>();
-        //todo maybe we can fill this array with a REST API
+
         this.correctValues.put("Avanius", Difficulty.Hard);
-        this.correctValues.put("Easy", Difficulty.Easy);
-        this.correctValues.put("Medium", Difficulty.Medium);
-        this.correctValues.put("Hard", Difficulty.Hard);
+        this.correctValues.put("EsstelingA2Easy", Difficulty.Easy);
+        this.correctValues.put("EsstelingA2Medium", Difficulty.Medium);
+        this.correctValues.put("EsstelingA2Hard", Difficulty.Hard);
     }
 
     /**
@@ -158,7 +158,6 @@ public class QR_code_scanner extends AppCompatActivity {
      * @param difficulty determent how many quests have to be done
      */
     private void difficultySelected(Difficulty difficulty) {
-        //todo hier ga je naar volgende activity
         //we create a intent to go to the home page
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         //add the value from the barcode to the intent

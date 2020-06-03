@@ -60,7 +60,6 @@ public class Pop extends Activity {
                 break;
 
             default:
-                //todo add notification
                 Toast.makeText(this, "Wrong password", Toast.LENGTH_SHORT).show();
                 break;
         }
