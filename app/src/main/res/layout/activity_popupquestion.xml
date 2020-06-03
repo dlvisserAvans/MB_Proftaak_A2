@@ -24,5 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--    todo make a button here to select the difficulty manually-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

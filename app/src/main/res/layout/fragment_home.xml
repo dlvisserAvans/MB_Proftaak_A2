@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/comfortaa"
-        android:text="@string/opdrachten_explanation"
+        android:text="@string/exercises_explanation"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/scroller_devider2"
         app:layout_constraintHorizontal_bias="1.0"
