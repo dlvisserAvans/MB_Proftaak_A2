@@ -154,6 +154,7 @@ public class QR_code_scanner extends AppCompatActivity {
      * we pass the barcode value to it via the intent
      */
     private void difficultySelected() {
+        //todo hier ga je naar volgende activity
         //we create a intent to go to the home page
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         //add the value from the barcode to the intent
