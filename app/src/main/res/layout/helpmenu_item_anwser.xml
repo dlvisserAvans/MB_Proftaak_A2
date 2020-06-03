@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_help_item"
+    android:background="@color/color_text_background"
    >
 
     <TextView
@@ -12,7 +12,7 @@
         android:padding="5dp"
         android:fontFamily="@font/comfortaa"
         android:text="Description example"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/color_text"
         android:textAlignment="center"
         android:textSize="14sp"/>
 

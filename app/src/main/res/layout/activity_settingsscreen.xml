@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsMenuActivity">
+    tools:context=".SettingsMenuActivity"
+    android:background="@color/color_background">
 
     <Button
         android:id="@+id/button"
@@ -30,7 +31,7 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/comfortaa"
         android:text="EN"
-        android:textColor="#000000"
+        android:textColor="@color/color_title"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView3" />
@@ -42,7 +43,7 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/comfortaa"
         android:text="Dark mode:"
-        android:textColor="#000000"
+        android:textColor="@color/color_title"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
@@ -53,7 +54,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:tint="#000000"
+        android:tint="@color/color_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/outline_nights_stay_24" />
@@ -66,6 +67,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
+        android:textColor="@color/color_text"
         android:text="Settings"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -81,7 +83,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +96,7 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/comfortaa"
         android:text="Language:"
-        android:textColor="#000000"
+        android:textColor="@color/color_title"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
@@ -106,7 +108,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:tint="#000000"
+        android:tint="@color/color_title"
         app:layout_constraintTop_toBottomOf="@+id/scroller_devider_help2"
         app:srcCompat="@drawable/outline_language_24" />
 

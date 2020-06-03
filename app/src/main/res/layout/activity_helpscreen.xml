@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/color_background"
     tools:context=".HelpMenuActivity">
 
 
@@ -17,6 +17,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
+        android:textColor="@color/color_text"
         android:text="Help"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -32,7 +33,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
