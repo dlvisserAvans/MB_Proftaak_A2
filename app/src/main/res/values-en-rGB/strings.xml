@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">The treasure room of king Avanius</string>
-    <string name="Home_Title">Opdrachten</string>
+    <string name="home_activity_title">Quests</string>
     <string name="back">Back</string>
     <string name="check">Check</string>
     <string name="treasure_room_found_letters">Found Letters:</string>
@@ -19,4 +19,5 @@
     <string name="help">Help</string>
     <string name="treasure_room">Treasure room</string>
     <string name="password_hint">Password</string>
+    <string name="scanscreen_message">To select the difficulty scan the QR-code with the button bellow</string>
 </resources>
