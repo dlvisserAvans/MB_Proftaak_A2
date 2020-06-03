@@ -51,11 +51,13 @@ public class JSONParser {
             Resources resources = appContext.getResources();
             for (int i = 0; i < quests.length(); i++){
                 JSONObject quest = quests.getJSONObject(i);
-                String imageName = quest.getString("image");
-                int imageID = resources.getIdentifier(imageName, "drawable",appContext.getPackageName());
-                System.out.println("ROUND: " + i + " ,imageID: " + imageID + " ,imageName: " + imageName);
 
-                questList.add(new Quest(resources.getIdentifier(imageName, "drawable", appContext.getPackageName()), quest.getString("title"), quest.getString("description")));
+//                String imageName = quest.getString("image");
+                int imageID = resources.getIdentifier(quest.getString("image"), "drawable",appContext.getPackageName());
+                int titleID = resources.getIdentifier(quest.getString("title"), "string", appContext.getPackageName());
+                int descriptionID = resources.getIdentifier(quest.getString("description"), "string", appContext.getPackageName());
+
+                questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
             }
         } catch (JSONException e) {
             e.printStackTrace();

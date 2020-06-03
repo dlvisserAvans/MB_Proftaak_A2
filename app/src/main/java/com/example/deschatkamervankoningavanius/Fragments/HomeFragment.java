@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
         textView = rootView.findViewById(R.id.tvQuestTitle);
-        textView.setText(questList.get(0).getTitle());
+        textView.setText(questList.get(0).getDesc());
 
 
 
