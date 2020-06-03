@@ -5,11 +5,23 @@ public class Quest {
     private int QuestImage;
     private String title;
     private String desc;
+    private boolean finished;
+    private QuestionType questionType;
 
-    public Quest(int questImage, String title, String desc) {
+    public Quest(int questImage, String title, String desc, QuestionType questionType) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
+        this.questionType = questionType;
+        this.finished = false;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     public int getQuestImage() {
@@ -34,5 +46,13 @@ public class Quest {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
     }
 }

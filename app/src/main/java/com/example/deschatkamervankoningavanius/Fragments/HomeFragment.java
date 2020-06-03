@@ -3,19 +3,25 @@ package com.example.deschatkamervankoningavanius.Fragments;
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.deschatkamervankoningavanius.Data.Quest;
+import com.example.deschatkamervankoningavanius.Data.QuestionType;
+import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
+import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,20 +35,30 @@ public class HomeFragment extends Fragment {
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     TextView textView;
 
+    private Fragment currentFragment = new OpenQuestionFragment();
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         questList = new ArrayList<>();
-        questList.add(new Quest(R.drawable.brochure,"Test1",""));
-        questList.add(new Quest(R.drawable.sticker,"Test2",""));
-        questList.add(new Quest(R.drawable.poster,"Test3",""));
-        questList.add(new Quest(R.drawable.namecard,"Test4",""));
+        questList.add(new Quest(R.drawable.brochure,"Test1","", QuestionType.OPENQUESTION));
+        questList.add(new Quest(R.drawable.sticker,"Test2","",QuestionType.MULTIPLECHOICE));
+        questList.add(new Quest(R.drawable.poster,"Test3","",QuestionType.OPENQUESTION));
+        questList.add(new Quest(R.drawable.namecard,"Test4","",QuestionType.MULTIPLECHOICE));
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
-        textView = rootView.findViewById(R.id.tvQuestTitle);
-        textView.setText(questList.get(0).getTitle());
+//        textView = rootView.findViewById(R.id.tvQuestTitle);
+//        textView.setText(questList.get(0).getTitle());
+
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Fragment fragment = currentFragment;
+        fragmentTransaction.add(R.id.fragment_layout_quest,fragment);
+        fragmentTransaction.commit();
 
 
 
@@ -70,11 +86,29 @@ public class HomeFragment extends Fragment {
             }
 
             @Override
-            public void onPageSelected(int position) {
-                Toast.makeText(getActivity(), questList.get(position).getTitle(),
-                        Toast.LENGTH_SHORT).show();
+            public void onPageSelected(final int position) {
+//               navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//                   @Override
+//                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                textView.setText(questList.get(position).getTitle());
+                       switch (questList.get(position).getQuestionType()){
+                           case OPENQUESTION:
+                               currentFragment = new OpenQuestionFragment();
+                               break;
+                           case MULTIPLECHOICE:
+                               currentFragment = new MultipleChoiceFragment();
+                               break;
+                       }
+
+                        getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
+//                        return true;
+//                    }
+//                };
+//                Toast.makeText(getActivity(), questList.get(position).getTitle(),
+//                        Toast.LENGTH_SHORT).show();
+//
+//                textView.setText(questList.get(position).getTitle());
             }
 
             @Override
