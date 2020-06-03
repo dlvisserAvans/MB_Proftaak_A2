@@ -1,6 +1,7 @@
 package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,6 +27,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
+    Intent difficultyIntent = new Intent();
+
+    public HomeFragment(Intent intent) {
+        this.difficultyIntent = intent;
+    }
 
     ViewPager viewPager;
     VPAdapter vpAdapter;
@@ -52,18 +58,19 @@ public class HomeFragment extends Fragment {
         allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
 
         Collections.shuffle(allQuestsList);
-        String difficulty = "easy";     //TODO get difficulty from QR code
+//        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
+        String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
         int questAmount = 1;
         //TODO change quest amounts?
         switch (difficulty){
             case "easy":
-                questAmount = 3;
+                questAmount = 4;
                 break;
             case "medium":
-                questAmount = 5;
+                questAmount = 6;
                 break;
             case "hard":
-                questAmount = 7;
+                questAmount = 8;
                 break;
         }
 

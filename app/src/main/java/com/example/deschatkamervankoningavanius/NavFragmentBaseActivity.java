@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class NavFragmentBaseActivity extends AppCompatActivity {
 
     //TODO: Research to make sure the new home fragment changes when the orientation changes.
-    private Fragment currentFragment = new HomeFragment();
+    private Fragment currentFragment = new HomeFragment(getIntent());
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -25,7 +25,7 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.navigation_home:
-                            currentFragment = new HomeFragment();
+                            currentFragment = new HomeFragment(getIntent());
                             break;
 
                         case R.id.navigation_treasury:
