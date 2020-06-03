@@ -31,7 +31,7 @@ public class Pop extends Activity {
         TextView textView = findViewById(R.id.password_edit_text);
         String password = textView.getText().toString();
         switch (password) {
-            case easy:
+            case "easy":
                 Toast.makeText(this, "Easy selected", Toast.LENGTH_SHORT).show();
                 //we create a intent to go to the home page
                 Intent intentEasy = new Intent(this, NavFragmentBaseActivity.class);
@@ -40,7 +40,7 @@ public class Pop extends Activity {
                 //start the intent
                 startActivity(intentEasy);
                 break;
-            case medium:
+            case "medium":
                 Toast.makeText(this, "medium selected", Toast.LENGTH_SHORT).show();
                 //we create a intent to go to the home page
                 Intent intentMedium = new Intent(this, NavFragmentBaseActivity.class);
@@ -49,7 +49,7 @@ public class Pop extends Activity {
                 //start the intent
                 startActivity(intentMedium);
                 break;
-            case hard:
+            case "hard":
                 Toast.makeText(this, "hard selected", Toast.LENGTH_SHORT).show();
                 //we create a intent to go to the home page
                 Intent intentHard = new Intent(this, NavFragmentBaseActivity.class);
