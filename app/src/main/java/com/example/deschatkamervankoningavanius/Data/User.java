@@ -40,4 +40,27 @@ public class User implements Serializable {
     }
 
 
+    public List<Quest> getQuests() {
+        return quests;
+    }
+
+    public void setQuests(List<Quest> quests) {
+        this.quests = quests;
+    }
+
+    public List<Character> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Character> answers) {
+        this.answers = answers;
+    }
+
+    public List<Character> getProgress() {
+        return progress;
+    }
+
+    public void setProgress(List<Character> progress) {
+        this.progress = progress;
+    }
 }
