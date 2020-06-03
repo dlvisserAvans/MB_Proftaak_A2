@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,9 +32,11 @@ public class HomeFragment extends Fragment {
     ViewPager viewPager;
     VPAdapter vpAdapter;
     List<Quest> questList;
-    Integer[] colors = null;
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    TextView textView;
+    ProgressBar progressBar;
+    int progress = 0;
+    int progress_step;
+    TextView tvProgress;
+
 
     private Fragment currentFragment = new OpenQuestionFragment();
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
@@ -50,8 +53,6 @@ public class HomeFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
-//        textView = rootView.findViewById(R.id.tvQuestTitle);
-//        textView.setText(questList.get(0).getTitle());
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -60,37 +61,24 @@ public class HomeFragment extends Fragment {
         fragmentTransaction.add(R.id.fragment_layout_quest,fragment);
         fragmentTransaction.commit();
 
-
+        progress_step = 100/questList.size();
+        progress = progress_step * 2;
+        progressBar = rootView.findViewById(R.id.progress_bar);
+        tvProgress = rootView.findViewById(R.id.tvProgress);
+        tvProgress.setText(progress + "%");
+        progressBar.setProgress(progress);
 
         vpAdapter = new VPAdapter(questList,getActivity());
         viewPager.setAdapter(vpAdapter);
 
-//        Integer[] colors_temp = {getResources().getColor(R.color.color1),getResources().getColor(R.color.color2)};
-
-//        colors = colors_temp;
-
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//                if (position < (vpAdapter.getCount() -1) && position < (colors.length-1)){
-//                    rootView.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset, colors[position], colors[position+1]));
-////                    viewPager.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset, colors[position], colors[position+1]));
-//                }
-//                else {
-////                    viewPager.setBackgroundColor(colors[colors.length-1]);
-//                    rootView.setBackgroundColor(colors[colors.length-1]);
-//                }
-
-//                textView.setText(questList.get(position).getTitle());
-
             }
 
             @Override
             public void onPageSelected(final int position) {
-//               navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//                   @Override
-//                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
 
                        switch (questList.get(position).getQuestionType()){
                            case OPENQUESTION:
@@ -102,13 +90,6 @@ public class HomeFragment extends Fragment {
                        }
 
                         getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
-//                        return true;
-//                    }
-//                };
-//                Toast.makeText(getActivity(), questList.get(position).getTitle(),
-//                        Toast.LENGTH_SHORT).show();
-//
-//                textView.setText(questList.get(position).getTitle());
             }
 
             @Override
