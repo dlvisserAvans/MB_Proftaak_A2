@@ -23,6 +23,10 @@ public class JSONParser {
         this.appContext = context;
     }
 
+    /**
+     * Reads the quests from a JSON file and
+     * @return returns a list of all quests read from the JSON files
+     */
     public List<Quest> JsonParse() {
         try {
             InputStream is = appContext.getAssets().open("quests.json");
@@ -47,12 +51,12 @@ public class JSONParser {
 
         try {
             JSONArray quests = reader.getJSONArray("quests");
-
+            
             Resources resources = appContext.getResources();
             for (int i = 0; i < quests.length(); i++){
                 JSONObject quest = quests.getJSONObject(i);
 
-//                String imageName = quest.getString("image");
+                //Get IDs for image and text for quests.
                 int imageID = resources.getIdentifier(quest.getString("image"), "drawable",appContext.getPackageName());
                 int titleID = resources.getIdentifier(quest.getString("title"), "string", appContext.getPackageName());
                 int descriptionID = resources.getIdentifier(quest.getString("description"), "string", appContext.getPackageName());

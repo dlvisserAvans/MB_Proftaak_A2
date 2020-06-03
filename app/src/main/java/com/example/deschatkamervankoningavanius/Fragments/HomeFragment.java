@@ -18,7 +18,6 @@ import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -28,7 +27,8 @@ public class HomeFragment extends Fragment {
     List<Quest> questList;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    TextView textView;
+    TextView titleView;
+    TextView descView;
 
     @Nullable
     @Override
@@ -38,8 +38,10 @@ public class HomeFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
-        textView = rootView.findViewById(R.id.tvQuestTitle);
-        textView.setText(questList.get(0).getDesc());
+        titleView = rootView.findViewById(R.id.tvQuestTitle);
+        descView = rootView.findViewById(R.id.tvQuestDesc);
+        titleView.setText(questList.get(0).getTitle());
+        descView.setText(questList.get(0).getDesc());
 
 
 
@@ -71,7 +73,8 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getActivity(), questList.get(position).getTitle(),
                         Toast.LENGTH_SHORT).show();
 
-                textView.setText(questList.get(position).getTitle());
+                titleView.setText(questList.get(position).getTitle());
+                descView.setText(questList.get(position).getDesc());
             }
 
             @Override
