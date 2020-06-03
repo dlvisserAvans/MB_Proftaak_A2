@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
     private int correctAnswers = 0;
     private Bundle bundle;
     private Fragment currentFragment;
+    private Quest currentQuest;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
 
     @Nullable
@@ -62,6 +63,7 @@ public class HomeFragment extends Fragment {
         bundle.putString("optionD", questList.get(0).getButtonOption("D"));
         this.currentFragment = new MultipleChoiceFragment();
         this.currentFragment.setArguments(this.bundle);
+        this.currentQuest = questList.get(0);
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -86,6 +88,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(final int position) {
+                currentQuest = questList.get(position);
                 System.out.println("Position: " + position);
                 switch (questList.get(position).getQuestionType()) {
                     case OPENQUESTION:
@@ -111,14 +114,14 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
+        setProgressBar();
         return rootView;
     }
 
     public void setProgressBar(){
         correctAnswers = 0;
         for (Quest quest : questList){
-            if (quest.isFinished() == true){
+            if (quest.isFinished()){
                 correctAnswers++;
             } else {
                 correctAnswers += 0;
@@ -127,5 +130,9 @@ public class HomeFragment extends Fragment {
         progress = correctAnswers * progress_step;
         progressBar.setProgress(progress);
         tvProgress.setText(progress + "%");
+    }
+
+    public void setQuestState(int position, boolean state){
+        questList.get(position).setFinished(state);
     }
 }

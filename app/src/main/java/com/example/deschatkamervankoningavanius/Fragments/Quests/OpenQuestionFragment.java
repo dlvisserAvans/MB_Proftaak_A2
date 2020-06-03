@@ -30,7 +30,7 @@ public class OpenQuestionFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         this.solution = bundle.getString("solution");
-        System.out.println("Solution: " + solution);
+        System.out.println("OpenQuestion --- Solution: " + solution);
 
         this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

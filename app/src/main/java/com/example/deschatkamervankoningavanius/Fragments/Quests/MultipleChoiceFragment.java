@@ -1,6 +1,5 @@
 package com.example.deschatkamervankoningavanius.Fragments.Quests;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,10 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button buttonOptionC;
     private Button buttonOptionD;
 
+    private Bundle bundle;
     private String solution = "";
+    private int clickAmount = 0;
+    private boolean finished = false;
 
     @Nullable
     @Override
@@ -33,13 +35,13 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.buttonOptionC = (Button)rootView.findViewById(R.id.btnMCAwnserC);
         this.buttonOptionD = (Button)rootView.findViewById(R.id.btnMCAwnserD);
 
-        Bundle bundle = this.getArguments();
+        bundle = this.getArguments();
         this.solution = bundle.getString("solution");
         this.buttonOptionA.setText(bundle.getString("optionA"));
         this.buttonOptionB.setText(bundle.getString("optionB"));
         this.buttonOptionC.setText(bundle.getString("optionC"));
         this.buttonOptionD.setText(bundle.getString("optionD"));
-        System.out.println("Solution: " + solution);
+        System.out.println("MultipleChoiceQuestion --- Solution: " + solution);
 
         this.buttonOptionA.setOnClickListener(this);
         this.buttonOptionB.setOnClickListener(this);
@@ -69,10 +71,18 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
     public void checkAnswer(String string, Button button){
         if (string.equals(solution)){
-            Toast.makeText(getActivity().getApplicationContext(),"CORRECT",Toast.LENGTH_SHORT).show();
-            button.setBackgroundColor(Color.GREEN);
+            button.setBackgroundResource(R.color.color2);
+            this.clickAmount++;
+            System.out.println("Pogingen: " + this.clickAmount);
+            finished = true;
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
+            this.clickAmount++;
+            finished = false;
         }
+    }
+
+    public boolean getFinished(){
+        return this.finished;
     }
 }
