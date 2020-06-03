@@ -32,10 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/qr_code_page_choose"
+        android:text="@string/qr_code_page_back"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorPrimary"
-        android:onClick="onButtonChooseDifficultyPressed"
+        android:onClick="onButtonBackClicked"
         app:layout_constraintBottom_toBottomOf="@+id/surfaceView" />
 
 

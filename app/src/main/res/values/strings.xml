@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">The treasure room of king Avanius</string>
     <string name="Home_Title">Opdrachten</string>
-    <string name="pop_up_help_text">If your phone doesn\'t support QR-code scanning\n select the difficulty bellow</string>
+    <string name="pop_up_help_text">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
     <string name="qr_code_page_no_qr_code_detected">No QR-code Detected</string>
-    <string name="qr_code_page_choose">Choose</string>
+    <string name="qr_code_page_back">Back</string>
     <string name="welcome">Welcome</string>
     <string name="scanscreen_message">Voor het selecteren van de moeilijkheidsgraad, scan de QR-code met de knop hieronder</string>
     <string name="back">Back</string>
@@ -21,4 +21,5 @@
     <string name="treasure_room">Treasure room</string>
     <string name="check">Check</string>
     <string name="placeholder">Text example</string>
+    <string name="password_hint">Password</string>
 </resources>

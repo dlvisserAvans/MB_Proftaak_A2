@@ -12,10 +12,11 @@
     <string name="quest_name">Opdracht naam</string>
     <string name="settings">Opties</string>
     <string name="pop_up_help_text">Bevat uw telefoon de NFC functie niet, dan kan u ook de QR code scannen. Klik voor die functie op de knop hieronder.</string>
-    <string name="qr_code_page_choose">Kies</string>
+    <string name="qr_code_page_back">Terug</string>
     <string name="welcome">Welkom</string>
     <string name="language_setting">NL</string>
     <string name="progress">Voortgang:</string>
     <string name="help">Help</string>
     <string name="treasure_room">Schatkamer</string>
+    <string name="password_hint">Wachtwoord</string>
 </resources>
