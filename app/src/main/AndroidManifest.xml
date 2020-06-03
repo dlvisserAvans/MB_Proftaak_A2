@@ -20,6 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Video.VideoActivity"></activity>
         <activity android:name=".QR_code_scanner" />
 
         <meta-data
