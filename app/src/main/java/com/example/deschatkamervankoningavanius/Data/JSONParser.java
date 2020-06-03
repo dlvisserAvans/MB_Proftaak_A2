@@ -51,7 +51,7 @@ public class JSONParser {
 
         try {
             JSONArray quests = reader.getJSONArray("quests");
-            
+
             Resources resources = appContext.getResources();
             for (int i = 0; i < quests.length(); i++){
                 JSONObject quest = quests.getJSONObject(i);
