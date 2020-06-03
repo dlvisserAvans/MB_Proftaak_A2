@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.deschatkamervankoningavanius.Data.JSONParser;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
@@ -32,12 +33,8 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        questList = new ArrayList<>();
-        questList.add(new Quest(R.drawable.brochure,"Test1",""));
-        questList.add(new Quest(R.drawable.sticker,"Test2",""));
-        questList.add(new Quest(R.drawable.poster,"Test3",""));
-        questList.add(new Quest(R.drawable.namecard,"Test4",""));
+        JSONParser jsonParser = new JSONParser(getContext());
+        questList = jsonParser.JsonParse();
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
