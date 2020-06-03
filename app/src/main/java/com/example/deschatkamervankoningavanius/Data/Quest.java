@@ -1,18 +1,20 @@
 package com.example.deschatkamervankoningavanius.Data;
 
-public class Quest {
+public abstract class Quest {
 
     private int QuestImage;
     private String title;
     private String desc;
     private boolean finished;
+    private String solution;
     private QuestionType questionType;
 
-    public Quest(int questImage, String title, String desc, QuestionType questionType) {
+    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
         this.questionType = questionType;
+        this.solution = solution;
         this.finished = false;
     }
 
@@ -46,6 +48,10 @@ public class Quest {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getSolution() {
+        return solution;
     }
 
     public QuestionType getQuestionType() {
