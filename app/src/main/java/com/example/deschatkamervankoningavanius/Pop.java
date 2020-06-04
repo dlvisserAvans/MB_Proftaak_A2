@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.deschatkamervankoningavanius.Video.VideoActivity;
+
+import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
+
 public class Pop extends Activity {
     private final String easy = "EASY", medium = "MEDIUM", hard = "HARD";
 
@@ -30,38 +34,31 @@ public class Pop extends Activity {
     public void onButtonCheckClicked(View view) {
         TextView textView = findViewById(R.id.password_edit_text);
         String password = textView.getText().toString();
+        Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         switch (password) {
             case "easy":
                 Toast.makeText(this, "Easy selected", Toast.LENGTH_SHORT).show();
-                //we create a intent to go to the home page
-                Intent intentEasy = new Intent(this, NavFragmentBaseActivity.class);
                 //add the value from the barcode to the intent
-                intentEasy.putExtra("Difficulty", Difficulty.Easy);
-                //start the intent
-                startActivity(intentEasy);
+                intent.putExtra("Difficulty", Difficulty.Easy);
                 break;
             case "medium":
                 Toast.makeText(this, "medium selected", Toast.LENGTH_SHORT).show();
-                //we create a intent to go to the home page
-                Intent intentMedium = new Intent(this, NavFragmentBaseActivity.class);
-                //add the value from the barcode to the intent
-                intentMedium.putExtra("Difficulty", Difficulty.Medium);
-                //start the intent
-                startActivity(intentMedium);
+                intent.putExtra("Difficulty", Difficulty.Medium);
                 break;
             case "hard":
                 Toast.makeText(this, "hard selected", Toast.LENGTH_SHORT).show();
-                //we create a intent to go to the home page
-                Intent intentHard = new Intent(this, NavFragmentBaseActivity.class);
-                //add the value from the barcode to the intent
-                intentHard.putExtra("Difficulty", Difficulty.Hard);
-                //start the intent
-                startActivity(intentHard);
+                intent.putExtra("Difficulty", Difficulty.Hard);
                 break;
-
             default:
                 Toast.makeText(this, "Wrong password", Toast.LENGTH_SHORT).show();
-                break;
+                return;
         }
+        startActivity(intent);
+
+        //create intent to play intro  video
+        Intent videoIntent = new Intent(this, VideoActivity.class);
+        videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
+
+        startActivity(videoIntent);
     }
 }
