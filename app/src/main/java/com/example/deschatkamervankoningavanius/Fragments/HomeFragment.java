@@ -54,47 +54,19 @@ public class HomeFragment extends Fragment {
         JSONParser jsonParser = new JSONParser(getContext());
 
         questList = new ArrayList<>();
-        List<Quest> allQuestsList = jsonParser.JsonParse();
 
-//        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
-//        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
-//        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
-//        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
-//        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
-//        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
-//        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
-//        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
-
-        Collections.shuffle(allQuestsList);
-//        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-
-        int questAmount = 1;
-        switch (this.difficulty){
-            case Easy:
-                questAmount = 3;
-                break;
-            case Medium:
-                questAmount = 5;
-                break;
-            case Hard:
-                questAmount = 7;
-                break;
+        String password = "password";   //TODO implement actual passwords
+        for (int i = 0; i < password.length(); i++){
+            this.password.add(password.charAt(i));
         }
 
-        for (int i = 0; (questList.size() < questAmount); i++){
-            String newQuestTitle = allQuestsList.get(i).getTitle();
-            boolean duplicate = false;
-            
-                for (Quest quest : questList){
-                    if (quest.getTitle().equals(newQuestTitle)){
-                        System.out.println("SAME TITLE");
-                        duplicate = true;
-                    }
-                }
-                if (!duplicate){
-                    questList.add(allQuestsList.get(i));
-                }
-        }
+        Collections.shuffle(this.password);
+        List<String> videoList = new ArrayList<>();
+
+        this.user = new User(this.password, videoList);
+        user.getQuests(difficulty, jsonParser);
+
+
 
 //        for (int i = 0; questList.size() < questAmount; i++){
 //            for (Quest quest : questList){
@@ -103,18 +75,6 @@ public class HomeFragment extends Fragment {
 //                }
 //            }
 //        }
-
-        String password = "password";   //TODO implement actual passwords
-        for (int i = 0; i < password.length(); i++){
-            this.password.add(password.charAt(i));
-        }
-
-        Collections.shuffle(this.password);
-
-        List<String> videoList = new ArrayList<>();
-
-        this.user = new User(this.questList, this.password, videoList);
-
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
@@ -150,7 +110,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                Toast.makeText(getActivity(), questList.get(position).getTitle(),
+                Toast.makeText(getActivity(), user.getQuests().get(position).getTitle(),
                         Toast.LENGTH_SHORT).show();
 
                 titleView.setText(user.getQuests().get(position).getTitle());
