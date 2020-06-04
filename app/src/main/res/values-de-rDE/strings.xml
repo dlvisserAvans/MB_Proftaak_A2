@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="home_activity_title">Übungen</string>
+    <string name="app_name">" Die Schatzkammer von König Avanius"</string>
+    <string name="back">Zurück</string>
+    <string name="check">Bitte prüfer</string>
+    <string name="treasure_room_found_letters">Briefe gefunden</string>
+    <string name="language">Sprache:</string>
+    <string name="menu">Speisekarte</string>
+    <string name="placeholder">Textbeispiel</string>
+    <string name="qr_code_page_no_qr_code_detected">Kein QR-Code gefunden</string>
+    <string name="quest_name">Befehlsname</string>
+    <string name="settings">Optionen</string>
+    <string name="pop_up_help_text">Wenn Ihr Telefon nicht über die NFC-Funktion verfügt, können Sie auch den QR-Code scannen. Klicken Sie auf die Schaltfläche unten für diese Position.</string>
+    <string name="qr_code_page_back">Zurück</string>
+    <string name="welcome">Herzlich willkommen</string>
+    <string name="language_setting">GB</string>
+    <string name="progress">Fortschritt:</string>
+    <string name="help">Hilfe</string>
+    <string name="treasure_room">Schatzkammer</string>
+    <string name="password_hint">Passwort</string>
+    <string name="scanscreen_message">Um den Schwierigkeitsgrad auszuwählen, scannen Sie den QR-Code mit der Schaltfläche unten.</string>
+</resources>
