@@ -22,6 +22,8 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
 import java.util.HashMap;
 
+import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
+
 public class QR_code_scanner extends AppCompatActivity {
 
 
@@ -166,6 +168,12 @@ public class QR_code_scanner extends AppCompatActivity {
 
         //start the intent
         startActivity(intent);
+
+        //create intent to play intro  video
+        Intent videoIntent = new Intent(this, VideoActivity.class);
+        videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
+
+        startActivity(videoIntent);
     }
 
     /**

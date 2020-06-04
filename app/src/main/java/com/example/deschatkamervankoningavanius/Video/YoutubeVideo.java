@@ -55,7 +55,7 @@ public class YoutubeVideo {
 
     private static final YoutubeVideo[] youtubeVideos = {
             new YoutubeVideo("W0wQ8WkFikg", "Intro video", true, R.drawable.koning1),
-            new YoutubeVideo("s1WQTUg_2vo", "Bedankt video", true, R.drawable.koning2),
+            new YoutubeVideo("s1WQTUg_2vo", "Bedankt video", false, R.drawable.koning2),
             new YoutubeVideo("bAyrhRPNYdE", "Repelsteeltje", true, R.drawable.koning3),
             new YoutubeVideo("8BFJ1gvfF8Q", "Raponsje", true, R.drawable.koning4),
             new YoutubeVideo("ERCdML3tnCQ", "Langneus", true, R.drawable.koning5),
