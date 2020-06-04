@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.deschatkamervankoningavanius.Pop;
 import com.example.deschatkamervankoningavanius.R;
+import com.example.deschatkamervankoningavanius.ScanscreenActivity;
+import com.example.deschatkamervankoningavanius.SprookjeAvanius;
 import com.example.deschatkamervankoningavanius.Video.VideoActivity;
 import com.example.deschatkamervankoningavanius.Video.YoutubeVideo;
 import com.example.deschatkamervankoningavanius.Video.YoutubeVideoAdapter;
@@ -39,6 +43,7 @@ implements AdapterView.OnItemClickListener, YoutubeVideoAdapter.OnItemClickListe
 
         View view = inflater.inflate(R.layout.fragment_treasury,container,false);
         Button buttonCheck = view.findViewById(R.id.btn_treasury_check);
+        ImageView imageView = view.findViewById(R.id.treasury_book);
 
         buttonCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +51,16 @@ implements AdapterView.OnItemClickListener, YoutubeVideoAdapter.OnItemClickListe
                 onButtonCheckClicked(v);
             }
         });
-        
+
+        imageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                onIconBookClicked(v);
+            }
+        });
+
+
+
         youtubeVideos = new ArrayList<>(); //de videos die in het recylerview komen
 
         //Als de youtubeVideo beschikbaar is voeg hem toe aan de list voor het recyclerview
@@ -89,5 +103,10 @@ implements AdapterView.OnItemClickListener, YoutubeVideoAdapter.OnItemClickListe
 
         Toast.makeText(getActivity(), "Check",
                 Toast.LENGTH_SHORT).show();
+    }
+
+    public void onIconBookClicked(View v) {
+        Intent intent = new Intent(getContext(), SprookjeAvanius.class);
+        startActivity(intent);
     }
 }
