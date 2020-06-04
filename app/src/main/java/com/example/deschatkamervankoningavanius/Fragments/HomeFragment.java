@@ -15,11 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.deschatkamervankoningavanius.Data.JSONParser;
+import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.Difficulty;
 import com.example.deschatkamervankoningavanius.R;
-import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
 import org.w3c.dom.Text;
 
