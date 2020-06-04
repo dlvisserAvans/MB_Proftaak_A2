@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.deschatkamervankoningavanius.Fragments.HomeFragment;
 import com.example.deschatkamervankoningavanius.R;
 
 public class OpenQuestionFragment extends Fragment {
@@ -19,6 +20,7 @@ public class OpenQuestionFragment extends Fragment {
     private Button buttonSubmit;
     private EditText answer;
     private String solution = "";
+    private int listValue;
 
     @Nullable
     @Override
@@ -30,6 +32,7 @@ public class OpenQuestionFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         this.solution = bundle.getString("solution");
+        listValue = bundle.getInt("listValue");
         System.out.println("OpenQuestion --- Solution: " + solution);
 
         this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -45,8 +48,17 @@ public class OpenQuestionFragment extends Fragment {
     public void checkAnswer(String string){
         if (string.equals(solution)){
             Toast.makeText(getActivity().getApplicationContext(),"CORRECT",Toast.LENGTH_SHORT).show();
+            HomeFragment.setQuestState(listValue, true);
+            HomeFragment.setProgressBar();
+            finishedQuestion();
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
+            HomeFragment.setQuestState(listValue, false);
         }
+    }
+
+    public void finishedQuestion(){
+        this.buttonSubmit.setClickable(false);
+        this.buttonSubmit.setBackgroundResource(R.color.color_btn_locked);
     }
 }

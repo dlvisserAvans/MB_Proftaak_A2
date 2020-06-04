@@ -18,6 +18,7 @@ import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 import com.example.deschatkamervankoningavanius.Data.MultipleChoiceQuest;
 import com.example.deschatkamervankoningavanius.Data.OpenQuestionQuest;
 import com.example.deschatkamervankoningavanius.Data.Quest;
+import com.example.deschatkamervankoningavanius.Data.QuestionType;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 import com.example.deschatkamervankoningavanius.R;
@@ -30,21 +31,27 @@ public class HomeFragment extends Fragment {
 
     private ViewPager viewPager;
     private VPAdapter vpAdapter;
-    private List<Quest> questList;
-    private ProgressBar progressBar;
-    private int progress = 0;
-    private int progress_step;
-    private TextView tvProgress;
-    private int correctAnswers = 0;
+    private static List<Quest> questList;
+    private static ProgressBar progressBar;
+    private static int progress = 0;
+    private static int progress_step;
+    private static TextView tvProgress;
+    private static int correctAnswers = 0;
     private Bundle bundle;
     private Fragment currentFragment;
     private Quest currentQuest;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
+    private static ArrayList<Fragment> fragments;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
+        viewPager = rootView.findViewById(R.id.vpQuest);
 
+        this.bundle = new Bundle();
+
+        //add questions to the questList
         questList = new ArrayList<>();
         questList.add(new MultipleChoiceQuest(R.drawable.namecard, "Test0", "", "1", "0", "1", "2", "3", false));
         questList.add(new OpenQuestionQuest(R.drawable.brochure,"Test1","", "solution1", false));
@@ -52,23 +59,31 @@ public class HomeFragment extends Fragment {
         questList.add(new OpenQuestionQuest(R.drawable.poster,"Test3","", "solution2", false));
         questList.add(new MultipleChoiceQuest(R.drawable.namecard,"Test4","", "F", "E", "F", "G", "H", false));
 
-        final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
-        viewPager = rootView.findViewById(R.id.vpQuest);
+        //add fragments of the questions to the fragmentList
+        fragments = new ArrayList<>();
+        for (Quest quest : questList){
+            if (quest.getQuestionType().equals(QuestionType.MULTIPLECHOICE)){
+                fragments.add(new MultipleChoiceFragment());
+            } else {
+                fragments.add(new OpenQuestionFragment());
+            }
+        }
 
-        this.bundle = new Bundle();
+        //set the fragment of the first question
         this.bundle.putString("solution", questList.get(0).getSolution());
         bundle.putString("optionA", questList.get(0).getButtonOption("A"));
         bundle.putString("optionB", questList.get(0).getButtonOption("B"));
         bundle.putString("optionC", questList.get(0).getButtonOption("C"));
         bundle.putString("optionD", questList.get(0).getButtonOption("D"));
-        this.currentFragment = new MultipleChoiceFragment();
+        bundle.putInt("listValue", 0);
+        this.currentFragment = fragments.get(0);
         this.currentFragment.setArguments(this.bundle);
         this.currentQuest = questList.get(0);
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        Fragment fragment = currentFragment;
+        final Fragment fragment = currentFragment;
         fragmentTransaction.add(R.id.fragment_layout_quest,fragment);
         fragmentTransaction.commit();
 
@@ -81,6 +96,7 @@ public class HomeFragment extends Fragment {
         vpAdapter = new VPAdapter(questList,getActivity());
         viewPager.setAdapter(vpAdapter);
 
+        setProgressBar();
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -88,37 +104,50 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(final int position) {
-                currentQuest = questList.get(position);
+//                currentQuest = questList.get(position);
                 System.out.println("Position: " + position);
                 switch (questList.get(position).getQuestionType()) {
                     case OPENQUESTION:
-                        bundle.putString("solution", questList.get(position).getSolution());
-                        currentFragment = new OpenQuestionFragment();
-                        currentFragment.setArguments(bundle);
+                        OpenQuestionFragment openQuestionFragment = (OpenQuestionFragment) fragments.get(position);
+                        currentFragment = openQuestionFragment;
+                        if (questList.get(position).isFinished()){
+                            openQuestionFragment.finishedQuestion();
+                        } else {
+                            bundle.putString("solution", questList.get(position).getSolution());
+                            bundle.putInt("listValue", position);
+                            currentFragment.setArguments(bundle);
+                        }
                         break;
+
                     case MULTIPLECHOICE:
-                        bundle.putString("solution", questList.get(position).getSolution());
-                        bundle.putString("optionA", questList.get(position).getButtonOption("A"));
-                        bundle.putString("optionB", questList.get(position).getButtonOption("B"));
-                        bundle.putString("optionC", questList.get(position).getButtonOption("C"));
-                        bundle.putString("optionD", questList.get(position).getButtonOption("D"));
-                        currentFragment = new MultipleChoiceFragment();
-                        currentFragment.setArguments(bundle);
+                        MultipleChoiceFragment multipleChoiceFragment = (MultipleChoiceFragment) fragments.get(position);
+                        currentFragment = multipleChoiceFragment;
+                        if (questList.get(position).isFinished()) {
+                            multipleChoiceFragment.finishedQuestion();
+                        } else {
+                            bundle.putString("solution", questList.get(position).getSolution());
+                            bundle.putString("optionA", questList.get(position).getButtonOption("A"));
+                            bundle.putString("optionB", questList.get(position).getButtonOption("B"));
+                            bundle.putString("optionC", questList.get(position).getButtonOption("C"));
+                            bundle.putString("optionD", questList.get(position).getButtonOption("D"));
+                            bundle.putInt("listValue", position);
+                            currentFragment.setArguments(bundle);
+                        }
                         break;
                 }
+
                 getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
-        setProgressBar();
+
         return rootView;
     }
 
-    public void setProgressBar(){
+    public static void setProgressBar(){
         correctAnswers = 0;
         for (Quest quest : questList){
             if (quest.isFinished()){
@@ -132,7 +161,9 @@ public class HomeFragment extends Fragment {
         tvProgress.setText(progress + "%");
     }
 
-    public void setQuestState(int position, boolean state){
+    public static void setQuestState(int position, boolean state){
+        System.out.println("Position: " + position + "--- State: " + state);
         questList.get(position).setFinished(state);
     }
+
 }

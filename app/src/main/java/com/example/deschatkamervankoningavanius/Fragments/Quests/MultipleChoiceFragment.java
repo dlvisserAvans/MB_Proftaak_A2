@@ -11,7 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.deschatkamervankoningavanius.Fragments.HomeFragment;
 import com.example.deschatkamervankoningavanius.R;
+
+import java.util.ArrayList;
 
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener{
 
@@ -23,7 +26,9 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Bundle bundle;
     private String solution = "";
     private int clickAmount = 0;
-    private boolean finished = false;
+    private int listValue;
+    ArrayList<Button> buttons = new ArrayList<>();
+    private boolean questionFinished = false;
 
     @Nullable
     @Override
@@ -35,12 +40,27 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.buttonOptionC = (Button)rootView.findViewById(R.id.btnMCAwnserC);
         this.buttonOptionD = (Button)rootView.findViewById(R.id.btnMCAwnserD);
 
+        if (this.buttons.size() == 0){
+            this.buttons.add(buttonOptionA);
+            this.buttons.add(buttonOptionB);
+            this.buttons.add(buttonOptionC);
+            this.buttons.add(buttonOptionD);
+        }
+
+        if (this.questionFinished == true){
+            finishedQuestion();
+        }
+        System.out.println("Buttonstate : " + this.buttons.get(1).isClickable());
+
+        System.out.println("Size buttonlist " + this.buttons.size());
+
         bundle = this.getArguments();
         this.solution = bundle.getString("solution");
         this.buttonOptionA.setText(bundle.getString("optionA"));
         this.buttonOptionB.setText(bundle.getString("optionB"));
         this.buttonOptionC.setText(bundle.getString("optionC"));
         this.buttonOptionD.setText(bundle.getString("optionD"));
+        listValue = bundle.getInt("listValue");
         System.out.println("MultipleChoiceQuestion --- Solution: " + solution);
 
         this.buttonOptionA.setOnClickListener(this);
@@ -53,36 +73,49 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btnMCAwnserA:
-                checkAnswer(this.buttonOptionA.getText().toString(), this.buttonOptionA);
-                break;
-            case R.id.btnMCAwnserB:
-                checkAnswer(this.buttonOptionB.getText().toString(), this.buttonOptionB);
-                break;
-            case R.id.btnMCAwnserC:
-                checkAnswer(this.buttonOptionC.getText().toString(), this.buttonOptionC);
-                break;
-            case R.id.btnMCAwnserD:
-                checkAnswer(this.buttonOptionD.getText().toString(), this.buttonOptionD);
-                break;
+        if (questionFinished == false){
+            switch (v.getId()){
+                case R.id.btnMCAwnserA:
+                    checkAnswer(this.buttonOptionA.getText().toString(), this.buttonOptionA);
+                    break;
+                case R.id.btnMCAwnserB:
+                    checkAnswer(this.buttonOptionB.getText().toString(), this.buttonOptionB);
+                    break;
+                case R.id.btnMCAwnserC:
+                    checkAnswer(this.buttonOptionC.getText().toString(), this.buttonOptionC);
+                    break;
+                case R.id.btnMCAwnserD:
+                    checkAnswer(this.buttonOptionD.getText().toString(), this.buttonOptionD);
+                    break;
+            }
+        } else {
+            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
+            System.out.println("You can't press the buttons");
         }
+
     }
 
     public void checkAnswer(String string, Button button){
         if (string.equals(solution)){
             button.setBackgroundResource(R.color.color2);
             this.clickAmount++;
+            questionFinished = true;
             System.out.println("Pogingen: " + this.clickAmount);
-            finished = true;
+            HomeFragment.setQuestState(listValue, true);
+            HomeFragment.setProgressBar();
+            finishedQuestion();
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
             this.clickAmount++;
-            finished = false;
+            questionFinished = false;
+            HomeFragment.setQuestState(listValue, false);
         }
     }
 
-    public boolean getFinished(){
-        return this.finished;
+    public void finishedQuestion(){
+        for (Button b : buttons){
+            b.setClickable(false);
+            b.setBackgroundResource(R.color.color_btn_locked);
+        }
     }
 }
