@@ -54,4 +54,12 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
         BottomNavigationView navigationView = findViewById(R.id.navbar);
         navigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
     }
+
+    /**
+     * with this override we disable the user to go back to the choose difficulty menu by accident
+     */
+    @Override
+    public void onBackPressed() {
+
+    }
 }
