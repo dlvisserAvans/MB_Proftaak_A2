@@ -19,10 +19,8 @@ public class User implements Serializable {
     private List<String> videos; //videos die voor de user beschikbaar zijn
     private int progressTracker;
 
-    public User(List<Character> answers, List<String> videos){
-        this.answers = answers;
+    public User(){
         this.progress = new ArrayList<>();
-        this.videos = videos;
         progressTracker = 0;
         this.quests = new ArrayList<>();
     }
@@ -31,6 +29,7 @@ public class User implements Serializable {
         List<Quest> allQuestsList = jsonParser.JsonParse();
         Collections.shuffle(allQuestsList);
 
+        //Change amount of quests based on difficulty
         int questAmount = 1;
         switch (difficulty){
             case Easy:
@@ -44,13 +43,14 @@ public class User implements Serializable {
                 break;
         }
 
+        //Add specified amount of quests to the user's quest List
         for (int i = 0; (quests.size() < questAmount); i++){
             String newQuestTitle = allQuestsList.get(i).getTitle();
             boolean duplicate = false;
 
+            //Makes sure the user doesn't get multiple quests for the same fairy tale
             for (Quest quest : quests){
                 if (quest.getTitle().equals(newQuestTitle)){
-                    System.out.println("SAME TITLE");
                     duplicate = true;
                 }
             }

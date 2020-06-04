@@ -28,13 +28,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    Intent difficultyIntent = new Intent();
-    Difficulty difficulty;
 
-    public HomeFragment(Intent intent, Difficulty difficulty) {
-        this.difficultyIntent = intent;
-        this.difficulty = difficulty;
-        System.out.println(difficulty);
+    public HomeFragment(User user) {
+        this.user = user;
     }
 
 
@@ -51,22 +47,6 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        JSONParser jsonParser = new JSONParser(getContext());
-
-        questList = new ArrayList<>();
-
-        String password = "password";   //TODO implement actual passwords
-        for (int i = 0; i < password.length(); i++){
-            this.password.add(password.charAt(i));
-        }
-
-        Collections.shuffle(this.password);
-        List<String> videoList = new ArrayList<>();
-
-        this.user = new User(this.password, videoList);
-        user.getQuests(difficulty, jsonParser);
-
-
 
 //        for (int i = 0; questList.size() < questAmount; i++){
 //            for (Quest quest : questList){
