@@ -34,6 +34,7 @@ public class TreasuryFragment extends Fragment {
     byte[] encodedPayload = new byte[0];
     TextView textView;
     private String topic = "group/A2/state";
+    String response = "";
 
     @Nullable
     @Override
@@ -82,14 +83,15 @@ public class TreasuryFragment extends Fragment {
     public void onButtonCheckClicked(View view){
         //TODO: Integrate function when Checkmenu is finished
 
-        String payload = "bbbb";
+        String payload = "aaa";
         String topic = "group/A2/word";
-        Toast.makeText(getActivity(), "Check", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Check", Toast.LENGTH_SHORT).show();
         System.out.println("onButtonCheckClicked()");
         try {
             encodedPayload = payload.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);
             client.publish(topic, message);
+            System.out.println("Message: " + message);
         } catch (UnsupportedEncodingException | MqttException e) {
             e.printStackTrace();
         }
@@ -128,7 +130,8 @@ public class TreasuryFragment extends Fragment {
                     Toast toast = Toast. makeText(getActivity().getApplicationContext(), "messageArrived()" , Toast.LENGTH_SHORT);
                     toast.show();
                     System.out.println("Topic: " + topic + " Message: " + message);
-                    textView.setText(new String(message.getPayload()));
+                    response = new String(message.getPayload());
+                    textView.setText(response);
                 }
 
                 @Override
