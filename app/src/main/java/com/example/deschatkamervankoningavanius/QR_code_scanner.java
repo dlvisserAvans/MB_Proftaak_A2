@@ -9,18 +9,20 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.deschatkamervankoningavanius.Video.VideoActivity;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
+
+import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
 
 public class QR_code_scanner extends AppCompatActivity {
 
@@ -33,8 +35,8 @@ public class QR_code_scanner extends AppCompatActivity {
     private String qrCodeValue;
     //here we display the qr-code value
     private TextView displayQRCodeValue;
-    //array list with all correct values
-    private ArrayList<String> correctValues;
+    //hash map with all correct values
+    private HashMap<String, Difficulty> correctValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,12 @@ public class QR_code_scanner extends AppCompatActivity {
 
         //initialise the rest of the attributes
         this.qrCodeValue = "";
-        this.correctValues = new ArrayList<>();
-        //todo maybe we can fill this array with a REST API
-        this.correctValues.add("Avanius");
+        this.correctValues = new HashMap<>();
+
+        this.correctValues.put("Avanius", Difficulty.Hard);
+        this.correctValues.put("EsstelingA2Easy", Difficulty.Easy);
+        this.correctValues.put("EsstelingA2Medium", Difficulty.Medium);
+        this.correctValues.put("EsstelingA2Hard", Difficulty.Hard);
     }
 
     /**
@@ -122,9 +127,9 @@ public class QR_code_scanner extends AppCompatActivity {
                             displayQRCodeValue.setText(qrCodeValue);
 
                             //check if the value is in the array with valid values
-                            if (correctValues.contains(qrCodeValue)) {
+                            if (correctValues.containsKey(qrCodeValue)) {
                                 //it is so we can proceed
-                                difficultySelected();
+                                difficultySelected(correctValues.get(qrCodeValue));
                             }
 
                         }
@@ -152,21 +157,32 @@ public class QR_code_scanner extends AppCompatActivity {
     /**
      * with this function we start the home page
      * we pass the barcode value to it via the intent
+     *
+     * @param difficulty determent how many quests have to be done
      */
-    private void difficultySelected() {
+    private void difficultySelected(Difficulty difficulty) {
         //we create a intent to go to the home page
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         //add the value from the barcode to the intent
-        intent.putExtra("Difficulty", qrCodeValue);
+        intent.putExtra("Difficulty", difficulty);
+
         //start the intent
         startActivity(intent);
+
+        //create intent to play intro  video
+        Intent videoIntent = new Intent(this, VideoActivity.class);
+        videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
+
+        startActivity(videoIntent);
     }
 
     /**
-     * onClick for the bottom button (only used for debugging)
-     * @param view
+     * with this function we go back to the start screen
      */
-    public void onButtonChooseDifficultyPressed(View view) {
-        difficultySelected();
+    public void onButtonBackClicked(View view) {
+        //make an intent to transition back to the start
+        Intent intent = new Intent(this, ScanscreenActivity.class);
+        //start the intent
+        startActivity(intent);
     }
 }

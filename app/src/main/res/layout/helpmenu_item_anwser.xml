@@ -11,7 +11,7 @@
         android:id="@+id/tvHelpmenuItemDescription"
         android:padding="5dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Description example"
+        android:text="@string/placeholder"
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textSize="14sp"/>

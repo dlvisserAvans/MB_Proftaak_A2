@@ -11,7 +11,7 @@
         android:paddingLeft="?android:expandableListPreferredChildPaddingLeft"
         android:paddingRight="?android:expandableListPreferredChildPaddingLeft"
         android:minHeight="40dp"
-        android:text="Title example"
+        android:text="@string/placeholder"
         android:fontFamily="@font/comfortaa"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorPrimary"
