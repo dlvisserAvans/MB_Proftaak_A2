@@ -53,11 +53,11 @@ public class HomeFragment extends Fragment {
 
         //add questions to the questList
         questList = new ArrayList<>();
-        questList.add(new MultipleChoiceQuest(R.drawable.namecard, "Test0", "", "1", "0", "1", "2", "3", false));
-        questList.add(new OpenQuestionQuest(R.drawable.brochure,"Test1","", "solution1", false));
-        questList.add(new MultipleChoiceQuest(R.drawable.sticker,"Test2","", "A", "A", "B", "C", "D", false));
-        questList.add(new OpenQuestionQuest(R.drawable.poster,"Test3","", "solution2", false));
-        questList.add(new MultipleChoiceQuest(R.drawable.namecard,"Test4","", "F", "E", "F", "G", "H", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false));
+        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false));
+        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false));
 
         //add fragments of the questions to the fragmentList
         fragments = new ArrayList<>();
