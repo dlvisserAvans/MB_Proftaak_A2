@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/outline_home_24"
-        android:title="TODO" />
+        android:title="@string/icon_quests" />
 
     <item
         android:id="@+id/navigation_treasury"
         android:icon="@drawable/outline_account_balance_24"
-        android:title="TODO" />
+        android:title="@string/icon_treasury" />
 
     <item
         android:id="@+id/navigation_menu"
         android:icon="@drawable/outline_more_horiz_24"
-        android:title="TODO" />
+        android:title="@string/icon_menu" />
 </menu>
 

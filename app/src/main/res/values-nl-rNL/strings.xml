@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="home_activity_title">Opdrachten</string>
-    <string name="app_name">" De schatkamer van Koning Avanius"</string>
-    <string name="back">Terug</string>
-    <string name="check">Controleer</string>
-    <string name="treasure_room_found_letters">Gevonden letters</string>
-    <string name="language">Taal:</string>
-    <string name="menu">Menu</string>
-    <string name="placeholder">Text voorbeeld</string>
-    <string name="qr_code_page_no_qr_code_detected">Geen QR-code gevonden</string>
-    <string name="quest_name">Opdracht naam</string>
-    <string name="settings">Opties</string>
-    <string name="pop_up_help_text">Bevat uw telefoon de NFC functie niet, dan kan u ook de QR code scannen. Klik voor die functie op de knop hieronder.</string>
-    <string name="qr_code_page_back">Terug</string>
-    <string name="welcome">Welkom</string>
-    <string name="language_setting">NL</string>
-    <string name="progress">Voortgang:</string>
-    <string name="help">Help</string>
-    <string name="treasure_room">Schatkamer</string>
-    <string name="password_hint">Wachtwoord</string>
-    <string name="scanscreen_message">Voor het selecteren van de moeilijkheidsgraad, scan de QR-code met de knop hieronder</string>
+    //UI elements
+
+    <string name="app_name">The Treasury of king Avanius</string>
+    <string name="language_setting">EN</string>
+    <string name="dark_mode">Dark mode:</string>
+    <string name="language">Language:</string>
+
+    <string name="startscreen_welcome">Welcome</string>
+    <string name="startscreen_message">To select the difficulty scan the QR-code with the button bellow</string>
+    <string name="password_hint">Password</string>
+    <string name="startscreen_popup_enter">Enter</string>
+    <string name="choose_difficulty">"Choose difficulty "</string>
+
+    <string name="home_activity_title">Quests</string>
+    <string name="quest_name">Quest Name</string>
+    <string name="progress">Progress:</string>
+
+    <string name="treasury_activity_title">Treasure room</string>
+    <string name="treasure_room_found_letters">Found Letters:</string>
+    <string name="treasure_room_letters" translatable="false">S, P, R, K, J, E</string>
+    <string name="treasury_btn_check">Check</string>
+
+    <string name="menu_activity_title">Menu</string>
+
+    <string name="icon_quests">Quests</string>
+    <string name="icon_treasury">Treasury</string>
+    <string name="icon_menu">Menu</string>
+
+    <string name="popup_scanscreen_helptext">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
+    <string name="popup_qrcode_scanner_undetected">No QR-code Detected</string>
+
+    <string name="btn_back">Back</string>
+
+    <string name="menu_help">Help</string>
+    <string name="exercises_explanation" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit, a varius mi egestas vel.</string>
+
+    <string name="menu_settings">Settings</string>
+
+    <string name="pop_up_confirm">Are you sure you want to reset?</string>
+    <string name="confirm">Confirm</string>
+    <string name="placeholder">Text example</string>
+
+    //Fairy Tale elements and quests
+
+    <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
+                                        But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
 
     <string name="draak">Draak</string>
     <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
@@ -49,7 +75,5 @@
     <string name="raponsje">Raponsje</string>
     <string name="raponsjeQuest1">Had de toren van Raponsje een deur?</string>
     <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
-    <string name="fairytail_avanius"> Koning Avanius leefde in een koningkrijk hier ver ver vandaan. Het was een groot en rijk koningkrijk. Iedereen was er gelukkig en iedereen had werk. Koning Avanius zorgde goed voor zijn volk, door geld te geven vanuit zijn eigen schatkamer aan de mensen die hulp nodig hadden.
-Maar op een dag was er een probleem. Koning Avanius was namelijk het wachtwoord van zijn schatkamer vergeten, hij kreeg hem niet meer open! Koning Avanius was zo verdrietig dat hij zijn volk niet meer kon helpen dat hij meteen een grote zoektocht opstelde. Hij had namelijk, voor als hij het wachtwoord ooit zou vergeten, aanwijzingen bij verschillende plaatsen in het wonderbos verstopt. Maar Koning Avanius was al oud en kan het avontuur zelf niet meer aangaan. Vandaar dat hij de dapperste avonturiers van het hele land bijeen riep. Om samen het wachtwoord te vinden en de rijkdom in het koningkrijk weer te laten vloeien.
-</string>
+
 </resources>
