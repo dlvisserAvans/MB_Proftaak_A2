@@ -22,6 +22,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Video.VideoActivity"/>
         <activity android:name=".QR_code_scanner" />
+        <activity android:name=".SprookjeAvanius"
+            android:theme="@style/AppTheme.ScanScreen"/>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"

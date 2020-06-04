@@ -110,4 +110,15 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 
+    <ImageView
+        android:id="@+id/treasury_book"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="3dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/scroller_devider3"
+        app:layout_constraintStart_toEndOf="@+id/tvTreasuryTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sprookje_foreground" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
