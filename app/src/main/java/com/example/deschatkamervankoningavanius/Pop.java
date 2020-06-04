@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,18 @@ public class Pop extends Activity {
         int heightPixels = displayMetrics.heightPixels;
 
         getWindow().setLayout((int) (widthPixels * .9), (int) (heightPixels * .7));
+        TextView textView = findViewById(R.id.password_edit_text);
+        textView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    onButtonCheckClicked(null);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void onButtonCheckClicked(View view) {
