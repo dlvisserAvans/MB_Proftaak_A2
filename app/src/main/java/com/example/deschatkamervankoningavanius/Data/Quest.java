@@ -5,11 +5,13 @@ public class Quest {
     private int QuestImage;
     private String title;
     private String desc;
+    private boolean solved;
 
     public Quest(int questImage, String title, String desc) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
+        this.solved = false;
     }
 
     public int getQuestImage() {
@@ -34,5 +36,13 @@ public class Quest {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public boolean isSolved() {
+        return solved;
+    }
+
+    public void setSolved(boolean solved) {
+        this.solved = solved;
     }
 }

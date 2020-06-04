@@ -25,6 +25,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+repositories {
+    maven {
+        url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+    }
 }
 
 dependencies {
@@ -38,4 +42,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+        exclude module: 'support-v4'
+    }
+    //Necessary to avoid problems with localbroadcastmanager.
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+
+    implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
 }
