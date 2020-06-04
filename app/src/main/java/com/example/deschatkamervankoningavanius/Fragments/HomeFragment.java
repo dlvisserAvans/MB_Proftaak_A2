@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.deschatkamervankoningavanius.Data.JSONParser;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.R;
@@ -33,6 +34,7 @@ public class HomeFragment extends Fragment {
         this.difficultyIntent = intent;
     }
 
+    JSONParser jsonParser = new JSONParser(getContext());
     ViewPager viewPager;
     VPAdapter vpAdapter;
     List<Quest> questList;
@@ -46,16 +48,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         questList = new ArrayList<>();
-        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
+        List<Quest> allQuestsList = jsonParser.JsonParse();
 
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
+//        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
+//        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
+//        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
+//        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
+//        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
+//        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
+//        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
+//        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
 
         Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
@@ -64,18 +66,22 @@ public class HomeFragment extends Fragment {
         //TODO change quest amounts?
         switch (difficulty){
             case "easy":
-                questAmount = 4;
+                questAmount = 3;
                 break;
             case "medium":
-                questAmount = 6;
+                questAmount = 5;
                 break;
             case "hard":
-                questAmount = 8;
+                questAmount = 7;
                 break;
         }
 
-        for (int i = 0; i < questAmount; i++){
-            questList.add(allQuestsList.get(i));
+        for (int i = 0; questList.size() < questAmount; i++){
+            for (Quest quest : questList){
+                if (!allQuestsList.get(i).getTitle().equals(quest.getTitle())){
+                    questList.add(allQuestsList.get(i));
+                }
+            }
         }
 
         String password = "password";   //TODO implement actual passwords

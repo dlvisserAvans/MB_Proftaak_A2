@@ -24,7 +24,7 @@ public class JSONParser {
     }
 
     /**
-     * Reads the quests from a JSON file and
+     * Reads the quests from a JSON file
      * @return returns a list of all quests read from the JSON files
      */
     public List<Quest> JsonParse() {
@@ -61,7 +61,7 @@ public class JSONParser {
                 int titleID = resources.getIdentifier(quest.getString("title"), "string", appContext.getPackageName());
                 int descriptionID = resources.getIdentifier(quest.getString("description"), "string", appContext.getPackageName());
 
-                questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
+                this.questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
             }
         } catch (JSONException e) {
             e.printStackTrace();
