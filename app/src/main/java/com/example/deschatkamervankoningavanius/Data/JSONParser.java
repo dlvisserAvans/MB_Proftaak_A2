@@ -29,12 +29,17 @@ public class JSONParser {
      */
     public List<Quest> JsonParse() {
         try {
-            InputStream is = appContext.getAssets().open("quests.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            this.JSONString = new String(buffer, StandardCharsets.UTF_8);
+            if (appContext != null){
+                InputStream is = appContext.getAssets().open("quests.json");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                this.JSONString = new String(buffer, StandardCharsets.UTF_8);
+            }else {
+                System.out.println("CONTEXT = NULL!");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -67,7 +72,6 @@ public class JSONParser {
             e.printStackTrace();
         }
 
-        System.out.println(questList);
         return this.questList;
     }
 

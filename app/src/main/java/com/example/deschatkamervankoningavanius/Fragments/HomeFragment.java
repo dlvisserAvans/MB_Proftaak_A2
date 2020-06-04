@@ -2,7 +2,6 @@ package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +20,9 @@ import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,18 +33,21 @@ public class HomeFragment extends Fragment {
         this.difficultyIntent = intent;
     }
 
-    JSONParser jsonParser = new JSONParser(getContext());
+
     ViewPager viewPager;
     VPAdapter vpAdapter;
     List<Quest> questList;
     ArrayList<Character> password = new ArrayList<>();
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    TextView textView;
+    TextView titleView;
+    TextView descView;
+    User user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        JSONParser jsonParser = new JSONParser(getContext());
 
         questList = new ArrayList<>();
         List<Quest> allQuestsList = jsonParser.JsonParse();
@@ -61,7 +63,7 @@ public class HomeFragment extends Fragment {
 
         Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-        String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
+        String difficulty = "hard"; //PLACEHOLDER, REMOVE LATER
         int questAmount = 1;
         //TODO change quest amounts?
         switch (difficulty){
@@ -76,13 +78,28 @@ public class HomeFragment extends Fragment {
                 break;
         }
 
-        for (int i = 0; questList.size() < questAmount; i++){
-            for (Quest quest : questList){
-                if (!allQuestsList.get(i).getTitle().equals(quest.getTitle())){
+        for (int i = 0; (questList.size() < questAmount); i++){
+            String newQuestTitle = allQuestsList.get(i).getTitle();
+            boolean duplicate = false;
+            
+                for (Quest quest : questList){
+                    if (quest.getTitle().equals(newQuestTitle)){
+                        System.out.println("SAME TITLE");
+                        duplicate = true;
+                    }
+                }
+                if (!duplicate){
                     questList.add(allQuestsList.get(i));
                 }
-            }
         }
+
+//        for (int i = 0; questList.size() < questAmount; i++){
+//            for (Quest quest : questList){
+//                if (!allQuestsList.get(i).getTitle().equals(quest.getTitle())){
+//                    questList.add(allQuestsList.get(i));
+//                }
+//            }
+//        }
 
         String password = "password";   //TODO implement actual passwords
         for (int i = 0; i < password.length(); i++){
@@ -93,13 +110,15 @@ public class HomeFragment extends Fragment {
 
         List<String> videoList = new ArrayList<>();
 
-        User user = new User(this.questList, this.password, videoList);
+        this.user = new User(this.questList, this.password, videoList);
 
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
-        textView = rootView.findViewById(R.id.tvQuestTitle);
-        textView.setText(user.getQuests().get(0).getTitle());
+        titleView = rootView.findViewById(R.id.tvQuestTitle);
+        descView = rootView.findViewById(R.id.tvQuestDesc);
+        titleView.setText(user.getQuests().get(0).getTitle());
+        descView.setText(user.getQuests().get(0).getDesc());
 
 
 
@@ -131,7 +150,8 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getActivity(), questList.get(position).getTitle(),
                         Toast.LENGTH_SHORT).show();
 
-                textView.setText(questList.get(position).getTitle());
+                titleView.setText(user.getQuests().get(position).getTitle());
+                descView.setText(user.getQuests().get(position).getDesc());
             }
 
             @Override
