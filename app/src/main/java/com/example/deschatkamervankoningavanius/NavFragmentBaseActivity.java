@@ -55,7 +55,9 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fragmentList.add(new HomeFragment(getIntent()));
+        this.difficulty = Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString());
+        createUser();
+        fragmentList.add(new HomeFragment(this.user));
         Log.d("FRAGMENT ID", fragmentList.get(0).toString());
         fragmentList.add(new TreasuryFragment());
         fragmentList.add(new MenuFragment());
@@ -64,9 +66,8 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navactivityfragmentbase);
 
-        this.difficulty = Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString());
-        createUser();
-        this.currentFragment = new HomeFragment(this.user);
+
+//        this.currentFragment = new HomeFragment(this.user);
 
         //Make the navbar menu clickable and handle the links to different fragments. Set navigationItemListener.
         FragmentManager fragmentManager = getSupportFragmentManager();

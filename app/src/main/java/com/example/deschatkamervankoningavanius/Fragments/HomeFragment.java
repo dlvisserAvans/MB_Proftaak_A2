@@ -49,49 +49,49 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        questList = new ArrayList<>();
-        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
+//        questList = new ArrayList<>();
+//        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
 
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
+//        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
+//        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
+//        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
+//        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
+//        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
+//        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
+//        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
+//        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
 
-        Collections.shuffle(allQuestsList);
+//        Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-        String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
-        int questAmount = 1;
-        //TODO change quest amounts?
-        switch (difficulty){
-            case "easy":
-                questAmount = 4;
-                break;
-            case "medium":
-                questAmount = 6;
-                break;
-            case "hard":
-                questAmount = 8;
-                break;
-        }
+//        String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
+//        int questAmount = 1;
+//        //TODO change quest amounts?
+//        switch (difficulty){
+//            case "easy":
+//                questAmount = 4;
+//                break;
+//            case "medium":
+//                questAmount = 6;
+//                break;
+//            case "hard":
+//                questAmount = 8;
+//                break;
+//        }
+//
+//        for (int i = 0; i < questAmount; i++){
+//            questList.add(allQuestsList.get(i));
+//        }
+//
+//        String password = "password";   //TODO implement actual passwords
+//        for (int i = 0; i < password.length(); i++){
+//            this.password.add(password.charAt(i));
+//        }
+//
+//        Collections.shuffle(this.password);
+//
+//        List<String> videoList = new ArrayList<>();
 
-        for (int i = 0; i < questAmount; i++){
-            questList.add(allQuestsList.get(i));
-        }
-
-        String password = "password";   //TODO implement actual passwords
-        for (int i = 0; i < password.length(); i++){
-            this.password.add(password.charAt(i));
-        }
-
-        Collections.shuffle(this.password);
-
-        List<String> videoList = new ArrayList<>();
-
-        User user = new User(this.questList, this.password, videoList);
+//        User user = new User(this.questList, this.password, videoList);
 
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
