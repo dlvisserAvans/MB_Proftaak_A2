@@ -31,12 +31,10 @@ public class HomeFragment extends Fragment {
     Intent difficultyIntent = new Intent();
     Difficulty difficulty;
 
-    public HomeFragment(Intent intent, Object o) {
+    public HomeFragment(Intent intent, Difficulty difficulty) {
         this.difficultyIntent = intent;
-        if (o.equals(Difficulty.Easy)){
-            difficulty = (Difficulty) o;
-        }
-        System.out.println(o);
+        this.difficulty = difficulty;
+        System.out.println(difficulty);
     }
 
 
@@ -69,11 +67,9 @@ public class HomeFragment extends Fragment {
 
         Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-        Difficulty difficulty;
-        difficulty = (Difficulty) difficultyIntent.getExtras().get("Difficulty");
 
         int questAmount = 1;
-        switch (difficulty){
+        switch (this.difficulty){
             case Easy:
                 questAmount = 3;
                 break;

@@ -16,15 +16,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavFragmentBaseActivity extends AppCompatActivity {
 
+    Difficulty difficulty = Difficulty.Easy;
+
     //TODO: Research to make sure the new home fragment changes when the orientation changes.
-    private Fragment currentFragment = new HomeFragment(getIntent(), Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString()));
+    private Fragment currentFragment = new HomeFragment(getIntent(), difficulty);
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
                         case R.id.navigation_home:
-                            currentFragment = new HomeFragment(getIntent(), Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString()));
+                            currentFragment = new HomeFragment(getIntent(), difficulty);
                             break;
                         case R.id.navigation_treasury:
                             currentFragment = new TreasuryFragment();
@@ -43,6 +45,9 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navactivityfragmentbase);
+
+        this.difficulty = Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString());
+        this.currentFragment = new HomeFragment(getIntent(), Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString()));
 
         //Make the navbar menu clickable and handle the links to different fragments. Set navigationItemListener.
         FragmentManager fragmentManager = getSupportFragmentManager();
