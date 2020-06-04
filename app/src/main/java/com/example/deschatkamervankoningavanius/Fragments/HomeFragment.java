@@ -36,6 +36,7 @@ public class HomeFragment extends Fragment {
     ViewPager viewPager;
     VPAdapter vpAdapter;
     List<Quest> questList;
+    List<Quest> allQuestList = new ArrayList<>();
     ArrayList<Character> password = new ArrayList<>();
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
@@ -46,18 +47,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         questList = new ArrayList<>();
-        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
+//        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
 
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
-        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
-        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
-        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
-        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
+        if (allQuestList.size()==0){
+            allQuestList.add(new Quest(R.drawable.brochure,"Test1",""));
+            allQuestList.add(new Quest(R.drawable.sticker,"Test2",""));
+            allQuestList.add(new Quest(R.drawable.poster,"Test3",""));
+            allQuestList.add(new Quest(R.drawable.namecard,"Test4",""));
+            allQuestList.add(new Quest(R.drawable.brochure,"Test5",""));
+            allQuestList.add(new Quest(R.drawable.sticker,"Test6",""));
+            allQuestList.add(new Quest(R.drawable.poster,"Test7",""));
+            allQuestList.add(new Quest(R.drawable.namecard,"Test8",""));
+            Collections.shuffle(allQuestList);
+        }
 
-        Collections.shuffle(allQuestsList);
+
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
         String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
         int questAmount = 1;
@@ -75,7 +79,7 @@ public class HomeFragment extends Fragment {
         }
 
         for (int i = 0; i < questAmount; i++){
-            questList.add(allQuestsList.get(i));
+            questList.add(allQuestList.get(i));
         }
 
         String password = "password";   //TODO implement actual passwords
