@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.deschatkamervankoningavanius.HelpMenuActivity;
 import com.example.deschatkamervankoningavanius.R;
+import com.example.deschatkamervankoningavanius.ScanscreenActivity;
 import com.example.deschatkamervankoningavanius.SettingsMenuActivity;
 
 public class MenuFragment extends Fragment {
@@ -22,9 +23,10 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_menu,container,false);
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
         Button buttonHelp = view.findViewById(R.id.btn_menu_help);
         Button buttonSettings = view.findViewById(R.id.btn_menu_settings);
+        Button buttonChooseDifficulty = view.findViewById(R.id.btn_menu_choose_difficulty);
 
         buttonHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,11 +42,18 @@ public class MenuFragment extends Fragment {
             }
         });
 
+        buttonChooseDifficulty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onButtonChooseDifficultyClicked(v);
+            }
+        });
+
 
         return view;
     }
 
-    public void onButtonSettingsClicked(View view){
+    public void onButtonSettingsClicked(View view) {
         //TODO: Integrate function when settingsmenu is finished
         Intent intent = new Intent(getActivity(), SettingsMenuActivity.class);
         startActivity(intent);
@@ -53,7 +62,7 @@ public class MenuFragment extends Fragment {
 //                Toast.LENGTH_SHORT).show();
     }
 
-    public void onButtonHelpClicked(View view){
+    public void onButtonHelpClicked(View view) {
         //TODO: Integrate function when helpmenu is finished
         Intent intent = new Intent(getActivity(), HelpMenuActivity.class);
         startActivity(intent);
@@ -62,4 +71,9 @@ public class MenuFragment extends Fragment {
 //                Toast.LENGTH_SHORT).show();
     }
 
+    public void onButtonChooseDifficultyClicked(View view) {
+        //todo reset the chosen difficulty and word
+        Intent intent = new Intent(getActivity(), ScanscreenActivity.class);
+        startActivity(intent);
+    }
 }
