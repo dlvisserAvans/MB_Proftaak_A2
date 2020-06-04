@@ -1,2 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    //UI elements
+
+    <string name="app_name">The Treasury of king Avanius</string>
+    <string name="language_setting">EN</string>
+    <string name="dark_mode">Dark mode:</string>
+    <string name="language">Language:</string>
+
+    <string name="startscreen_welcome">Welcome</string>
+    <string name="startscreen_message">To select the difficulty scan the QR-code with the button bellow</string>
+    <string name="password_hint">Password</string>
+    <string name="startscreen_popup_enter">Enter</string>
+    <string name="choose_difficulty">"Choose difficulty "</string>
+
+    <string name="home_activity_title">Quests</string>
+    <string name="quest_name">Quest Name</string>
+    <string name="progress">Progress:</string>
+
+    <string name="treasury_activity_title">Treasury</string>
+    <string name="treasure_room_found_letters">Found Letters:</string>
+    <string name="treasure_room_letters" translatable="false">S, P, R, K, J, E</string>
+    <string name="treasury_btn_check">Check</string>
+
+    <string name="menu_activity_title">Menu</string>
+
+    <string name="icon_quests">Quests</string>
+    <string name="icon_treasury">Treasury</string>
+    <string name="icon_menu">Menu</string>
+
+    <string name="popup_scanscreen_helptext">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
+    <string name="popup_qrcode_scanner_undetected">No QR-code Detected</string>
+
+    <string name="btn_back">Back</string>
+
+    <string name="menu_help">Help</string>
+    <string name="exercises_explanation" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit, a varius mi egestas vel.</string>
+
+    <string name="menu_settings">Settings</string>
+
+    <string name="pop_up_confirm">Are you sure you want to reset?</string>
+    <string name="confirm">Confirm</string>
+    <string name="placeholder">Text example</string>
+
+    //Fairy Tale elements and quests
+
+    <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
+                                        But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
+
+    <string name="draak">Draak</string>
+    <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
+    <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
+    <string name="draakQuest3">Met de … maak je draak wakker.</string>
+
+    <string name="repelsteeltje">Repelsteeltje</string>
+    <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
+    <string name="repelsteeltjeQuest2">Wat wilde repelsteeltje van de molenaarsdochter?</string>
+
+    <string name="zesDienaren">De Zes Dienaren</string>
+    <string name="zesDienarenQuest1">Wat waren de namen van de 6 dienaren?</string>
+
+    <string name="doornroosje">Doornroosje</string>
+    <string name="doornroosjeQuest1">Waardoor viel Doornroosje in slaap?</string>
+    <string name="doornroosjeQuest2">Waarmee ontwaakte de prins Doornroosje?</string>
+
+    <string name="roodkapje">Roodkapje</string>
+    <string name="roodkapjeQuest1">Naar wie ging roodkapje op bezoek?</string>
+    <string name="roodkapjeQuest2">Wie heeft roodkapjes oma opgegeten?</string>
+
+    <string name="pinokkio">Pinokkio</string>
+    <string name="pinokkioQuest1">Hoe heet de timmerman die pinokkio maakte?</string>
+    <string name="pinokkioQuest2">Wat groeit er bij pinokkio als hij liegt?</string>
+    <string name="pinokkioQuest3">Wie haalden pinokkio over om mee op avontuur te gaan?</string>
+
+    <string name="raponsje">Raponsje</string>
+    <string name="raponsjeQuest1">Had de toren van Raponsje een deur?</string>
+    <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
+
+</resources>

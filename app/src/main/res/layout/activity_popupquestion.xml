@@ -21,7 +21,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="@string/pop_up_help_text"
+            android:text="@string/popup_scanscreen_helptext"
             android:textSize="36sp" />
 
         <EditText
@@ -38,12 +38,15 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onButtonCheckClicked"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_button_selector"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:hint="@string/check"  />
+            android:hint="@string/treasury_btn_check"
+            android:onClick="onButtonCheckClicked"
+            android:text="@string/startscreen_popup_enter"
+            android:textColor="@color/color_btn_text" />
 
     </LinearLayout>
 
