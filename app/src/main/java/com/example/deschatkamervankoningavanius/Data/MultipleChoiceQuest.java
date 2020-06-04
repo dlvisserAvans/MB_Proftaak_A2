@@ -7,8 +7,8 @@ public class MultipleChoiceQuest extends Quest {
     private String buttonOptionC;
     private String buttonOptionD;
 
-    public MultipleChoiceQuest(int questImage, String title, String desc,  String solution, String buttonOptionA, String buttonOptionB, String buttonOptionC, String buttonOptionD, boolean finished, String recievedLetter) {
-        super(questImage, title, desc, QuestionType.MULTIPLECHOICE, solution, finished, recievedLetter);
+    public MultipleChoiceQuest(int questImage, int title, int desc,  String solution, String buttonOptionA, String buttonOptionB, String buttonOptionC, String buttonOptionD) {
+        super(questImage, title, desc, QuestionType.MULTIPLECHOICE, solution);
 
         this.buttonOptionA = buttonOptionA;
         this.buttonOptionB = buttonOptionB;

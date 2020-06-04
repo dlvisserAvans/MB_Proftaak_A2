@@ -1,6 +1,7 @@
 package com.example.deschatkamervankoningavanius.Data;
 
 import com.example.deschatkamervankoningavanius.Difficulty;
+import com.example.deschatkamervankoningavanius.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,7 +27,8 @@ public class User implements Serializable {
     }
 
     public void getQuests(Difficulty difficulty, JSONParser jsonParser){
-        List<Quest> allQuestsList = jsonParser.JsonParse();
+//        List<Quest> allQuestsList = jsonParser.JsonParse();
+        List<Quest> allQuestsList = initQuest();
         Collections.shuffle(allQuestsList);
 
         //Change amount of quests based on difficulty
@@ -45,12 +47,12 @@ public class User implements Serializable {
 
         //Add specified amount of quests to the user's quest List
         for (int i = 0; (quests.size() < questAmount); i++){
-            String newQuestTitle = allQuestsList.get(i).getTitle();
+            int newQuestTitle = allQuestsList.get(i).getTitle();
             boolean duplicate = false;
 
             //Makes sure the user doesn't get multiple quests for the same fairy tale
             for (Quest quest : quests){
-                if (quest.getTitle().equals(newQuestTitle)){
+                if (quest.getTitle() == newQuestTitle){
                     duplicate = true;
                 }
             }
@@ -98,5 +100,27 @@ public class User implements Serializable {
 
     public void setProgress(List<Character> progress) {
         this.progress = progress;
+    }
+
+    public ArrayList<Quest> initQuest(){
+        ArrayList<Quest> quests = new ArrayList<>();
+
+        quests.add(new OpenQuestionQuest(R.drawable.brochure,R.string.draak,R.string.draakQuest1,"A"));
+        quests.add(new OpenQuestionQuest(R.drawable.brochure,R.string.draak,R.string.draakQuest2,"A"));
+        quests.add(new OpenQuestionQuest(R.drawable.brochure,R.string.draak,R.string.draakQuest3,"A"));
+        quests.add(new OpenQuestionQuest(R.drawable.namecard,R.string.repelsteeltje,R.string.repelsteeltjeQuest2,"A"));
+        quests.add(new MultipleChoiceQuest(R.drawable.namecard,R.string.repelsteeltje,R.string.repelsteeltjeQuest1,"A", "A", "B", "C", "D"));
+        quests.add(new OpenQuestionQuest(R.drawable.brochure,R.string.zesDienaren,R.string.zesDienarenQuest1,"A"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.doornroosje,R.string.doornroosjeQuest1,"A", "A", "B", "C", "D"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.doornroosje,R.string.doornroosjeQuest2,"A", "A", "B", "C", "D"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.roodkapje,R.string.roodkapjeQuest1,"A", "A", "B", "C", "D"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.roodkapje,R.string.roodkapjeQuest2,"A", "A", "B", "C", "D"));
+        quests.add(new OpenQuestionQuest(R.drawable.sticker,R.string.pinokkio,R.string.pinokkioQuest1,"A"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.pinokkio,R.string.pinokkioQuest2,"A", "A", "B", "C", "D"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.pinokkio,R.string.pinokkioQuest3,"A", "A", "B", "C", "D"));
+        quests.add(new OpenQuestionQuest(R.drawable.sticker,R.string.raponsje,R.string.raponsjeQuest1,"A"));
+        quests.add(new MultipleChoiceQuest(R.drawable.sticker,R.string.raponsje,R.string.raponsjeQuest2,"A", "A", "B", "C", "D"));
+
+        return quests;
     }
 }

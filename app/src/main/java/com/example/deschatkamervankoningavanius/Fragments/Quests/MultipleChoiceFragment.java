@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,9 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button buttonOptionC;
     private Button buttonOptionD;
 
+    private TextView titleview;
+    private TextView descview;
+
     private Bundle bundle;
     private String solution = "";
     private int clickAmount = 0;
@@ -39,6 +43,9 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.buttonOptionB = (Button)rootView.findViewById(R.id.btnMCAwnserB);
         this.buttonOptionC = (Button)rootView.findViewById(R.id.btnMCAwnserC);
         this.buttonOptionD = (Button)rootView.findViewById(R.id.btnMCAwnserD);
+        this.titleview = rootView.findViewById(R.id.tvMulttitle);
+        this.descview = rootView.findViewById(R.id.tvMultdesc);
+
 
         if (this.buttons.size() == 0){
             this.buttons.add(buttonOptionA);
@@ -54,14 +61,18 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
         System.out.println("Size buttonlist " + this.buttons.size());
 
-        bundle = this.getArguments();
-        this.solution = bundle.getString("solution");
-        this.buttonOptionA.setText(bundle.getString("optionA"));
-        this.buttonOptionB.setText(bundle.getString("optionB"));
-        this.buttonOptionC.setText(bundle.getString("optionC"));
-        this.buttonOptionD.setText(bundle.getString("optionD"));
-        listValue = bundle.getInt("listValue");
-        System.out.println("MultipleChoiceQuestion --- Solution: " + solution);
+        if (!questionFinished) {
+            bundle = this.getArguments();
+            titleview.setText(bundle.getInt("title"));
+            descview.setText(bundle.getInt("desc"));
+            this.solution = bundle.getString("solution");
+            this.buttonOptionA.setText(bundle.getString("optionA"));
+            this.buttonOptionB.setText(bundle.getString("optionB"));
+            this.buttonOptionC.setText(bundle.getString("optionC"));
+            this.buttonOptionD.setText(bundle.getString("optionD"));
+            listValue = bundle.getInt("listValue");
+            System.out.println("MultipleChoiceQuestion --- Solution: " + solution);
+        }
 
         this.buttonOptionA.setOnClickListener(this);
         this.buttonOptionB.setOnClickListener(this);

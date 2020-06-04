@@ -2,8 +2,8 @@ package com.example.deschatkamervankoningavanius.Data;
 
 public class OpenQuestionQuest extends Quest {
 
-    public OpenQuestionQuest(int questImage, String title, String desc, String solution, boolean finished, String recievedLetter) {
-        super(questImage, title, desc, QuestionType.OPENQUESTION, solution, finished, recievedLetter);
+    public OpenQuestionQuest(int questImage, int title, int desc, String solution) {
+        super(questImage, title, desc, QuestionType.OPENQUESTION, solution);
     }
 
     @Override

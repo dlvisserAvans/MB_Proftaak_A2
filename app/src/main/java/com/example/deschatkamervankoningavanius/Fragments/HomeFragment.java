@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,8 +48,8 @@ public class HomeFragment extends Fragment {
     ArrayList<Character> password = new ArrayList<>();
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    TextView titleView;
-    TextView descView;
+//    TextView titleView;
+//    TextView descView;
     User user;
     private ViewPager viewPager;
     private VPAdapter vpAdapter;
@@ -71,18 +72,18 @@ public class HomeFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
 
-//        questList = new ArrayList<>();
+        questList = user.getQuests();
 //        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
         this.bundle = new Bundle();
-        solution = rootView.findViewById(R.id.tvQuestTitle2);
+//        solution = rootView.findViewById(R.id.tvQuestTitle2);
 
         //add questions to the questList
-        questList = new ArrayList<>();
-        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false, "A"));
-        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false, "B"));
-        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false, "C"));
-        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false, "D"));
-        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false, "E"));
+//        questList = new ArrayList<>();
+//        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false, "A"));
+//        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false, "B"));
+//        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false, "C"));
+//        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false, "D"));
+//        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false, "E"));
 
 //        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
 //        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
@@ -126,12 +127,12 @@ public class HomeFragment extends Fragment {
 //        User user = new User(this.questList, this.password, videoList);
 
 
-        final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
-        viewPager = rootView.findViewById(R.id.vpQuest);
-        titleView = rootView.findViewById(R.id.tvQuestTitle);
-        descView = rootView.findViewById(R.id.tvQuestDesc);
-        titleView.setText(user.getQuests().get(0).getTitle());
-        descView.setText(user.getQuests().get(0).getDesc());
+//        final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
+//        viewPager = rootView.findViewById(R.id.vpQuest);
+//        titleView = rootView.findViewById(R.id.tvQuestTitle);
+//        descView = rootView.findViewById(R.id.tvQuestDesc);
+//        titleView.setText(user.getQuests().get(0).getTitle());
+//        descView.setText(user.getQuests().get(0).getDesc());
         //add fragments of the questions to the fragmentList
         fragments = new ArrayList<>();
         for (Quest quest : questList){
@@ -142,16 +143,26 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        //set the fragment of the first question
-        this.bundle.putString("solution", questList.get(0).getSolution());
-        bundle.putString("optionA", questList.get(0).getButtonOption("A"));
-        bundle.putString("optionB", questList.get(0).getButtonOption("B"));
-        bundle.putString("optionC", questList.get(0).getButtonOption("C"));
-        bundle.putString("optionD", questList.get(0).getButtonOption("D"));
-        bundle.putInt("listValue", 0);
         this.currentFragment = fragments.get(0);
-        this.currentFragment.setArguments(this.bundle);
-        this.currentQuest = questList.get(0);
+        //set the fragment of the first question
+        if (questList.get(0).getQuestionType().equals(QuestionType.MULTIPLECHOICE)) {
+            bundle.putInt("title",questList.get(0).getTitle());
+            bundle.putInt("desc",questList.get(0).getDesc());
+            bundle.putString("solution", questList.get(0).getSolution());
+            bundle.putString("optionA", questList.get(0).getButtonOption("A"));
+            bundle.putString("optionB", questList.get(0).getButtonOption("B"));
+            bundle.putString("optionC", questList.get(0).getButtonOption("C"));
+            bundle.putString("optionD", questList.get(0).getButtonOption("D"));
+            bundle.putInt("listValue", 0);
+            this.currentFragment.setArguments(this.bundle);
+//            this.currentQuest = questList.get(0);
+        }else {
+            bundle.putInt("title",questList.get(0).getTitle());
+            bundle.putInt("desc",questList.get(0).getDesc());
+            bundle.putString("solution", questList.get(0).getSolution());
+            bundle.putInt("listValue", 0);
+            this.currentFragment.setArguments(bundle);
+        }
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -175,34 +186,41 @@ public class HomeFragment extends Fragment {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
 
+//            @Override
+//            public void onPageSelected(int position) {
+//                Toast.makeText(getActivity(), user.getQuests().get(position).getTitle(),
+//                        Toast.LENGTH_SHORT).show();
+//            }
             @Override
-            public void onPageSelected(int position) {
-                Toast.makeText(getActivity(), user.getQuests().get(position).getTitle(),
-                        Toast.LENGTH_SHORT).show();
             public void onPageSelected(final int position) {
+//                titleView.setText(user.getQuests().get(position).getTitle());
+//                descView.setText(user.getQuests().get(position).getDesc());
 //                currentQuest = questList.get(position);
                 System.out.println("Position: " + position);
                 switch (questList.get(position).getQuestionType()) {
+
                     case OPENQUESTION:
                         OpenQuestionFragment openQuestionFragment = (OpenQuestionFragment) fragments.get(position);
                         currentFragment = openQuestionFragment;
                         if (questList.get(position).isFinished()){
                             openQuestionFragment.finishedQuestion();
                         } else {
+                            bundle.putInt("title",questList.get(position).getTitle());
+                            bundle.putInt("desc",questList.get(position).getDesc());
                             bundle.putString("solution", questList.get(position).getSolution());
                             bundle.putInt("listValue", position);
                             currentFragment.setArguments(bundle);
                         }
                         break;
 
-                titleView.setText(user.getQuests().get(position).getTitle());
-                descView.setText(user.getQuests().get(position).getDesc());
                     case MULTIPLECHOICE:
                         MultipleChoiceFragment multipleChoiceFragment = (MultipleChoiceFragment) fragments.get(position);
                         currentFragment = multipleChoiceFragment;
                         if (questList.get(position).isFinished()) {
                             multipleChoiceFragment.finishedQuestion();
                         } else {
+                            bundle.putInt("title",questList.get(position).getTitle());
+                            bundle.putInt("desc",questList.get(position).getDesc());
                             bundle.putString("solution", questList.get(position).getSolution());
                             bundle.putString("optionA", questList.get(position).getButtonOption("A"));
                             bundle.putString("optionB", questList.get(position).getButtonOption("B"));

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,9 @@ public class OpenQuestionFragment extends Fragment {
     private EditText answer;
     private String solution = "";
     private int listValue;
+    private TextView titleview;
+    private TextView descview;
+    private boolean questionFinished = false;
 
     @Nullable
     @Override
@@ -29,18 +33,26 @@ public class OpenQuestionFragment extends Fragment {
 
         this.buttonSubmit = (Button)rootView.findViewById(R.id.button7);
         this.answer = (EditText)rootView.findViewById(R.id.editTextTextPersonName);
+        this.titleview = rootView.findViewById(R.id.tvOpentitle);
+        this.descview = rootView.findViewById(R.id.tvOpendesc);
 
+        if (!questionFinished){
         Bundle bundle = this.getArguments();
+        titleview.setText(bundle.getInt("title"));
+        descview.setText(bundle.getInt("desc"));
         this.solution = bundle.getString("solution");
         listValue = bundle.getInt("listValue");
-        System.out.println("OpenQuestion --- Solution: " + solution);
+        System.out.println("OpenQuestion --- Solution: " + solution);}
 
+        if (!questionFinished){
         this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkAnswer(answer.getText().toString());
             }
-        });
+        });}else {
+            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
+        }
 
         return rootView;
     }
@@ -51,9 +63,11 @@ public class OpenQuestionFragment extends Fragment {
             HomeFragment.setQuestState(listValue, true);
             HomeFragment.setProgressBar();
             finishedQuestion();
+            questionFinished = true;
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
             HomeFragment.setQuestState(listValue, false);
+            questionFinished = false;
         }
     }
 
