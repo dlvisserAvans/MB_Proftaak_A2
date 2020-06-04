@@ -17,9 +17,11 @@ public class PopUpConfirmReset extends Activity {
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+//        getParent().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
+
 
         getWindow().setLayout((int) (widthPixels * .9), (int) (heightPixels * .7));
     }
