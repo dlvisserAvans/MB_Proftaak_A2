@@ -17,14 +17,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class NavFragmentBaseActivity extends AppCompatActivity {
 
     //TODO: Research to make sure the new home fragment changes when the orientation changes.
-    private Fragment currentFragment = new HomeFragment(getIntent());
+    private Fragment currentFragment = new HomeFragment(getIntent(), Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString()));
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
                         case R.id.navigation_home:
-                            currentFragment = new HomeFragment(getIntent());
+                            currentFragment = new HomeFragment(getIntent(), Difficulty.valueOf(getIntent().getExtras().get("Difficulty").toString()));
                             break;
                         case R.id.navigation_treasury:
                             currentFragment = new TreasuryFragment();

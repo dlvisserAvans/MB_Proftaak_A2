@@ -56,9 +56,9 @@ public class Pop extends Activity {
         startActivity(intent);
 
         //create intent to play intro  video
-        Intent videoIntent = new Intent(this, VideoActivity.class);
-        videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
+//        Intent videoIntent = new Intent(this, VideoActivity.class);
+//        videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
 
-        startActivity(videoIntent);
+//        startActivity(videoIntent);
     }
 }

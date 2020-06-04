@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.deschatkamervankoningavanius.Data.JSONParser;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.Data.User;
+import com.example.deschatkamervankoningavanius.Difficulty;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
@@ -28,9 +29,14 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     Intent difficultyIntent = new Intent();
+    Difficulty difficulty;
 
-    public HomeFragment(Intent intent) {
+    public HomeFragment(Intent intent, Object o) {
         this.difficultyIntent = intent;
+        if (o.equals(Difficulty.Easy)){
+            difficulty = (Difficulty) o;
+        }
+        System.out.println(o);
     }
 
 
@@ -63,17 +69,18 @@ public class HomeFragment extends Fragment {
 
         Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-        String difficulty = "hard"; //PLACEHOLDER, REMOVE LATER
+        Difficulty difficulty;
+        difficulty = (Difficulty) difficultyIntent.getExtras().get("Difficulty");
+
         int questAmount = 1;
-        //TODO change quest amounts?
         switch (difficulty){
-            case "easy":
+            case Easy:
                 questAmount = 3;
                 break;
-            case "medium":
+            case Medium:
                 questAmount = 5;
                 break;
-            case "hard":
+            case Hard:
                 questAmount = 7;
                 break;
         }
