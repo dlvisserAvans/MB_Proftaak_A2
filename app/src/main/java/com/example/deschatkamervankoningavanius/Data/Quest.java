@@ -1,17 +1,31 @@
 package com.example.deschatkamervankoningavanius.Data;
 
-public class Quest {
+public abstract class Quest {
 
     private int QuestImage;
     private String title;
     private String desc;
-    private boolean solved;
+    private boolean finished;
+    private String solution;
+    private QuestionType questionType;
+    private String recievedLetter;
 
-    public Quest(int questImage, String title, String desc) {
+    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution, boolean finished, String recievedLetter) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
-        this.solved = false;
+        this.questionType = questionType;
+        this.solution = solution;
+        this.finished = finished;
+        this.recievedLetter = recievedLetter;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     public int getQuestImage() {
@@ -38,11 +52,21 @@ public class Quest {
         this.desc = desc;
     }
 
-    public boolean isSolved() {
-        return solved;
+    public String getSolution() {
+        return solution;
     }
 
-    public void setSolved(boolean solved) {
-        this.solved = solved;
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public abstract String getButtonOption(String option);
+
+    public String getRecievedLetter() {
+        return recievedLetter;
+    }
+
+    public void setRecievedLetter(String recievedLetter) {
+        this.recievedLetter = recievedLetter;
     }
 }
