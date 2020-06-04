@@ -1,7 +1,10 @@
 package com.example.deschatkamervankoningavanius.Data;
 
+import com.example.deschatkamervankoningavanius.Difficulty;
+
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -16,12 +19,45 @@ public class User implements Serializable {
     private List<String> videos; //videos die voor de user beschikbaar zijn
     private int progressTracker;
 
-    public User(List<Quest> quests, List<Character> answers, List<String> videos){
-        this.quests = quests;
-        this.answers = answers;
+    public User(){
         this.progress = new ArrayList<>();
-        this.videos = videos;
         progressTracker = 0;
+        this.quests = new ArrayList<>();
+    }
+
+    public void getQuests(Difficulty difficulty, JSONParser jsonParser){
+        List<Quest> allQuestsList = jsonParser.JsonParse();
+        Collections.shuffle(allQuestsList);
+
+        //Change amount of quests based on difficulty
+        int questAmount = 1;
+        switch (difficulty){
+            case Easy:
+                questAmount = 3;
+                break;
+            case Medium:
+                questAmount = 5;
+                break;
+            case Hard:
+                questAmount = 7;
+                break;
+        }
+
+        //Add specified amount of quests to the user's quest List
+        for (int i = 0; (quests.size() < questAmount); i++){
+            String newQuestTitle = allQuestsList.get(i).getTitle();
+            boolean duplicate = false;
+
+            //Makes sure the user doesn't get multiple quests for the same fairy tale
+            for (Quest quest : quests){
+                if (quest.getTitle().equals(newQuestTitle)){
+                    duplicate = true;
+                }
+            }
+            if (!duplicate){
+                quests.add(allQuestsList.get(i));
+            }
+        }
     }
 
     public void updateProgress(int amount){

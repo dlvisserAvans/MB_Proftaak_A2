@@ -2,7 +2,6 @@ package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,23 +14,25 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.deschatkamervankoningavanius.Data.JSONParser;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.Data.User;
+import com.example.deschatkamervankoningavanius.Difficulty;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    Intent difficultyIntent = new Intent();
 
-    public HomeFragment(Intent intent) {
-        this.difficultyIntent = intent;
+    public HomeFragment(User user) {
+        this.user = user;
     }
+
 
     ViewPager viewPager;
     VPAdapter vpAdapter;
@@ -40,28 +41,27 @@ public class HomeFragment extends Fragment {
     ArrayList<Character> password = new ArrayList<>();
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-    TextView textView;
+    TextView titleView;
+    TextView descView;
+    User user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         questList = new ArrayList<>();
-//        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
+        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
 
-        if (allQuestList.size()==0){
-            allQuestList.add(new Quest(R.drawable.brochure,"Test1",""));
-            allQuestList.add(new Quest(R.drawable.sticker,"Test2",""));
-            allQuestList.add(new Quest(R.drawable.poster,"Test3",""));
-            allQuestList.add(new Quest(R.drawable.namecard,"Test4",""));
-            allQuestList.add(new Quest(R.drawable.brochure,"Test5",""));
-            allQuestList.add(new Quest(R.drawable.sticker,"Test6",""));
-            allQuestList.add(new Quest(R.drawable.poster,"Test7",""));
-            allQuestList.add(new Quest(R.drawable.namecard,"Test8",""));
-            Collections.shuffle(allQuestList);
-        }
+        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
+        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
+        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
+        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
+        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
+        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
+        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
+        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
 
-
+        Collections.shuffle(allQuestsList);
 //        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
         String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
         int questAmount = 1;
@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
         }
 
         for (int i = 0; i < questAmount; i++){
-            questList.add(allQuestList.get(i));
+            questList.add(allQuestsList.get(i));
         }
 
         String password = "password";   //TODO implement actual passwords
@@ -96,8 +96,10 @@ public class HomeFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
         viewPager = rootView.findViewById(R.id.vpQuest);
-        textView = rootView.findViewById(R.id.tvQuestTitle);
-        textView.setText(user.getQuests().get(0).getTitle());
+        titleView = rootView.findViewById(R.id.tvQuestTitle);
+        descView = rootView.findViewById(R.id.tvQuestDesc);
+        titleView.setText(user.getQuests().get(0).getTitle());
+        descView.setText(user.getQuests().get(0).getDesc());
 
 
 
@@ -126,10 +128,11 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                Toast.makeText(getActivity(), questList.get(position).getTitle(),
+                Toast.makeText(getActivity(), user.getQuests().get(position).getTitle(),
                         Toast.LENGTH_SHORT).show();
 
-                textView.setText(questList.get(position).getTitle());
+                titleView.setText(user.getQuests().get(position).getTitle());
+                descView.setText(user.getQuests().get(position).getDesc());
             }
 
             @Override

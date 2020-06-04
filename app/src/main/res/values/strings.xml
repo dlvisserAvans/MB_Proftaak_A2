@@ -28,4 +28,33 @@ But one day there was a problem. King Avanius had forgotten the password of his 
     <string name="choose_difficulty">"Choose difficulty "</string>
     <string name="pop_up_confirm">Are you sure you want to reset?</string>
     <string name="confirm">Confirm</string>
+
+    <string name="draak">Draak</string>
+    <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
+    <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
+    <string name="draakQuest3">Met de … maak je draak wakker.</string>
+
+    <string name="repelsteeltje">Repelsteeltje</string>
+    <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
+    <string name="repelsteeltjeQuest2">Wat wilde repelsteeltje van de molenaarsdochter?</string>
+
+    <string name="zesDienaren">De Zes Dienaren</string>
+    <string name="zesDienarenQuest1">Wat waren de namen van de 6 dienaren?</string>
+
+    <string name="doornroosje">Doornroosje</string>
+    <string name="doornroosjeQuest1">Waardoor viel Doornroosje in slaap?</string>
+    <string name="doornroosjeQuest2">Waarmee ontwaakte de prins Doornroosje?</string>
+
+    <string name="roodkapje">Roodkapje</string>
+    <string name="roodkapjeQuest1">Naar wie ging roodkapje op bezoek?</string>
+    <string name="roodkapjeQuest2">Wie heeft roodkapjes oma opgegeten?</string>
+
+    <string name="pinokkio">Pinokkio</string>
+    <string name="pinokkioQuest1">Hoe heet de timmerman die pinokkio maakte?</string>
+    <string name="pinokkioQuest2">Wat groeit er bij pinokkio als hij liegt?</string>
+    <string name="pinokkioQuest3">Wie haalden pinokkio over om mee op avontuur te gaan?</string>
+
+    <string name="raponsje">Raponsje</string>
+    <string name="raponsjeQuest1">Had de toren van Raponsje een deur?</string>
+    <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
 </resources>

@@ -20,6 +20,35 @@
     <string name="treasure_room">Schatkamer</string>
     <string name="password_hint">Wachtwoord</string>
     <string name="scanscreen_message">Voor het selecteren van de moeilijkheidsgraad, scan de QR-code met de knop hieronder</string>
+
+    <string name="draak">Draak</string>
+    <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
+    <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
+    <string name="draakQuest3">Met de … maak je draak wakker.</string>
+
+    <string name="repelsteeltje">Repelsteeltje</string>
+    <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
+    <string name="repelsteeltjeQuest2">Wat wilde repelsteeltje van de molenaarsdochter?</string>
+
+    <string name="zesDienaren">De Zes Dienaren</string>
+    <string name="zesDienarenQuest1">Wat waren de namen van de 6 dienaren?</string>
+
+    <string name="doornroosje">Doornroosje</string>
+    <string name="doornroosjeQuest1">Waardoor viel Doornroosje in slaap?</string>
+    <string name="doornroosjeQuest2">Waarmee ontwaakte de prins Doornroosje?</string>
+
+    <string name="roodkapje">Roodkapje</string>
+    <string name="roodkapjeQuest1">Naar wie ging roodkapje op bezoek?</string>
+    <string name="roodkapjeQuest2">Wie heeft roodkapjes oma opgegeten?</string>
+
+    <string name="pinokkio">Pinokkio</string>
+    <string name="pinokkioQuest1">Hoe heet de timmerman die pinokkio maakte?</string>
+    <string name="pinokkioQuest2">Wat groeit er bij pinokkio als hij liegt?</string>
+    <string name="pinokkioQuest3">Wie haalden pinokkio over om mee op avontuur te gaan?</string>
+
+    <string name="raponsje">Raponsje</string>
+    <string name="raponsjeQuest1">Had de toren van Raponsje een deur?</string>
+    <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
     <string name="fairytail_avanius"> Koning Avanius leefde in een koningkrijk hier ver ver vandaan. Het was een groot en rijk koningkrijk. Iedereen was er gelukkig en iedereen had werk. Koning Avanius zorgde goed voor zijn volk, door geld te geven vanuit zijn eigen schatkamer aan de mensen die hulp nodig hadden.
 Maar op een dag was er een probleem. Koning Avanius was namelijk het wachtwoord van zijn schatkamer vergeten, hij kreeg hem niet meer open! Koning Avanius was zo verdrietig dat hij zijn volk niet meer kon helpen dat hij meteen een grote zoektocht opstelde. Hij had namelijk, voor als hij het wachtwoord ooit zou vergeten, aanwijzingen bij verschillende plaatsen in het wonderbos verstopt. Maar Koning Avanius was al oud en kan het avontuur zelf niet meer aangaan. Vandaar dat hij de dapperste avonturiers van het hele land bijeen riep. Om samen het wachtwoord te vinden en de rijkdom in het koningkrijk weer te laten vloeien.
 </string>
