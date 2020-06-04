@@ -42,6 +42,8 @@
         <activity android:name=".NavFragmentBaseActivity"/>
         <activity android:name=".HelpMenuActivity"/>
         <activity android:name=".SettingsMenuActivity"/>
+        <activity android:name=".PopUpConfirmReset" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

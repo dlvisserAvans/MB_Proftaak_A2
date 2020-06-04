@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.deschatkamervankoningavanius.HelpMenuActivity;
+import com.example.deschatkamervankoningavanius.NavFragmentBaseActivity;
+import com.example.deschatkamervankoningavanius.PopUpConfirmReset;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.ScanscreenActivity;
 import com.example.deschatkamervankoningavanius.SettingsMenuActivity;
@@ -72,8 +74,7 @@ public class MenuFragment extends Fragment {
     }
 
     public void onButtonChooseDifficultyClicked(View view) {
-        //todo reset the chosen difficulty and word
-        Intent intent = new Intent(getActivity(), ScanscreenActivity.class);
+        Intent intent = new Intent(getActivity(), PopUpConfirmReset.class);
         startActivity(intent);
     }
 }
