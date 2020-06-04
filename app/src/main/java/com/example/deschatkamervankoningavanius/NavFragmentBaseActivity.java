@@ -54,4 +54,9 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
         BottomNavigationView navigationView = findViewById(R.id.navbar);
         navigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }
