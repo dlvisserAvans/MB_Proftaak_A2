@@ -66,7 +66,7 @@ public class JSONParser {
                 int titleID = resources.getIdentifier(quest.getString("title"), "string", appContext.getPackageName());
                 int descriptionID = resources.getIdentifier(quest.getString("description"), "string", appContext.getPackageName());
 
-                this.questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
+//                this.questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
             }
         } catch (JSONException e) {
             e.printStackTrace();
