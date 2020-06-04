@@ -61,7 +61,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
         System.out.println("Size buttonlist " + this.buttons.size());
 
-        if (!questionFinished) {
+        if (questionFinished == false) {
             bundle = this.getArguments();
             titleview.setText(bundle.getInt("title"));
             descview.setText(bundle.getInt("desc"));

@@ -1,14 +1,12 @@
 package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,23 +16,15 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
-import com.example.deschatkamervankoningavanius.Data.MultipleChoiceQuest;
-import com.example.deschatkamervankoningavanius.Data.OpenQuestionQuest;
-import com.example.deschatkamervankoningavanius.Data.JSONParser;
-import com.example.deschatkamervankoningavanius.Adapters.VPAdapter;
 import com.example.deschatkamervankoningavanius.Data.Quest;
 import com.example.deschatkamervankoningavanius.Data.QuestionType;
+import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
-import com.example.deschatkamervankoningavanius.Data.User;
-import com.example.deschatkamervankoningavanius.Difficulty;
 import com.example.deschatkamervankoningavanius.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -55,8 +45,8 @@ public class HomeFragment extends Fragment {
     private VPAdapter vpAdapter;
     private static List<Quest> questList;
     private static ProgressBar progressBar;
-    private static int progress = 0;
-    private static int progress_step;
+    private static double progress = 0;
+    private static double progress_step;
     private static TextView tvProgress;
     private static int correctAnswers = 0;
     private Bundle bundle;
@@ -175,7 +165,7 @@ public class HomeFragment extends Fragment {
         progressBar = rootView.findViewById(R.id.progress_bar);
         tvProgress = rootView.findViewById(R.id.tvProgress);
         tvProgress.setText(progress + "%");
-        progressBar.setProgress(progress);
+        progressBar.setProgress((int)progress);
 
         vpAdapter = new VPAdapter(questList,getActivity());
         viewPager.setAdapter(vpAdapter);
@@ -253,7 +243,7 @@ public class HomeFragment extends Fragment {
             }
         }
         progress = correctAnswers * progress_step;
-        progressBar.setProgress(progress);
+        progressBar.setProgress((int)progress);
         tvProgress.setText(progress + "%");
     }
 
@@ -266,7 +256,7 @@ public class HomeFragment extends Fragment {
         String string = "";
         for (Quest quest : questList){
             if (quest.isFinished() == true){
-                string += quest.getRecievedLetter() + " ";
+                string += quest.getLetters().get(0) + " ";
             } else {
                 string += ". ";
             }

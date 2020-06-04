@@ -59,7 +59,7 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
         createUser();
         fragmentList.add(new HomeFragment(this.user));
         Log.d("FRAGMENT ID", fragmentList.get(0).toString());
-        fragmentList.add(new TreasuryFragment());
+        fragmentList.add(new TreasuryFragment(this.user));
         fragmentList.add(new MenuFragment());
         currentFragment = fragmentList.get(0);
 

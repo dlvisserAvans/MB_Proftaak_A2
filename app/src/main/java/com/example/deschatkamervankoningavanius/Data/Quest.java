@@ -1,4 +1,7 @@
 package com.example.deschatkamervankoningavanius.Data;
+
+import java.util.ArrayList;
+
 public abstract class Quest {
     private int QuestImage;
     private int title;
@@ -7,6 +10,7 @@ public abstract class Quest {
     private String solution;
     private QuestionType questionType;
     private String recievedLetter;
+    private ArrayList<Character> letters = new ArrayList<>();
 
     public Quest(int questImage, int title, int desc, QuestionType questionType, String solution) {
         QuestImage = questImage;
@@ -53,5 +57,13 @@ public abstract class Quest {
     }
     public void setRecievedLetter(String recievedLetter) {
         this.recievedLetter = recievedLetter;
+    }
+
+    public ArrayList<Character> getLetters() {
+        return letters;
+    }
+
+    public void setLetters(ArrayList<Character> letters) {
+        this.letters = letters;
     }
 }

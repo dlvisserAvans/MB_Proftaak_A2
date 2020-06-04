@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.R;
 import com.example.deschatkamervankoningavanius.SprookjeAvanius;
 import com.example.deschatkamervankoningavanius.Video.VideoActivity;
@@ -33,6 +35,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
+
 public class TreasuryFragment extends Fragment implements AdapterView.OnItemClickListener, YoutubeVideoAdapter.OnItemClickListener {
     final String tag = "JANKEESBROEKHUIZEN";
     private static final String LOGTAG = TreasuryFragment.class.getName();
@@ -44,10 +48,21 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
     TextView textView;
     private String topic = "group/A2/state";
     String response = "";
+    User user;
+
+    public TreasuryFragment(User user){
+        this.user = user;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_treasury,container,false);
+        TextView textView = view.findViewById(R.id.tvCollectedLetters);
+
+        textView.setText(HomeFragment.setTextView());
+
+
 //        TextView textView = view.findViewById(R.id.tvQuestTitle2);
 //        textView.setText(HomeFragment.setTextView());
         Button buttonCheck = view.findViewById(R.id.btn_treasury_check);
@@ -129,7 +144,8 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
     }
     public void onButtonCheckClicked(View view){
         //TODO: Integrate function when Checkmenu is finished
-        String payload = "aaa";
+        String payload = user.getPassword();
+        System.out.println(user.getPassword());
         String topic = "group/A2/word";
 //        Toast.makeText(getActivity(), "Check", Toast.LENGTH_SHORT).show();
         System.out.println("onButtonCheckClicked()");
@@ -168,11 +184,19 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                 }
                 @Override
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
-                    Toast toast = Toast. makeText(getActivity().getApplicationContext(), "messageArrived()" , Toast.LENGTH_SHORT);
-                    toast.show();
+
                     System.out.println("Topic: " + topic + " Message: " + message);
                     response = new String(message.getPayload());
-                    textView.setText(response);
+                    System.out.println("Response: " + response);
+                    Toast toast = Toast. makeText(getActivity().getApplicationContext(), response , Toast.LENGTH_SHORT);
+                    toast.show();
+                    if (response.equals("true")){
+                        Intent videoIntent = new Intent(getActivity(), VideoActivity.class);
+                        videoIntent.putExtra(EXTRA_VIDEO_REF, "s1WQTUg_2vo");
+
+                        startActivity(videoIntent);
+                    }
+
                 }
                 @Override
                 public void deliveryComplete(IMqttDeliveryToken token) {
