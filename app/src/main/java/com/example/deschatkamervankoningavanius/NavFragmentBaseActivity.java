@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.deschatkamervankoningavanius.Fragments.HomeFragment;
 import com.example.deschatkamervankoningavanius.Fragments.MenuFragment;

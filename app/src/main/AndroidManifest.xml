@@ -42,6 +42,9 @@
         <activity android:name=".NavFragmentBaseActivity"/>
         <activity android:name=".HelpMenuActivity"/>
         <activity android:name=".SettingsMenuActivity"/>
+        <activity android:name=".PopUpConfirmReset"
+            android:theme="@style/AppTheme.ScanScreen"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

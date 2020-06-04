@@ -22,4 +22,7 @@
     <string name="check">Check</string>
     <string name="placeholder">Text example</string>
     <string name="password_hint">Password</string>
+    <string name="choose_difficulty">"Choose difficulty "</string>
+    <string name="pop_up_confirm">Are you sure you want to reset?</string>
+    <string name="confirm">Confirm</string>
 </resources>

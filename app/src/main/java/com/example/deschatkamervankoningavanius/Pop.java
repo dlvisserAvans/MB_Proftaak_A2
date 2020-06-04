@@ -11,8 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.example.deschatkamervankoningavanius.Video.VideoActivity;
-
 import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
+import com.example.deschatkamervankoningavanius.Fragments.MenuFragment;
 
 public class Pop extends Activity {
     private final String easy = "EASY", medium = "MEDIUM", hard = "HARD";
@@ -36,16 +36,16 @@ public class Pop extends Activity {
         String password = textView.getText().toString();
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         switch (password) {
-            case "easy":
+            case easy:
                 Toast.makeText(this, "Easy selected", Toast.LENGTH_SHORT).show();
                 //add the value from the barcode to the intent
                 intent.putExtra("Difficulty", Difficulty.Easy);
                 break;
-            case "medium":
+            case medium:
                 Toast.makeText(this, "medium selected", Toast.LENGTH_SHORT).show();
                 intent.putExtra("Difficulty", Difficulty.Medium);
                 break;
-            case "hard":
+            case hard:
                 Toast.makeText(this, "hard selected", Toast.LENGTH_SHORT).show();
                 intent.putExtra("Difficulty", Difficulty.Hard);
                 break;
