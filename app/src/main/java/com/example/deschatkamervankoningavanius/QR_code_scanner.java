@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.deschatkamervankoningavanius.Video.VideoActivity;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -162,6 +163,7 @@ public class QR_code_scanner extends AppCompatActivity {
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
         //add the value from the barcode to the intent
         intent.putExtra("Difficulty", difficulty);
+
         //start the intent
         startActivity(intent);
     }

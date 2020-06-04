@@ -76,6 +76,7 @@ public class VideoActivity extends AppCompatActivity implements YouTubePlayerLis
     public void onStateChange(YouTubePlayer youTubePlayer, PlayerConstants.PlayerState playerState) {
         if(playerState.equals(PlayerConstants.PlayerState.ENDED)){
             this.finish();
+
         }
     }
 

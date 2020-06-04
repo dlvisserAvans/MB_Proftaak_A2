@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.deschatkamervankoningavanius.Video.VideoActivity;
+
+import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
+
 public class Pop extends Activity {
     private final String easy = "EASY", medium = "MEDIUM", hard = "HARD";
 
@@ -39,6 +43,13 @@ public class Pop extends Activity {
                 intentEasy.putExtra("Difficulty", Difficulty.Easy);
                 //start the intent
                 startActivity(intentEasy);
+
+                Intent videoIntent = new Intent(this, VideoActivity.class);
+                videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
+
+                startActivity(videoIntent);
+
+
                 break;
             case "medium":
                 Toast.makeText(this, "medium selected", Toast.LENGTH_SHORT).show();
