@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -15,24 +16,28 @@ import com.example.deschatkamervankoningavanius.Fragments.MenuFragment;
 import com.example.deschatkamervankoningavanius.Fragments.TreasuryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NavFragmentBaseActivity extends AppCompatActivity {
 
-    //TODO: Research to make sure the new home fragment changes when the orientation changes.
-    private Fragment currentFragment = new HomeFragment(getIntent());
+    private List<Fragment> fragmentList = new ArrayList<>();
+    private Fragment currentFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
                         case R.id.navigation_home:
-                            currentFragment = new HomeFragment(getIntent());
+                            currentFragment = fragmentList.get(0);
+                            Log.d("FRAGMENT ID", fragmentList.get(0).toString());
                             break;
                         case R.id.navigation_treasury:
-                            currentFragment = new TreasuryFragment();
+                            currentFragment = fragmentList.get(1);
                             break;
 
                         case R.id.navigation_menu:
-                            currentFragment = new MenuFragment();
+                            currentFragment = fragmentList.get(2);
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, currentFragment).commit();
@@ -40,8 +45,16 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
                 }
             };
 
+    //TODO: Research to make sure the new home fragment changes when the orientation changes.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        fragmentList.add(new HomeFragment(getIntent()));
+        Log.d("FRAGMENT ID", fragmentList.get(0).toString());
+        fragmentList.add(new TreasuryFragment());
+        fragmentList.add(new MenuFragment());
+        currentFragment = fragmentList.get(0);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navactivityfragmentbase);
 
