@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
     private Quest currentQuest;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
     private static ArrayList<Fragment> fragments;
+    private TextView solution;
 
     @Nullable
     @Override
@@ -50,14 +51,15 @@ public class HomeFragment extends Fragment {
         viewPager = rootView.findViewById(R.id.vpQuest);
 
         this.bundle = new Bundle();
+        solution = rootView.findViewById(R.id.tvQuestTitle2);
 
         //add questions to the questList
         questList = new ArrayList<>();
-        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false));
-        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false));
-        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false));
-        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false));
-        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false));
+        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false, "A"));
+        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false, "B"));
+        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false, "C"));
+        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false, "D"));
+        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false, "E"));
 
         //add fragments of the questions to the fragmentList
         fragments = new ArrayList<>();
@@ -166,4 +168,15 @@ public class HomeFragment extends Fragment {
         questList.get(position).setFinished(state);
     }
 
+    public static String setTextView(){
+        String string = "";
+        for (Quest quest : questList){
+            if (quest.isFinished() == true){
+                string += quest.getRecievedLetter() + " ";
+            } else {
+                string += ". ";
+            }
+        }
+        return string;
+    }
 }

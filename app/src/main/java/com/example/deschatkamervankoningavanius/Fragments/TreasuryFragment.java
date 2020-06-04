@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,8 @@ public class TreasuryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_treasury,container,false);
+        TextView textView = view.findViewById(R.id.tvQuestTitle2);
+        textView.setText(HomeFragment.setTextView());
         Button buttonCheck = view.findViewById(R.id.btn_treasury_check);
 
         buttonCheck.setOnClickListener(new View.OnClickListener() {

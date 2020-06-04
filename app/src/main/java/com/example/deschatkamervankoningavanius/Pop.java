@@ -1,7 +1,6 @@
 package com.example.deschatkamervankoningavanius;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
@@ -20,6 +19,6 @@ public class Pop extends Activity {
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
 
-        getWindow().setLayout((int)(widthPixels * .9),(int)(heightPixels * .7));
+        getWindow().setLayout((int)(widthPixels * .9),(int)(heightPixels * .82));
     }
 }

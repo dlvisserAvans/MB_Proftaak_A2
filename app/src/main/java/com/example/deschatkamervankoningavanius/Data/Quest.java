@@ -8,14 +8,16 @@ public abstract class Quest {
     private boolean finished;
     private String solution;
     private QuestionType questionType;
+    private String recievedLetter;
 
-    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution, boolean finished) {
+    public Quest(int questImage, String title, String desc, QuestionType questionType, String solution, boolean finished, String recievedLetter) {
         QuestImage = questImage;
         this.title = title;
         this.desc = desc;
         this.questionType = questionType;
         this.solution = solution;
         this.finished = finished;
+        this.recievedLetter = recievedLetter;
     }
 
     public boolean isFinished() {
@@ -59,4 +61,12 @@ public abstract class Quest {
     }
 
     public abstract String getButtonOption(String option);
+
+    public String getRecievedLetter() {
+        return recievedLetter;
+    }
+
+    public void setRecievedLetter(String recievedLetter) {
+        this.recievedLetter = recievedLetter;
+    }
 }

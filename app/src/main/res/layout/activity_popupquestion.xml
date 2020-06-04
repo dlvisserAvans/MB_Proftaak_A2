@@ -17,7 +17,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
-        android:text="Bevat uw telefoon de NFC functie niet, dan kan u ook de QR code scannen. Klik voor die functie op de knop hieronder."
+        android:text="Deze vraag heeft u zojuist al beantwoord!!!!"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
