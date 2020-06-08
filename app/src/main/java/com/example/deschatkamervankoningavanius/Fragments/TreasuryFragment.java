@@ -90,9 +90,11 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
         youtubeVideoAdapter = new YoutubeVideoAdapter(view.getContext(), youtubeVideos, this);
         youtubeVideoRecyclerView.setAdapter(youtubeVideoAdapter);
         youtubeVideoRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
         textView = (TextView) view.findViewById(R.id.tvCollectedLetters);
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(getActivity().getApplicationContext(),"tcp://maxwell.bps-software.nl:1883", clientId);
+
         try {
             MqttConnectOptions options = new MqttConnectOptions();
             options.setUserName("androidTI");
@@ -158,6 +160,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
             e.printStackTrace();
         }
     }
+
     private void subscribe(){
         int qos = 2;
         try {
@@ -165,7 +168,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
             subToken.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    Toast toast = Toast. makeText(getActivity().getApplicationContext(), "onSuccess()" , Toast.LENGTH_SHORT);
+                    Toast toast = Toast. makeText(getActivity().getApplicationContext(), "Send: " + HomeFragment.setTextView(), Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 @Override

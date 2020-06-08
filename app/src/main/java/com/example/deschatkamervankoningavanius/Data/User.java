@@ -1,6 +1,10 @@
 package com.example.deschatkamervankoningavanius.Data;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.deschatkamervankoningavanius.Difficulty;
+import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
+import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 import com.example.deschatkamervankoningavanius.R;
 
 import java.io.Serializable;
@@ -37,7 +41,7 @@ public class User implements Serializable {
         switch (difficulty){
             case Easy:
                 questAmount = 3;
-                this.password = "aaa";
+                this.password = "hoi";
                 break;
             case Medium:
                 questAmount = 5;
@@ -45,7 +49,7 @@ public class User implements Serializable {
                 break;
             case Hard:
                 questAmount = 7;
-                this.password = "letters";
+                this.password = "zzzzzzz";
                 break;
         }
 
@@ -146,5 +150,22 @@ public class User implements Serializable {
         quests.add(new MultipleChoiceQuest(R.drawable.raponsje,R.string.raponsje,R.string.raponsjeQuest2,"A", "A", "B", "C", "D"));
 
         return quests;
+    }
+
+    public ArrayList<Fragment> initFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        for (Quest quest : initQuest()){
+            if (!quest.isFinished()){
+                if (quest.getQuestionType().equals(QuestionType.MULTIPLECHOICE)){
+                    fragments.add(new MultipleChoiceFragment());
+                } else {
+                    fragments.add(new OpenQuestionFragment());
+                }
+            } else {
+
+            }
+        }
+        return fragments;
     }
 }

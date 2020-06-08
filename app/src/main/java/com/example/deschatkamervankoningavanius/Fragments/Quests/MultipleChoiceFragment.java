@@ -47,21 +47,14 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.descview = rootView.findViewById(R.id.tvMultdesc);
 
 
-        if (this.buttons.size() == 0){
-            this.buttons.add(buttonOptionA);
-            this.buttons.add(buttonOptionB);
-            this.buttons.add(buttonOptionC);
-            this.buttons.add(buttonOptionD);
-        }
+//        if (this.buttons.size() == 0){
+//            this.buttons.add(buttonOptionA);
+//            this.buttons.add(buttonOptionB);
+//            this.buttons.add(buttonOptionC);
+//            this.buttons.add(buttonOptionD);
+//        }
 
-        if (this.questionFinished == true){
-            finishedQuestion();
-        }
-        System.out.println("Buttonstate : " + this.buttons.get(1).isClickable());
-
-        System.out.println("Size buttonlist " + this.buttons.size());
-
-        if (questionFinished == false) {
+        if (!this.questionFinished){
             bundle = this.getArguments();
             titleview.setText(bundle.getInt("title"));
             descview.setText(bundle.getInt("desc"));
@@ -72,13 +65,15 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
             this.buttonOptionD.setText(bundle.getString("optionD"));
             listValue = bundle.getInt("listValue");
             System.out.println("MultipleChoiceQuestion --- Solution: " + solution);
+
+            this.buttonOptionA.setOnClickListener(this);
+            this.buttonOptionB.setOnClickListener(this);
+            this.buttonOptionC.setOnClickListener(this);
+            this.buttonOptionD.setOnClickListener(this);
+        } else {
+            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
+            finishedQuestion();
         }
-
-        this.buttonOptionA.setOnClickListener(this);
-        this.buttonOptionB.setOnClickListener(this);
-        this.buttonOptionC.setOnClickListener(this);
-        this.buttonOptionD.setOnClickListener(this);
-
         return rootView;
     }
 
@@ -100,7 +95,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                     break;
             }
         } else {
-            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
             System.out.println("You can't press the buttons");
         }
 
@@ -118,15 +113,22 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
             this.clickAmount++;
-            questionFinished = false;
-            HomeFragment.setQuestState(listValue, false);
         }
     }
 
     public void finishedQuestion(){
-        for (Button b : buttons){
-            b.setClickable(false);
-            b.setBackgroundResource(R.color.color_btn_locked);
-        }
+//        for (Button b : buttons){
+//            b.setClickable(false);
+//            b.setBackgroundResource(R.color.color_btn_locked);
+//        }
+        this.buttonOptionA.setBackgroundResource(R.color.color_btn_locked);
+        this.buttonOptionB.setBackgroundResource(R.color.color_btn_locked);
+        this.buttonOptionC.setBackgroundResource(R.color.color_btn_locked);
+        this.buttonOptionD.setBackgroundResource(R.color.color_btn_locked);
+
+        this.buttonOptionA.setText(bundle.getString("optionA"));
+        this.buttonOptionB.setText(bundle.getString("optionB"));
+        this.buttonOptionC.setText(bundle.getString("optionC"));
+        this.buttonOptionD.setText(bundle.getString("optionD"));
     }
 }

@@ -1,15 +1,14 @@
 package com.example.deschatkamervankoningavanius;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 
 import com.example.deschatkamervankoningavanius.Data.JSONParser;
 import com.example.deschatkamervankoningavanius.Data.User;
@@ -19,15 +18,14 @@ import com.example.deschatkamervankoningavanius.Fragments.TreasuryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class NavFragmentBaseActivity extends AppCompatActivity {
 
     private List<Fragment> fragmentList = new ArrayList<>();
-    private Fragment currentFragment;
-    User user;
-    Difficulty difficulty;
+    private Fragment currentFragment = null;
+    private User user = null;
+    private Difficulty difficulty = null;
     //TODO: Research to make sure the new home fragment changes when the orientation changes.
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

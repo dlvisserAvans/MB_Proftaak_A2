@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
     private Fragment currentFragment;
     private Quest currentQuest;
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener;
-    private static ArrayList<Fragment> fragments;
+    private static ArrayList<Fragment> fragments = new ArrayList<>();
     private TextView solution;
 
     @Nullable
@@ -65,75 +65,24 @@ public class HomeFragment extends Fragment {
         questList = user.getQuests();
 //        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
         this.bundle = new Bundle();
-//        solution = rootView.findViewById(R.id.tvQuestTitle2);
 
-        //add questions to the questList
-//        questList = new ArrayList<>();
-//        questList.add(new MultipleChoiceQuest(R.drawable.draak, "Draak", "", "1", "0", "1", "2", "3", false, "A"));
-//        questList.add(new OpenQuestionQuest(R.drawable.repelsteeltje,"Repelsteeltje","", "solution1", false, "B"));
-//        questList.add(new MultipleChoiceQuest(R.drawable.langnek,"Lange Jan","", "A", "A", "B", "C", "D", false, "C"));
-//        questList.add(new OpenQuestionQuest(R.drawable.doornroosje,"Doornroosje","", "solution2", false, "D"));
-//        questList.add(new MultipleChoiceQuest(R.drawable.roodkapje,"Roodkapje","", "F", "E", "F", "G", "H", false, "E"));
+        System.out.println("Index questionlist: " + questList.size());
+        for (int i = 0; i < questList.size(); i++){
+            System.out.println((i+1) + " Question state: " + questList.get(i).isFinished());
+        }
 
-//        allQuestsList.add(new Quest(R.drawable.brochure,"Test1",""));
-//        allQuestsList.add(new Quest(R.drawable.sticker,"Test2",""));
-//        allQuestsList.add(new Quest(R.drawable.poster,"Test3",""));
-//        allQuestsList.add(new Quest(R.drawable.namecard,"Test4",""));
-//        allQuestsList.add(new Quest(R.drawable.brochure,"Test5",""));
-//        allQuestsList.add(new Quest(R.drawable.sticker,"Test6",""));
-//        allQuestsList.add(new Quest(R.drawable.poster,"Test7",""));
-//        allQuestsList.add(new Quest(R.drawable.namecard,"Test8",""));
-
-//        Collections.shuffle(allQuestsList);
-//        String difficulty = difficultyIntent.getExtras().get("Difficulty");    //TODO Use this line to get difficulty enum instead of string
-//        String difficulty = "easy"; //PLACEHOLDER, REMOVE LATER
-//        int questAmount = 1;
-//        //TODO change quest amounts?
-//        switch (difficulty){
-//            case "easy":
-//                questAmount = 4;
-//                break;
-//            case "medium":
-//                questAmount = 6;
-//                break;
-//            case "hard":
-//                questAmount = 8;
-//                break;
-//        }
-//
-//        for (int i = 0; i < questAmount; i++){
-//            questList.add(allQuestsList.get(i));
-//        }
-//
-//        String password = "password";   //TODO implement actual passwords
-//        for (int i = 0; i < password.length(); i++){
-//            this.password.add(password.charAt(i));
-//        }
-//
-//        Collections.shuffle(this.password);
-//
-//        List<String> videoList = new ArrayList<>();
-
-//        User user = new User(this.questList, this.password, videoList);
-
-
-//        final View rootView = inflater.inflate(R.layout.fragment_home,container,false);
-//        viewPager = rootView.findViewById(R.id.vpQuest);
-//        titleView = rootView.findViewById(R.id.tvQuestTitle);
-//        descView = rootView.findViewById(R.id.tvQuestDesc);
-//        titleView.setText(user.getQuests().get(0).getTitle());
-//        descView.setText(user.getQuests().get(0).getDesc());
-        //add fragments of the questions to the fragmentList
-        fragments = new ArrayList<>();
-        for (Quest quest : questList){
-            if (quest.getQuestionType().equals(QuestionType.MULTIPLECHOICE)){
-                fragments.add(new MultipleChoiceFragment());
-            } else {
-                fragments.add(new OpenQuestionFragment());
+        if (fragments.size() == 0){
+            for (Quest quest : questList){
+                if (quest.getQuestionType().equals(QuestionType.MULTIPLECHOICE)){
+                    fragments.add(new MultipleChoiceFragment());
+                } else {
+                    fragments.add(new OpenQuestionFragment());
+                }
             }
         }
 
         this.currentFragment = fragments.get(0);
+
         //set the fragment of the first question
         if (questList.get(0).getQuestionType().equals(QuestionType.MULTIPLECHOICE)) {
             bundle.putInt("title",questList.get(0).getTitle());
@@ -145,8 +94,8 @@ public class HomeFragment extends Fragment {
             bundle.putString("optionD", questList.get(0).getButtonOption("D"));
             bundle.putInt("listValue", 0);
             this.currentFragment.setArguments(this.bundle);
-//            this.currentQuest = questList.get(0);
-        }else {
+
+        } else {
             bundle.putInt("title",questList.get(0).getTitle());
             bundle.putInt("desc",questList.get(0).getDesc());
             bundle.putString("solution", questList.get(0).getSolution());
@@ -176,51 +125,36 @@ public class HomeFragment extends Fragment {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
 
-//            @Override
-//            public void onPageSelected(int position) {
-//                Toast.makeText(getActivity(), user.getQuests().get(position).getTitle(),
-//                        Toast.LENGTH_SHORT).show();
-//            }
             @Override
             public void onPageSelected(final int position) {
-//                titleView.setText(user.getQuests().get(position).getTitle());
-//                descView.setText(user.getQuests().get(position).getDesc());
-//                currentQuest = questList.get(position);
                 System.out.println("Position: " + position);
-                switch (questList.get(position).getQuestionType()) {
 
+                switch (questList.get(position).getQuestionType()) {
                     case OPENQUESTION:
                         OpenQuestionFragment openQuestionFragment = (OpenQuestionFragment) fragments.get(position);
                         currentFragment = openQuestionFragment;
-                        if (questList.get(position).isFinished()){
-                            openQuestionFragment.finishedQuestion();
-                        } else {
-                            bundle.putInt("title",questList.get(position).getTitle());
-                            bundle.putInt("desc",questList.get(position).getDesc());
-                            bundle.putString("solution", questList.get(position).getSolution());
-                            bundle.putInt("listValue", position);
-                            currentFragment.setArguments(bundle);
-                        }
+                        bundle.putInt("title", questList.get(position).getTitle());
+                        bundle.putInt("desc", questList.get(position).getDesc());
+                        bundle.putString("solution", questList.get(position).getSolution());
+                        bundle.putInt("listValue", position);
+                        currentFragment.setArguments(bundle);
                         break;
 
                     case MULTIPLECHOICE:
                         MultipleChoiceFragment multipleChoiceFragment = (MultipleChoiceFragment) fragments.get(position);
                         currentFragment = multipleChoiceFragment;
-                        if (questList.get(position).isFinished()) {
-                            multipleChoiceFragment.finishedQuestion();
-                        } else {
-                            bundle.putInt("title",questList.get(position).getTitle());
-                            bundle.putInt("desc",questList.get(position).getDesc());
-                            bundle.putString("solution", questList.get(position).getSolution());
-                            bundle.putString("optionA", questList.get(position).getButtonOption("A"));
-                            bundle.putString("optionB", questList.get(position).getButtonOption("B"));
-                            bundle.putString("optionC", questList.get(position).getButtonOption("C"));
-                            bundle.putString("optionD", questList.get(position).getButtonOption("D"));
-                            bundle.putInt("listValue", position);
-                            currentFragment.setArguments(bundle);
-                        }
+                        bundle.putInt("title", questList.get(position).getTitle());
+                        bundle.putInt("desc", questList.get(position).getDesc());
+                        bundle.putString("solution", questList.get(position).getSolution());
+                        bundle.putString("optionA", questList.get(position).getButtonOption("A"));
+                        bundle.putString("optionB", questList.get(position).getButtonOption("B"));
+                        bundle.putString("optionC", questList.get(position).getButtonOption("C"));
+                        bundle.putString("optionD", questList.get(position).getButtonOption("D"));
+                        bundle.putInt("listValue", position);
+                        currentFragment.setArguments(bundle);
                         break;
                 }
+
 
                 getChildFragmentManager().beginTransaction().replace(R.id.fragment_layout_quest, currentFragment).commit();
             }

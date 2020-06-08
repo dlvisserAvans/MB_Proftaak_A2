@@ -45,13 +45,15 @@ public class OpenQuestionFragment extends Fragment {
         System.out.println("OpenQuestion --- Solution: " + solution);}
 
         if (!questionFinished){
-        this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswer(answer.getText().toString());
-            }
-        });}else {
+            this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    checkAnswer(answer.getText().toString());
+                }
+            });
+        } else {
             Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
+            finishedQuestion();
         }
 
         return rootView;
@@ -66,8 +68,6 @@ public class OpenQuestionFragment extends Fragment {
             questionFinished = true;
         } else {
             Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
-            HomeFragment.setQuestState(listValue, false);
-            questionFinished = false;
         }
     }
 
