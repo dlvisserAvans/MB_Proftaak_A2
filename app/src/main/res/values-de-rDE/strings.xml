@@ -59,8 +59,8 @@
     <string name="repelsteeltjeQuest2OptionC">Ihr erstgeborenes Kind</string>
     <string name="repelsteeltjeQuest2OptionD">Ihr Hund</string>
     <string name="zesDienaren">Die sechs Butler</string>
-    <string name="zesDienarenQuest1">Wie hießen die 6 Butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">Wie heißt der letzte Butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik und...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
     <string name="doornroosje">Schlaf gut</string>
     <string name="doornroosjeQuest1">Was ließ Schlaf gut einschlafen?</string>
     <string name="doornroosjeQuest1OptionA">Drehendes Rad</string>

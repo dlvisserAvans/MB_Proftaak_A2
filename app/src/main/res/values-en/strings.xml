@@ -56,8 +56,8 @@
     <string name="repelsteeltjeQuest2OptionC">Her first born child</string>
     <string name="repelsteeltjeQuest2OptionD">Her dog</string>
     <string name="zesDienaren">The Six Butlers</string>
-    <string name="zesDienarenQuest1">What were the names of the 6 butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">What is the name of the last butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik and...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
     <string name="doornroosje">Sleep tight</string>
     <string name="doornroosjeQuest1">What made Sleeping tight fall asleep?</string>
     <string name="doornroosjeQuest1OptionA">Spinning wheel</string>
