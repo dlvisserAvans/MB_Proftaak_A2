@@ -20,7 +20,20 @@ public class HelpMenuActivity extends AppCompatActivity {
 
         expandableTextView=findViewById(R.id.ExtvHelp);
         ExpandableTextViewAdapter adapter= new ExpandableTextViewAdapter(HelpMenuActivity.this);
+
+        adapter.setItems(new String[]{
+                getResources().getString(R.string.help_howtoplay),
+                getResources().getString(R.string.help_rules),
+                getResources().getString(R.string.help_created_by)});
+
+        adapter.setItemanwsers(new String[][]{
+                {getResources().getString(R.string.help_howtoplay_answer)},
+                {getResources().getString(R.string.help_rules_answer)},
+                {getResources().getString(R.string.help_created_by_answer)}});
+
         expandableTextView.setAdapter(adapter);
+
+
     }
 
     public void onButtonBackClicked(View view){

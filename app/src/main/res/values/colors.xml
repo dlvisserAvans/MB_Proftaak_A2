@@ -9,6 +9,7 @@
 
     <color name="color_background">#FFFFFF</color>
     <color name="color_text_background">#EFEFE8</color>
+    <color name="color_help_text_background">#D7D7D0</color>
     <color name="color_title">#000000</color>
     <color name="color_text">#A9A9A9</color>
 

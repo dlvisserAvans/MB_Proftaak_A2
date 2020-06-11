@@ -14,9 +14,8 @@ public class ExpandableTextViewAdapter extends BaseExpandableListAdapter {
 
     private Context context;
 
-    private String[] items = {"How to play", "What are the rules?"};
-    private String[][] itemanwsers = {{"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit."},
-    {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit."}};
+    private String[] items;
+    private String[][] itemanwsers;
 
     public ExpandableTextViewAdapter(Context context) {
         this.context = context;
@@ -89,5 +88,21 @@ public class ExpandableTextViewAdapter extends BaseExpandableListAdapter {
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return false;
+    }
+
+    public String[] getItems() {
+        return items;
+    }
+
+    public void setItems(String[] items) {
+        this.items = items;
+    }
+
+    public String[][] getItemanwsers() {
+        return itemanwsers;
+    }
+
+    public void setItemanwsers(String[][] itemanwsers) {
+        this.itemanwsers = itemanwsers;
     }
 }
