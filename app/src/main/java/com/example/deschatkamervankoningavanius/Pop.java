@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.example.deschatkamervankoningavanius.Video.VideoActivity;
 import static com.example.deschatkamervankoningavanius.Video.VideoActivity.EXTRA_VIDEO_REF;
-import com.example.deschatkamervankoningavanius.Fragments.MenuFragment;
 
 public class Pop extends Activity {
     private final String easy = "EASY", medium = "MEDIUM", hard = "HARD";
@@ -45,6 +44,7 @@ public class Pop extends Activity {
     }
 
     public void onButtonCheckClicked(View view) {
+
         TextView textView = findViewById(R.id.password_edit_text);
         String password = textView.getText().toString();
         Intent intent = new Intent(this, NavFragmentBaseActivity.class);
@@ -68,10 +68,16 @@ public class Pop extends Activity {
         }
         startActivity(intent);
 
+        //gives an explanation about the purpose off the application
+        Intent intentExplanation = new Intent(this, ExplanationBegin.class);
+        startActivity(intentExplanation);
+
         //create intent to play intro  video
         Intent videoIntent = new Intent(this, VideoActivity.class);
         videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
 
         startActivity(videoIntent);
+
+
     }
 }
