@@ -25,7 +25,6 @@ public class OpenQuestionFragment extends Fragment {
     private Bundle bundle;
     private TextView titleview;
     private TextView descview;
-    private Bundle bundle;
     private boolean questionFinished = false;
 
     @Nullable
