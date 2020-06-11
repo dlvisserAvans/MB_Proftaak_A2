@@ -7,15 +7,15 @@
     <color name="color2">#45623b</color>
     <color name="color3">#a1C23b</color>
 
-    <color name="color_background">#FFFFFF</color>
-    <color name="color_text_background">#EFEFE8</color>
-    <color name="color_title">#000000</color>
+    <color name="color_background">#2C2F33</color>
+    <color name="color_text_background">#40403E</color>
+    <color name="color_title">#FFFFFF</color>
     <color name="color_text">#A9A9A9</color>
 
     <color name="color_btn_pressed">#FFFFFF</color>
     <color name="color_btn_unpressed">#8a0e12</color>
     <color name="color_btn_locked">#8F8F8F</color>
-    <color name="color_btn_unpressed_outline">#000000</color>
+    <color name="color_btn_unpressed_outline">#2C2F33</color>
 
-    <color name="popup_background">#EFEFE8</color>
+    <color name="popup_background">#23272A</color>
 </resources>
