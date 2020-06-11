@@ -46,70 +46,83 @@
 
     <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
                                         But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
-
+    //draak
     <string name="draak">Draak</string>
     <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
     <string name="draakQuest1Solution">DraakQuest1</string>
+
     <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
     <string name="draakQuest2Solution">DraakQuest2</string>
+
     <string name="draakQuest3">Met de … maak je draak wakker.</string>
     <string name="draakQuest3Solution">DraakQuest3</string>
 
-
+    //repelsteeltje
     <string name="repelsteeltje">Repelsteeltje</string>
     <string name="repelsteeltjeQuest1">What was the miller\'s daughter to change straw into?</string>
     <string name="repelsteeltjeQuest1Solution">RepelsteeltjeQuest1</string>
+
     <string name="repelsteeltjeQuest2">What did the miller\'s daughter\'s rumpelstiltskin want?</string>
     <string name="repelsteeltjeQuest1OptionA">repelsteeltjeQuest1OptionA</string>
     <string name="repelsteeltjeQuest1OptionB">repelsteeltjeQuest1OptionB</string>
     <string name="repelsteeltjeQuest1OptionC">repelsteeltjeQuest1OptionC</string>
     <string name="repelsteeltjeQuest1OptionD">repelsteeltjeQuest1OptionD</string>
 
+    //langnek
     <string name="zesDienaren">The Six Servants</string>
     <string name="zesDienarenQuest1">What were the names of the 6 servants?</string>
     <string name="zesDienarenQuest1Solution">ZesDienarenQuest1</string>
 
+    //doornroosje
     <string name="doornroosje">Sleeping Beauty</string>
     <string name="doornroosjeQuest1">What made Sleeping Beauty fall asleep?</string>
     <string name="doornroosjeQuest1OptionA">doornroosjeQuest1OptionA</string>
     <string name="doornroosjeQuest1OptionB">doornroosjeQuest1OptionB</string>
     <string name="doornroosjeQuest1OptionC">doornroosjeQuest1OptionC</string>
     <string name="doornroosjeQuest1OptionD">doornroosjeQuest1OptionD</string>
+
     <string name="doornroosjeQuest2">How did the prince Sleeping Beauty wake up?</string>
     <string name="doornroosjeQuest2OptionA">doornroosjeQuest2OptionA</string>
     <string name="doornroosjeQuest2OptionB">doornroosjeQuest1OptionB</string>
     <string name="doornroosjeQuest2OptionC">doornroosjeQuest1OptionC</string>
     <string name="doornroosjeQuest2OptionD">doornroosjeQuest1OptionD</string>
 
+    //roodkapje
     <string name="roodkapje">Little Red Riding Hood</string>
     <string name="roodkapjeQuest1">Who did Little Red Riding Hood visit?</string>
     <string name="roodkapjeQuest1OptionA">roodkapjeQuest1OptionA</string>
     <string name="roodkapjeQuest1OptionB">roodkapjeQuest1OptionB</string>
     <string name="roodkapjeQuest1OptionC">roodkapjeQuest1OptionC</string>
     <string name="roodkapjeQuest1OptionD">roodkapjeQuest1OptionD</string>
+
     <string name="roodkapjeQuest2">Who Eaten Red Riding Hood Grandma?</string>
     <string name="roodkapjeQuest2OptionA">roodkapjeQuest2OptionA</string>
     <string name="roodkapjeQuest2OptionB">roodkapjeQuest1OptionB</string>
     <string name="roodkapjeQuest2OptionC">roodkapjeQuest1OptionC</string>
     <string name="roodkapjeQuest2OptionD">roodkapjeQuest1OptionD</string>
 
+    //pinokkio
     <string name="pinokkio">Pinocchio</string>
     <string name="pinokkioQuest1">What is the name of the carpenter who made Pinocchio?</string>
     <string name="pinokkioQuest1Solution">PinokkioQuest1</string>
+
     <string name="pinokkioQuest2">What grows with Pinocchio when he lies?</string>
     <string name="pinokkioQuest2OptionA">pinokkioQuest2OptionA</string>
     <string name="pinokkioQuest2OptionB">pinokkioQuest2OptionB</string>
     <string name="pinokkioQuest2OptionC">pinokkioQuest2OptionC</string>
     <string name="pinokkioQuest2OptionD">pinokkioQuest2OptionD</string>
+
     <string name="pinokkioQuest3">Who persuaded Pinocchio to go on an adventure?</string>
     <string name="pinokkioQuest3OptionA">pinokkioQuest3OptionA</string>
     <string name="pinokkioQuest3OptionB">pinokkioQuest2OptionB</string>
     <string name="pinokkioQuest3OptionC">pinokkioQuest2OptionC</string>
     <string name="pinokkioQuest3OptionD">pinokkioQuest2OptionD</string>
 
+    //raponsje
     <string name="raponsje">Raponsje</string>
     <string name="raponsjeQuest1">Did Rapunzel\'s tower have a door?</string>
     <string name="raponsjeQuest1Solution">RaponsjeQuest1</string>
+
     <string name="raponsjeQuest2">What happened to the prince when he fell out of the tower?</string>
     <string name="raponsjeQuest2OptionA">raponsjeQuest2OptionA</string>
     <string name="raponsjeQuest2OptionB">raponsjeQuest2OptionB</string>

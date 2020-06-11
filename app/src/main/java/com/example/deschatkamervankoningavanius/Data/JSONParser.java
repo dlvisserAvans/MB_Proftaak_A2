@@ -2,15 +2,15 @@ package com.example.deschatkamervankoningavanius.Data;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 
 import com.example.deschatkamervankoningavanius.Difficulty;
 
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -96,38 +96,44 @@ public class JSONParser {
         List<String> passwords = new ArrayList<>();
 
         switch (difficulty){
+            //get all easy passwords from JSon
             case Easy:
                 try {
                     JSONArray easyPasswords = reader.getJSONArray("passwordsEasy");
                     for (int i = 0; i < easyPasswords.length(); i++){
-                        passwords.add(easyPasswords.getString(i));
+                        JSONObject easyPassword = easyPasswords.getJSONObject(i);
+                        passwords.add(easyPassword.getString("password"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 break;
+            //get all medium passwords from JSon
             case Medium:
                 try {
                     JSONArray mediumPasswords = reader.getJSONArray("passwordsMedium");
                     for (int i = 0; i < mediumPasswords.length(); i++){
-                        passwords.add(mediumPasswords.getString(i));
+                        JSONObject mediumPassword = mediumPasswords.getJSONObject(i);
+                        passwords.add(mediumPassword.getString("password"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 break;
+            //get all hard passwords from JSon
             case Hard:
                 try {
                     JSONArray hardPasswords = reader.getJSONArray("passwordsHard");
                     for (int i = 0; i < hardPasswords.length(); i++){
-                        passwords.add(hardPasswords.getString(i));
+                        JSONObject hardPassword = hardPasswords.getJSONObject(i);
+                        passwords.add(hardPassword.getString("password"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 break;
         }
-        Collections.shuffle(passwords);
+        Collections.shuffle(passwords); //shuffle the passwords
         password = passwords.get(0);
 
 
