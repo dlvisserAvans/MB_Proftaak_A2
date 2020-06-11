@@ -193,6 +193,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                     toast.show();
                     if (response.equals("true")){
                         Intent videoIntent = new Intent(getActivity(), VideoActivity.class);
+                        YoutubeVideo.getYoutubeVideo(1).setAvailable(true);
                         videoIntent.putExtra(EXTRA_VIDEO_REF, "s1WQTUg_2vo");
                         startActivity(videoIntent);
                     }
