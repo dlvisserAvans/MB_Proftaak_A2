@@ -121,10 +121,10 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 //            b.setClickable(false);
 //            b.setBackgroundResource(R.color.color_btn_locked);
 //        }
-        this.buttonOptionA.setBackgroundResource(R.color.color_btn_locked);
-        this.buttonOptionB.setBackgroundResource(R.color.color_btn_locked);
-        this.buttonOptionC.setBackgroundResource(R.color.color_btn_locked);
-        this.buttonOptionD.setBackgroundResource(R.color.color_btn_locked);
+        this.buttonOptionA.setBackgroundResource(R.drawable.rounded_button_locked);
+        this.buttonOptionB.setBackgroundResource(R.drawable.rounded_button_locked);
+        this.buttonOptionC.setBackgroundResource(R.drawable.rounded_button_locked);
+        this.buttonOptionD.setBackgroundResource(R.drawable.rounded_button_locked);
 
         this.buttonOptionA.setText(bundle.getString("optionA"));
         this.buttonOptionB.setText(bundle.getString("optionB"));

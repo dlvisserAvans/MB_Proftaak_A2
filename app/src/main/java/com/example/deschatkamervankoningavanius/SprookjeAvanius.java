@@ -18,6 +18,6 @@ public class SprookjeAvanius extends Activity {
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
 
-        getWindow().setLayout((int) (widthPixels * .9), (int) (heightPixels * .7));
+        getWindow().setLayout((int) (widthPixels * .9), (int) (heightPixels * .9));
     }
 }

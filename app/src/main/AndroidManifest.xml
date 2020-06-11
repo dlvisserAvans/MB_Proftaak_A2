@@ -24,8 +24,8 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Video.VideoActivity"/>
-        <activity android:name=".QR_code_scanner" />
+        <activity android:name=".Video.VideoActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".QR_code_scanner" android:screenOrientation="portrait"/>
         <activity android:name=".SprookjeAvanius"
             android:theme="@style/AppTheme.ScanScreen"/>
 
@@ -34,22 +34,22 @@
             android:value="barcode" />
 
 
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".SplashScreenActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanscreenActivity" />
+        <activity android:name=".ScanscreenActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".Pop"
-            android:theme="@style/AppTheme.ScanScreen"/>
-        <activity android:name=".NavFragmentBaseActivity"/>
-        <activity android:name=".HelpMenuActivity"/>
-        <activity android:name=".SettingsMenuActivity"/>
+            android:theme="@style/AppTheme.ScanScreen" android:screenOrientation="portrait"/>
+        <activity android:name=".NavFragmentBaseActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".HelpMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SettingsMenuActivity" android:screenOrientation="portrait"/>
         <activity android:name=".PopUpConfirmReset"
-            android:theme="@style/AppTheme.ScanScreen"/>
+            android:theme="@style/AppTheme.ScanScreen" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

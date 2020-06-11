@@ -61,8 +61,6 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
         textView = view.findViewById(R.id.tvCollectedLetters);
         textView.setText(HomeFragment.setTextView());
 
-
-
         Button buttonCheck = view.findViewById(R.id.btn_treasury_check);
         ImageView imageView = view.findViewById(R.id.treasury_book);
         buttonCheck.setOnClickListener(new View.OnClickListener() {

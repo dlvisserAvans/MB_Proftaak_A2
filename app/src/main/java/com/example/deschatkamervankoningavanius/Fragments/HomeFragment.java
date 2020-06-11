@@ -188,7 +188,11 @@ public class HomeFragment extends Fragment {
                 correctAnswers += 0;
             }
         }
-        progress = correctAnswers * progress_step;
+        if (correctAnswers == questList.size()){
+            progress = 100;
+        }else {
+            progress = correctAnswers * progress_step;
+        }
         progressBar.setProgress((int)progress);
         tvProgress.setText(progress + "%");
     }

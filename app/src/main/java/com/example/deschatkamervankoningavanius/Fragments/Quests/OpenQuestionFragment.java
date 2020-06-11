@@ -74,6 +74,6 @@ public class OpenQuestionFragment extends Fragment {
 
     public void finishedQuestion(){
         this.buttonSubmit.setClickable(false);
-        this.buttonSubmit.setBackgroundResource(R.color.color_btn_locked);
+        this.buttonSubmit.setBackgroundResource(R.drawable.rounded_button_locked);
     }
 }
