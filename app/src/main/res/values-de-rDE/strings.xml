@@ -1,79 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     //UI elements
-
-    <string name="app_name">The Treasury of king Avanius</string>
-    <string name="language_setting">EN</string>
-    <string name="dark_mode">Dark mode:</string>
-    <string name="language">Language:</string>
-
-    <string name="startscreen_welcome">Welcome</string>
-    <string name="startscreen_message">To select the difficulty scan the QR-code with the button bellow</string>
-    <string name="password_hint">Password</string>
-    <string name="startscreen_popup_enter">Enter</string>
-    <string name="choose_difficulty">"Choose difficulty "</string>
-
+    <string name="app_name">Die Schatzkammer von König Avanius</string>
+    <string name="language_setting">DE</string>
+    <string name="dark_mode">Dunkler Modus:</string>
+    <string name="language">Sprache:</string>
+    <string name="startscreen_welcome">Herzlich willkommen</string>
+    <string name="startscreen_message">Um die Schwierigkeit auszuwählen, scannen Sie den QR-Code mit der Taste unten</string>
+    <string name="password_hint">Passwort</string>
+    <string name="startscreen_popup_enter">Eingeben</string>
+    <string name="choose_difficulty">"Wähle den Schwierigkeitsgrad"</string>
     <string name="home_activity_title">Quests</string>
-    <string name="quest_name">Quest Name</string>
-    <string name="progress">Progress:</string>
-
-    <string name="treasury_activity_title">Treasury</string>
-    <string name="treasure_room_found_letters">Found Letters:</string>
+    <string name="quest_name">Questname</string>
+    <string name="progress">Fortschritt:</string>
+    <string name="treasury_activity_title">Schatzkammer</string>
+    <string name="treasure_room_found_letters">Gefundene Briefe:</string>
     <string name="treasure_room_letters" translatable="false">S, P, R, K, J, E</string>
-    <string name="treasury_btn_check">Check</string>
-
-    <string name="menu_activity_title">Menu</string>
-
+    <string name="treasury_btn_check">Prüfen</string>
+    <string name="menu_activity_title">Speisekarte</string>
     <string name="icon_quests">Quests</string>
-    <string name="icon_treasury">Treasury</string>
-    <string name="icon_menu">Menu</string>
-
-    <string name="popup_scanscreen_helptext">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
-    <string name="popup_qrcode_scanner_undetected">No QR-code Detected</string>
-
-    <string name="btn_back">Back</string>
-
-    <string name="menu_help">Help</string>
-    <string name="exercises_explanation" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique libero et urna commodo, ac convallis magna dictum. Etiam faucibus consequat facilisis. Mauris tempus justo elit, a varius mi egestas vel.</string>
-
-    <string name="menu_settings">Settings</string>
-
-    <string name="pop_up_confirm">Are you sure you want to reset?</string>
-    <string name="confirm">Confirm</string>
-    <string name="placeholder">Text example</string>
-
+    <string name="icon_treasury">Schatzkammer</string>
+    <string name="icon_menu">Speisekarte</string>
+    <string name="popup_scanscreen_helptext">Wenn Ihr Telefon das Scannen von QR-Codes nicht unterstützt \n Geben Sie das folgende Passwort ein</string>
+    <string name="popup_qrcode_scanner_undetected">Kein QR-Code erkannt</string>
+    <string name="btn_back">Zurück</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="exercises_explanation" translatable="false">//TODO</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="pop_up_confirm">Sind Sie sicher, dass Sie zurücksetzen möchten?</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="placeholder">//TODO</string>
     //Fairy Tale elements and quests
+    <string name="fairytail_avanius">König Avanius lebte in einem Königreich weit weg von hier. Es war ein großes und reiches Königreich. Alle waren glücklich und alle hatten Arbeit. König Avanius kümmerte sich gut um sein Volk, indem er Geld zur Verfügung stellte
+        Geben Sie aus seinem eigenen Schatzhaus den Menschen, die Hilfe brauchten. Aber eines Tages gab es ein Problem. König Avanius hatte das Passwort seiner Schatzkammer vergessen, er konnte es nicht mehr öffnen! König Avanius war so traurig, dass er seinem Volk nicht mehr helfen konnte, dass er sich sofort auf eine große Suche machte.
+        Er hatte Hinweise von verschiedenen Stellen im Wald versteckt, falls er es jemals vergaß. Aber König Avanius war schon alt und kann das Abenteuer nicht mehr selbst beginnen. Daher ist er der mutigste Abenteurer des Ganzen
+        Land. Gemeinsam das Passwort finden und den Reichtum zurück ins Königreich fließen lassen.</string>
 
-    <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
-                                        But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
-
-    <string name="draak">Draak</string>
-    <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
-    <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
-    <string name="draakQuest3">Met de … maak je draak wakker.</string>
-
-    <string name="repelsteeltje">Repelsteeltje</string>
-    <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
-    <string name="repelsteeltjeQuest2">Wat wilde repelsteeltje van de molenaarsdochter?</string>
-
-    <string name="zesDienaren">De Zes Dienaren</string>
-    <string name="zesDienarenQuest1">Wat waren de namen van de 6 dienaren?</string>
-
-    <string name="doornroosje">Doornroosje</string>
-    <string name="doornroosjeQuest1">Waardoor viel Doornroosje in slaap?</string>
-    <string name="doornroosjeQuest2">Waarmee ontwaakte de prins Doornroosje?</string>
-
-    <string name="roodkapje">Roodkapje</string>
-    <string name="roodkapjeQuest1">Naar wie ging roodkapje op bezoek?</string>
-    <string name="roodkapjeQuest2">Wie heeft roodkapjes oma opgegeten?</string>
-
-    <string name="pinokkio">Pinokkio</string>
-    <string name="pinokkioQuest1">Hoe heet de timmerman die pinokkio maakte?</string>
-    <string name="pinokkioQuest2">Wat groeit er bij pinokkio als hij liegt?</string>
-    <string name="pinokkioQuest3">Wie haalden pinokkio over om mee op avontuur te gaan?</string>
-
-    <string name="raponsje">Raponsje</string>
-    <string name="raponsjeQuest1">Had de toren van Raponsje een deur?</string>
-    <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
-
+    <string name="draak">Drachen</string>
+    <string name="draakQuest1">Welche Farbe hat die Drachenzunge?</string>
+    <string name="draakQuest1Solution">Rot</string>
+    <string name="draakQuest2">Wie viele Nägel können Sie vom Drachen sehen?</string>
+    <string name="draakQuest2Solution">8</string>
+    <string name="draakQuest3">Mit dem ... weckst du den Drachen auf.</string>
+    <string name="draakQuest3Solution">Krone</string>
+    <string name="repelsteeltje">Rumpstick</string>
+    <string name="repelsteeltjeQuest1">Was war die Tochter des Müllers, in die er Stroh wechseln sollte?</string>
+    <string name="repelsteeltjeQuest1Solution">Gold</string>
+    <string name="repelsteeltjeQuest2">Was wollte die Rumpelstickzen der Müllerstochter?</string>
+    <string name="repelsteeltjeQuest2OptionA">Ihre Mühle</string>
+    <string name="repelsteeltjeQuest2OptionB">Ihr Gelds</string>
+    <string name="repelsteeltjeQuest2OptionC">Ihr erstgeborenes Kind</string>
+    <string name="repelsteeltjeQuest2OptionD">Ihr Hund</string>
+    <string name="zesDienaren">Die sechs Butler</string>
+    <string name="zesDienarenQuest1">Wie hießen die 6 Butlers?</string>
+    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="doornroosje">Schlaf gut</string>
+    <string name="doornroosjeQuest1">Was ließ Schlaf gut einschlafen?</string>
+    <string name="doornroosjeQuest1OptionA">Drehendes Rad</string>
+    <string name="doornroosjeQuest1OptionB">Spinne</string>
+    <string name="doornroosjeQuest1OptionC">Apfel</string>
+    <string name="doornroosjeQuest1OptionD">Schlaflied</string>
+    <string name="doornroosjeQuest2">Wie ist der Prinz Schlaf gut aufgewacht?</string>
+    <string name="doornroosjeQuest2OptionA">Mit einer Ohrfeige</string>
+    <string name="doornroosjeQuest2OptionB">Mit einer sanften Berührung</string>
+    <string name="doornroosjeQuest2OptionC">Mit einem Lied</string>
+    <string name="doornroosjeQuest2OptionD">Mit einem Kuss</string>
+    <string name="roodkapje">Grüne Kappe</string>
+    <string name="roodkapjeQuest1">Wen hat Grüne Kappe besucht?</string>
+    <string name="roodkapjeQuest1OptionA">Ihr Arzt</string>
+    <string name="roodkapjeQuest1OptionB">Ihre Oma</string>
+    <string name="roodkapjeQuest1OptionC">Ihrer Mutter</string>
+    <string name="roodkapjeQuest1OptionD">Ihre Freundin</string>
+    <string name="roodkapjeQuest2">Wer hat Grüne Kappe Oma gegessen?</string>
+    <string name="roodkapjeQuest2OptionA">Der große böse Bär</string>
+    <string name="roodkapjeQuest2OptionB">Der große böse Affe</string>
+    <string name="roodkapjeQuest2OptionC">Der große böse Wolf</string>
+    <string name="roodkapjeQuest2OptionD">Der große böse Alligator</string>
+    <string name="pinokkio">Lange Nase</string>
+    <string name="pinokkioQuest1">Wie heißt der Schreiner, der Lange Nase hergestellt hat?</string>
+    <string name="pinokkioQuest1Solution">Geppetto</string>
+    <string name="pinokkioQuest2">Was wächst mit Lange Nase, wenn er lügt?</string>
+    <string name="pinokkioQuest2OptionA">Sein Finger</string>
+    <string name="pinokkioQuest2OptionB">Sein Zeh</string>
+    <string name="pinokkioQuest2OptionC">Sein Arm</string>
+    <string name="pinokkioQuest2OptionD">Seine Nase</string>
+    <string name="pinokkioQuest3">Wer hat Lange Nase zu einem Abenteuer überredet?</string>
+    <string name="pinokkioQuest3OptionA">Große Schnecke und kleiner Elefant</string>
+    <string name="pinokkioQuest3OptionB">Dumme Katze und hinterhältiger Fuch</string>
+    <string name="pinokkioQuest3OptionC">Kluges Kaninchen und glücklicher Hund</string>
+    <string name="pinokkioQuest3OptionD">Flauschiger Bär und Psychohuhn</string>
+    <string name="raponsje">Langes Geflecht</string>
+    <string name="raponsjeQuest1">Hatte Langes Geflecht Turm eine Tür?</string>
+    <string name="raponsjeQuest1Solution">Nein</string>
+    <string name="raponsjeQuest2">Was ist mit dem Prinzen passiert, als er aus dem Turm gefallen ist?</string>
+    <string name="raponsjeQuest2OptionA">Er starb</string>
+    <string name="raponsjeQuest2OptionB">Er wurde gelähmt></string>
+    <string name="raponsjeQuest2OptionC">Er wurde blind</string>
+    <string name="raponsjeQuest2OptionD">Er wurde taub</string>
 </resources>

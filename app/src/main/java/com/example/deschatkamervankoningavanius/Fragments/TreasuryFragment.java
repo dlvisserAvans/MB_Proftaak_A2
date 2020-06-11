@@ -59,12 +59,10 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_treasury,container,false);
         TextView textView = view.findViewById(R.id.tvCollectedLetters);
-
         textView.setText(HomeFragment.setTextView());
 
 
-//        TextView textView = view.findViewById(R.id.tvQuestTitle2);
-//        textView.setText(HomeFragment.setTextView());
+
         Button buttonCheck = view.findViewById(R.id.btn_treasury_check);
         ImageView imageView = view.findViewById(R.id.treasury_book);
         buttonCheck.setOnClickListener(new View.OnClickListener() {
@@ -196,7 +194,6 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                     if (response.equals("true")){
                         Intent videoIntent = new Intent(getActivity(), VideoActivity.class);
                         videoIntent.putExtra(EXTRA_VIDEO_REF, "s1WQTUg_2vo");
-
                         startActivity(videoIntent);
                     }
 

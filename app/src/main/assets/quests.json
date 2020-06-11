@@ -1,80 +1,294 @@
 {
 	"quests":[
 		{
-		"image":"brochure",
-		"title":"draak",
-		"description":"draakQuest1"
+			"image":"draak",
+			"title":"draak",
+			"description":"draakQuest1",
+			"solution":"draakQuest1Solution",
+			"type":"open"
 		},
 		{
-		"image":"sticker",
-		"title":"draak",
-		"description":"draakQuest2"
+			"image":"draak",
+			"title":"draak",
+			"description":"draakQuest2",
+			"solution":"draakQuest2Solution",
+			"type":"open"
 		},
 		{
-		"image":"drama",
-		"title":"draak",
-		"description":"draakQuest3"
+			"image":"draak",
+			"title":"draak",
+			"description":"draakQuest3",
+			"solution":"draakQuest3Solution",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"repelsteeltje",
-		"description":"repelsteeltjeQuest1"
+			"image":"repelsteeltje",
+			"title":"repelsteeltje",
+			"description":"repelsteeltjeQuest1",
+			"solution":"repelsteeltjeQuest1Solution",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"repelsteeltje",
-		"description":"repelsteeltjeQuest2"
+			"image":"repelsteeltje",
+			"title":"repelsteeltje",
+			"description":"repelsteeltjeQuest2",
+			"solution":"repelsteeltjeQuest2OptionC",
+			"optionA":"repelsteeltjeQuest2OptionA",
+			"optionB":"repelsteeltjeQuest2OptionB",
+			"optionC":"repelsteeltjeQuest2OptionC",
+			"optionD":"repelsteeltjeQuest2OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"zesDienaren",
-		"description":"zesDienarenQuest1"
+			"image":"langnek",
+			"title":"zesDienaren",
+			"description":"zesDienarenQuest1",
+			"solution":"zesDienarenQuest1Solution",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"doornroosje",
-		"description":"doornroosjeQuest1"
+			"image":"doornroosje",
+			"title":"doornroosje",
+			"description":"doornroosjeQuest1",
+			"solution": "doornroosjeQuest1OptionA",
+			"optionA":"doornroosjeQuest1OptionA",
+			"optionB":"doornroosjeQuest1OptionB",
+			"optionC":"doornroosjeQuest1OptionC",
+			"optionD":"doornroosjeQuest1OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"doornroosje",
-		"description":"doornroosjeQuest2"
+			"image":"doornroosje",
+			"title":"doornroosje",
+			"description":"doornroosjeQuest2",
+			"solution": "doornroosjeQuest2OptionD",
+			"optionA":"doornroosjeQuest2OptionA",
+			"optionB":"doornroosjeQuest2OptionB",
+			"optionC":"doornroosjeQuest2OptionC",
+			"optionD":"doornroosjeQuest2OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"roodkapje",
-		"description":"roodkapjeQuest1"
+			"image":"roodkapje",
+			"title":"roodkapje",
+			"description":"roodkapjeQuest1",
+			"solution": "roodkapjeQuest1OptionB",
+			"optionA":"roodkapjeQuest1OptionA",
+			"optionB":"roodkapjeQuest1OptionB",
+			"optionC":"roodkapjeQuest1OptionC",
+			"optionD":"roodkapjeQuest1OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"roodkapje",
-		"description":"roodkapjeQuest2"
+			"image":"roodkapje",
+			"title":"roodkapje",
+			"description":"roodkapjeQuest2",
+			"solution": "roodkapjeQuest2OptionC",
+			"optionA":"roodkapjeQuest2OptionA",
+			"optionB":"roodkapjeQuest2OptionB",
+			"optionC":"roodkapjeQuest2OptionC",
+			"optionD":"roodkapjeQuest2OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest1"
+			"image":"pinokkio",
+			"title":"pinokkio",
+			"description":"pinokkioQuest1",
+			"solution":"pinokkioQuest1Solution",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest2"
+			"image":"pinokkio",
+			"title":"pinokkio",
+			"description":"pinokkioQuest2",
+			"solution": "pinokkioQuest2OptionD",
+			"optionA":"pinokkioQuest2OptionA",
+			"optionB":"pinokkioQuest2OptionB",
+			"optionC":"pinokkioQuest2OptionC",
+			"optionD":"pinokkioQuest2OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest3"
+			"image":"pinokkio",
+			"title":"pinokkio",
+			"description":"pinokkioQuest3",
+			"solution": "pinokkioQuest3OptionB",
+			"optionA":"pinokkioQuest3OptionA",
+			"optionB":"pinokkioQuest3OptionB",
+			"optionC":"pinokkioQuest3OptionC",
+			"optionD":"pinokkioQuest3OptionD",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"raponsje",
-		"description":"raponsjeQuest1"
+			"image":"raponsje",
+			"title":"raponsje",
+			"description":"raponsjeQuest1",
+			"solution":"raponsjeQuest1Solution",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"raponsje",
-		"description":"raponsjeQuest2"
+			"image":"raponsje",
+			"title":"raponsje",
+			"description":"raponsjeQuest2",
+			"solution": "raponsjeQuest2OptionC",
+			"optionA":"raponsjeQuest2OptionA",
+			"optionB":"raponsjeQuest2OptionB",
+			"optionC":"raponsjeQuest2OptionC",
+			"optionD":"raponsjeQuest2OptionD",
+			"type":"multipleChoice"
+		}
+	],
+	"passwordsEasy":[
+		{
+			"password":"gul"
+		},
+		{
+			"password":"wei"
+		},
+		{
+			"password":"non"
+		}
+	],
+	"passwordsMedium": [
+		{
+			"password":"aarde"
+		},
+		{
+			"password":"begin"
+		},
+		{
+			"password":"clown"
+		},
+		{
+			"password":"dicht"
+		},
+		{
+			"password":"einde"
+		},
+		{
+			"password":"fabel"
+		},
+		{
+			"password":"geluk"
+		},
+		{
+			"password":"helft"
+		},
+		{
+			"password":"imker"
+		},
+		{
+			"password":"jaren"
+		},
+		{
+			"password":"kamer"
+		},
+		{
+			"password":"lente"
+		},
+		{
+			"password":"meter"
+		},
+		{
+			"password":"niets"
+		},
+		{
+			"password":"onzin"
+		},
+		{
+			"password":"plaag"
+		},
+		{
+			"password":"raket"
+		},
+		{
+			"password":"schat"
+		},
+		{
+			"password":"toets"
+		},
+		{
+			"password":"uilen"
+		},
+		{
+			"password":"vlieg"
+		},
+		{
+			"password":"waard"
+		},
+		{
+			"password":"zwaar"
+		}
+	],
+	"passwordsHard": [
+		{
+			"password":"aardbol"
+		},
+		{
+			"password":"bouwval"
+		},
+		{
+			"password":"cimbaal"
+		},
+		{
+			"password":"deurbel"
+		},
+		{
+			"password":"eetzaal"
+		},
+		{
+			"password":"fluweel"
+		},
+		{
+			"password":"glasbol"
+		},
+		{
+			"password":"hakbijl"
+		},
+		{
+			"password":"inzamel"
+		},
+		{
+			"password":"jaartal"
+		},
+		{
+			"password":"kasteel"
+		},
+		{
+			"password":"liniaal"
+		},
+		{
+			"password":"meestal"
+		},
+		{
+			"password":"normaal"
+		},
+		{
+			"password":"ongeval"
+		},
+		{
+			"password":"pistool"
+		},
+		{
+			"password":"raadsel"
+		},
+		{
+			"password":"stempel"
+		},
+		{
+			"password":"trommel"
+		},
+		{
+			"password":"uitstel"
+		},
+		{
+			"password":"vaandel"
+		},
+		{
+			"password":"wachter"
+		},
+		{
+			"password":"zaagsel"
 		}
 	]
-
 }
