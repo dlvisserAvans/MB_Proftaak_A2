@@ -24,6 +24,7 @@
     <string name="popup_scanscreen_helptext">Als uw telefoon geen QR-codescans ondersteunt \n Voer het onderstaande wachtwoord in</string>
     <string name="popup_qrcode_scanner_undetected">Geen QR-code gedetecteerd</string>
     <string name="btn_back">Terug</string>
+    <string name="btn_submit">Bevestigen</string>
     <string name="menu_help">Help</string>
     <string name="exercises_explanation" translatable="false">//TODO</string>
     <string name="menu_settings">Instellingen</string>

@@ -24,6 +24,7 @@
     <string name="popup_scanscreen_helptext">Wenn Ihr Telefon das Scannen von QR-Codes nicht unterstützt \n Geben Sie das folgende Passwort ein</string>
     <string name="popup_qrcode_scanner_undetected">Kein QR-Code erkannt</string>
     <string name="btn_back">Zurück</string>
+    <string name="btn_submit">Einreichen</string>
     <string name="menu_help">Hilfe</string>
     <string name="exercises_explanation" translatable="false">//TODO</string>
     <string name="menu_settings">Einstellungen</string>
