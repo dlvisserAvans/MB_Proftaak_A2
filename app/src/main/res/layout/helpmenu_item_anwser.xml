@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_help_item_answer">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHelpmenuItemDescription"
+        android:padding="5dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/placeholder"
+        android:textColor="@color/color_text"
+        android:textAlignment="center"
+        android:textSize="14sp"/>
+
+</LinearLayout>

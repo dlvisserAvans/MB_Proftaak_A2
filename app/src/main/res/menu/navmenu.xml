@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/outline_home_24"
+        android:title="@string/icon_quests" />
+
+    <item
+        android:id="@+id/navigation_treasury"
+        android:icon="@drawable/outline_account_balance_24"
+        android:title="@string/icon_treasury" />
+
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/outline_more_horiz_24"
+        android:title="@string/icon_menu" />
+</menu>
+
