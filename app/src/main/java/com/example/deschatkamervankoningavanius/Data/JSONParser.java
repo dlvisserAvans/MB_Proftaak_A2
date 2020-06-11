@@ -65,8 +65,21 @@ public class JSONParser {
                 int imageID = resources.getIdentifier(quest.getString("image"), "drawable",appContext.getPackageName());
                 int titleID = resources.getIdentifier(quest.getString("title"), "string", appContext.getPackageName());
                 int descriptionID = resources.getIdentifier(quest.getString("description"), "string", appContext.getPackageName());
+                int solutionID = resources.getIdentifier(quest.getString("solution"), "string", appContext.getPackageName());
 
-//                this.questList.add(new Quest(imageID, resources.getString(titleID), resources.getString(descriptionID)));
+                if(quest.getString("type").equals("open")){
+
+                    this.questList.add(new OpenQuestionQuest(imageID, titleID, descriptionID, resources.getString(solutionID)));
+                }else if (quest.get("type").equals("multipleChoice")){
+                    int optionAID = resources.getIdentifier(quest.getString("optionA"), "string", appContext.getPackageName());
+                    int optionBID= resources.getIdentifier(quest.getString("optionB"), "string", appContext.getPackageName());
+                    int optionCID = resources.getIdentifier(quest.getString("optionC"), "string", appContext.getPackageName());
+                    int optionDID = resources.getIdentifier(quest.getString("optionD"), "string", appContext.getPackageName());
+
+                    this.questList.add(new MultipleChoiceQuest(imageID, titleID, descriptionID, resources.getString(solutionID), resources.getString(optionAID), resources.getString(optionBID), resources.getString(optionCID), resources.getString(optionDID)));
+                }
+
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
