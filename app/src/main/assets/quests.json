@@ -32,11 +32,11 @@
 			"image":"repelsteeltje",
 			"title":"repelsteeltje",
 			"description":"repelsteeltjeQuest2",
-			"solution":"repelsteeltjeQuest1OptionA",
-			"optionA":"repelsteeltjeQuest1OptionA",
-			"optionB":"repelsteeltjeQuest1OptionB",
-			"optionC":"repelsteeltjeQuest1OptionC",
-			"optionD":"repelsteeltjeQuest1OptionD",
+			"solution":"repelsteeltjeQuest2OptionA",
+			"optionA":"repelsteeltjeQuest2OptionA",
+			"optionB":"repelsteeltjeQuest2OptionB",
+			"optionC":"repelsteeltjeQuest2OptionC",
+			"optionD":"repelsteeltjeQuest2OptionD",
 			"type":"multipleChoice"
 		},
 		{
@@ -151,24 +151,144 @@
 	],
 	"passwordsMedium": [
 		{
-			"password":"arena"
+			"password":"aarde"
 		},
 		{
-			"password":"motor"
+			"password":"begin"
 		},
 		{
-			"password":"vaten"
+			"password":"clown"
+		},
+		{
+			"password":"dicht"
+		},
+		{
+			"password":"einde"
+		},
+		{
+			"password":"fabel"
+		},
+		{
+			"password":"geluk"
+		},
+		{
+			"password":"helft"
+		},
+		{
+			"password":"imker"
+		},
+		{
+			"password":"jaren"
+		},
+		{
+			"password":"kamer"
+		},
+		{
+			"password":"lente"
+		},
+		{
+			"password":"meter"
+		},
+		{
+			"password":"niets"
+		},
+		{
+			"password":"onzin"
+		},
+		{
+			"password":"plaag"
+		},
+		{
+			"password":"raket"
+		},
+		{
+			"password":"schat"
+		},
+		{
+			"password":"toets"
+		},
+		{
+			"password":"uilen"
+		},
+		{
+			"password":"vlieg"
+		},
+		{
+			"password":"waard"
+		},
+		{
+			"password":"zwaar"
 		}
 	],
 	"passwordsHard": [
 		{
-			"password":"kalkoen"
+			"password":"aardbol"
+		},
+		{
+			"password":"bouwval"
+		},
+		{
+			"password":"cimbaal"
+		},
+		{
+			"password":"deurbel"
+		},
+		{
+			"password":"eetzaal"
+		},
+		{
+			"password":"fluweel"
+		},
+		{
+			"password":"glasbol"
+		},
+		{
+			"password":"hakbijl"
+		},
+		{
+			"password":"inzamel"
+		},
+		{
+			"password":"jaartal"
+		},
+		{
+			"password":"kasteel"
 		},
 		{
 			"password":"liniaal"
 		},
 		{
-			"password":"ritueel"
+			"password":"meestal"
+		},
+		{
+			"password":"normaal"
+		},
+		{
+			"password":"ongeval"
+		},
+		{
+			"password":"pistool"
+		},
+		{
+			"password":"raadsel"
+		},
+		{
+			"password":"stempel"
+		},
+		{
+			"password":"trommel"
+		},
+		{
+			"password":"uitstel"
+		},
+		{
+			"password":"vaandel"
+		},
+		{
+			"password":"wachter"
+		},
+		{
+			"password":"zaagsel"
 		}
 	]
 }
