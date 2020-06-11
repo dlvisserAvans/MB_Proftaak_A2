@@ -89,14 +89,6 @@ public class NavFragmentBaseActivity extends AppCompatActivity {
     public void createUser(){
         JSONParser jsonParser = new JSONParser(getApplicationContext());
 
-//        String password = "password";   //TODO implement actual passwords
-//        for (int i = 0; i < password.length(); i++){
-//            this.password.add(password.charAt(i));
-//        }
-//
-//        Collections.shuffle(this.password);
-//        List<String> videoList = new ArrayList<>();
-
         //Make a new user
         this.user = new User();
         this.user.getQuests(difficulty, jsonParser); //Tell user to get quests
