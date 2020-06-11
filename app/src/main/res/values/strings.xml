@@ -30,6 +30,13 @@
     <string name="pop_up_confirm">Are you sure you want to reset?</string>
     <string name="confirm">Confirm</string>
     <string name="placeholder">//TODO</string>
+    <string name="help_howtoplay">How to play</string>
+    <string name="help_rules">What are the rules</string>
+    <string name="help_created_by">Created By</string>
+    <string name="help_howtoplay_answer">Find the answers to the questions in the forest of mysteries, when all questions are answered return to the chest and enter the right passcode by turning the knob.</string>
+    <string name="help_rules_answer">The answers to the questions can be found in the forest of mysteries, the stories are owned and copyrighted by the Essteling, sharing of answers will result in a permanent ban.</string>
+    <string name="help_created_by_answer">Avans Hogeschool proftaakgroep A2</string>
+
     //Fairy Tale elements and quests
     <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
                                         But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
