@@ -33,62 +33,83 @@
     //Fairy Tale elements and quests
     <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
                                         But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
+    //fairytail dragon
     <string name="draak">Dragon</string>
     <string name="draakQuest1">What color has the tongue of dragon?</string>
     <string name="draakQuest1Solution">Red</string>
+
     <string name="draakQuest2">How many nails can you see of the dragon?</string>
     <string name="draakQuest2Solution">8</string>
+
     <string name="draakQuest3">With the ... you wake up dragon.</string>
     <string name="draakQuest3Solution">Crown</string>
+
+    //fairytail repelsteeltje
     <string name="repelsteeltje">Rumpstick</string>
     <string name="repelsteeltjeQuest1">What was the miller\'s daughter to change straw into?</string>
     <string name="repelsteeltjeQuest1Solution">Gold</string>
+
     <string name="repelsteeltjeQuest2">What did rumpstick wanted from the miller\'s daughter?</string>
     <string name="repelsteeltjeQuest2OptionA">Her mill</string>
     <string name="repelsteeltjeQuest2OptionB">Her stacks</string>
     <string name="repelsteeltjeQuest2OptionC">Her first born child</string>
     <string name="repelsteeltjeQuest2OptionD">Her dog</string>
+
+    //fairytail six butlers
     <string name="zesDienaren">The Six Butlers</string>
-    <string name="zesDienarenQuest1">What were the names of the 6 butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">What is the name of the last butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik and...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
+
+    //fairytail doornroosje
     <string name="doornroosje">Sleep tight</string>
     <string name="doornroosjeQuest1">What made Sleeping tight fall asleep?</string>
     <string name="doornroosjeQuest1OptionA">Spinning wheel</string>
     <string name="doornroosjeQuest1OptionB">Spider</string>
     <string name="doornroosjeQuest1OptionC">Apple</string>
     <string name="doornroosjeQuest1OptionD">Sleeping song</string>
+
     <string name="doornroosjeQuest2">How did the prince wake Sleeping tight up?</string>
     <string name="doornroosjeQuest2OptionA">With a slap</string>
     <string name="doornroosjeQuest2OptionB">With a gentle touch</string>
     <string name="doornroosjeQuest2OptionC">With a song</string>
     <string name="doornroosjeQuest2OptionD">With a kiss</string>
+
+    //fairytail roodkapje
     <string name="roodkapje">Little Green Riding Hood</string>
     <string name="roodkapjeQuest1">Who did Little Green Riding Hood visit?</string>
     <string name="roodkapjeQuest1OptionA">Her doctor</string>
     <string name="roodkapjeQuest1OptionB">Her grandma</string>
     <string name="roodkapjeQuest1OptionC">Her mother</string>
     <string name="roodkapjeQuest1OptionD">Her friend</string>
+
     <string name="roodkapjeQuest2">Who has eaten Green Riding Hood\'s Grandma?</string>
     <string name="roodkapjeQuest2OptionA">The big bad bear</string>
     <string name="roodkapjeQuest2OptionB">The big bad ape</string>
     <string name="roodkapjeQuest2OptionC">The big bad wolf</string>
     <string name="roodkapjeQuest2OptionD">The big bad alligator</string>
+
+    //fairytail pinokkio
     <string name="pinokkio">Long Nose</string>
     <string name="pinokkioQuest1">What is the name of the carpenter who made Long nose?</string>
     <string name="pinokkioQuest1Solution">Geppetto</string>
+
     <string name="pinokkioQuest2">What grows with Long nose when he lies?</string>
     <string name="pinokkioQuest2OptionA">His finger</string>
     <string name="pinokkioQuest2OptionB">His toe</string>
     <string name="pinokkioQuest2OptionC">His arm</string>
     <string name="pinokkioQuest2OptionD">His nose</string>
+
     <string name="pinokkioQuest3">Who persuaded Long nose to go on an adventure?</string>
     <string name="pinokkioQuest3OptionA">Big snail and small elephant</string>
     <string name="pinokkioQuest3OptionB">Stupid cat and sneaky fox</string>
     <string name="pinokkioQuest3OptionC">Smart rabbit and happy dog</string>
     <string name="pinokkioQuest3OptionD">Fluffy bear and psycho chicken</string>
+
+    //fairytail raponsje
     <string name="raponsje">Long braid</string>
     <string name="raponsjeQuest1">Did Long braid\'s tower have a door?</string>
     <string name="raponsjeQuest1Solution">No</string>
+
     <string name="raponsjeQuest2">What happened to the prince when he fell out of the tower?</string>
     <string name="raponsjeQuest2OptionA">He died</string>
     <string name="raponsjeQuest2OptionB">He became paralysed</string>

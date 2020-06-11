@@ -36,6 +36,7 @@
         Hij had namelijk voor als hij het ooit zou vergeten aanwijzingen bij verschillende plaatsen in het bos verstopt. Maar Koning Avanius was al oud en kan het avontuur zelf niet meer aangaan. Vandaar dat hij de dapperste avonturiers van het hele
         land bijeen riep. Om samen het wachtwoord te vinden en de rijkdom in het koningkrijk weer te laten vloeien.</string>
 
+    //fairytail dragon
     <string name="draak">Draak</string>
     <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
     <string name="draakQuest1Solution">Rood</string>
@@ -46,6 +47,7 @@
     <string name="draakQuest3">Met de … maak je draak wakker.</string>
     <string name="draakQuest3Solution">Kroon</string>
 
+    //fairytail repelsteeltje
     <string name="repelsteeltje">Repelstokje</string>
     <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
     <string name="repelsteeltjeQuest1Solution">Goud</string>
@@ -56,10 +58,12 @@
     <string name="repelsteeltjeQuest2OptionC">Haar eerst geboren kind</string>
     <string name="repelsteeltjeQuest2OptionD">Haar hond</string>
 
+    //fairytail six butlers
     <string name="zesDienaren">De Zes Butlers</string>
-    <string name="zesDienarenQuest1">Wat waren de namen van de 6 butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">Wat is de naam van de laatste butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik en...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
 
+    //fairytail doornroosje
     <string name="doornroosje">Slaapzacht</string>
     <string name="doornroosjeQuest1">Waardoor viel Slaapzacht in slaap?</string>
     <string name="doornroosjeQuest1OptionA">Spinnenwiel</string>
@@ -73,6 +77,7 @@
     <string name="doornroosjeQuest2OptionC">Met een lied</string>
     <string name="doornroosjeQuest2OptionD">Met een kus</string>
 
+    //fairytail roodkapje
     <string name="roodkapje">Groenkapje</string>
     <string name="roodkapjeQuest1">Naar wie ging Groenkapje op bezoek?</string>
     <string name="roodkapjeQuest1OptionA">Haar doctor</string>
@@ -86,6 +91,7 @@
     <string name="roodkapjeQuest2OptionC">De grote boze wolf</string>
     <string name="roodkapjeQuest2OptionD">De grote boze alligator</string>
 
+    //fairytail pinokkio
     <string name="pinokkio">Langneus</string>
     <string name="pinokkioQuest1">Hoe heet de timmerman die Langneus maakte?</string>
     <string name="pinokkioQuest1Solution">Geppetto</string>
@@ -102,6 +108,7 @@
     <string name="pinokkioQuest3OptionC">Slimme konijn en blije hond</string>
     <string name="pinokkioQuest3OptionD">Donzige beer en psycho kip</string>
 
+    //fairytail raponsje
     <string name="raponsje">Langvlecht</string>
     <string name="raponsjeQuest1">Had de toren van Langvlecht een deur?</string>
     <string name="raponsjeQuest1Solution">Nee</string>

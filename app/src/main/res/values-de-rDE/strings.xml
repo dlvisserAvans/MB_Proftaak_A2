@@ -36,62 +36,83 @@
         Er hatte Hinweise von verschiedenen Stellen im Wald versteckt, falls er es jemals vergaß. Aber König Avanius war schon alt und kann das Abenteuer nicht mehr selbst beginnen. Daher ist er der mutigste Abenteurer des Ganzen
         Land. Gemeinsam das Passwort finden und den Reichtum zurück ins Königreich fließen lassen.</string>
 
+    //fairytail dragon
     <string name="draak">Drachen</string>
     <string name="draakQuest1">Welche Farbe hat die Drachenzunge?</string>
     <string name="draakQuest1Solution">Rot</string>
+
     <string name="draakQuest2">Wie viele Nägel können Sie vom Drachen sehen?</string>
     <string name="draakQuest2Solution">8</string>
+
     <string name="draakQuest3">Mit dem ... weckst du den Drachen auf.</string>
     <string name="draakQuest3Solution">Krone</string>
+
+    //fairytail repelsteeltje
     <string name="repelsteeltje">Rumpstick</string>
     <string name="repelsteeltjeQuest1">Was war die Tochter des Müllers, in die er Stroh wechseln sollte?</string>
     <string name="repelsteeltjeQuest1Solution">Gold</string>
+
     <string name="repelsteeltjeQuest2">Was wollte die Rumpelstickzen der Müllerstochter?</string>
     <string name="repelsteeltjeQuest2OptionA">Ihre Mühle</string>
     <string name="repelsteeltjeQuest2OptionB">Ihr Gelds</string>
     <string name="repelsteeltjeQuest2OptionC">Ihr erstgeborenes Kind</string>
     <string name="repelsteeltjeQuest2OptionD">Ihr Hund</string>
+
+    //fairytail six butlers
     <string name="zesDienaren">Die sechs Butler</string>
-    <string name="zesDienarenQuest1">Wie hießen die 6 Butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">Wie heißt der letzte Butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik und...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
+
+    //fairytail doornroosje
     <string name="doornroosje">Schlaf gut</string>
     <string name="doornroosjeQuest1">Was ließ Schlaf gut einschlafen?</string>
     <string name="doornroosjeQuest1OptionA">Drehendes Rad</string>
     <string name="doornroosjeQuest1OptionB">Spinne</string>
     <string name="doornroosjeQuest1OptionC">Apfel</string>
     <string name="doornroosjeQuest1OptionD">Schlaflied</string>
+
     <string name="doornroosjeQuest2">Wie ist der Prinz Schlaf gut aufgewacht?</string>
     <string name="doornroosjeQuest2OptionA">Mit einer Ohrfeige</string>
     <string name="doornroosjeQuest2OptionB">Mit einer sanften Berührung</string>
     <string name="doornroosjeQuest2OptionC">Mit einem Lied</string>
     <string name="doornroosjeQuest2OptionD">Mit einem Kuss</string>
+
+    //fairytail roodkapje
     <string name="roodkapje">Grüne Kappe</string>
     <string name="roodkapjeQuest1">Wen hat Grüne Kappe besucht?</string>
     <string name="roodkapjeQuest1OptionA">Ihr Arzt</string>
     <string name="roodkapjeQuest1OptionB">Ihre Oma</string>
     <string name="roodkapjeQuest1OptionC">Ihrer Mutter</string>
     <string name="roodkapjeQuest1OptionD">Ihre Freundin</string>
+
     <string name="roodkapjeQuest2">Wer hat Grüne Kappe Oma gegessen?</string>
     <string name="roodkapjeQuest2OptionA">Der große böse Bär</string>
     <string name="roodkapjeQuest2OptionB">Der große böse Affe</string>
     <string name="roodkapjeQuest2OptionC">Der große böse Wolf</string>
     <string name="roodkapjeQuest2OptionD">Der große böse Alligator</string>
+
+    //fairytail pinokkio
     <string name="pinokkio">Lange Nase</string>
     <string name="pinokkioQuest1">Wie heißt der Schreiner, der Lange Nase hergestellt hat?</string>
     <string name="pinokkioQuest1Solution">Geppetto</string>
+
     <string name="pinokkioQuest2">Was wächst mit Lange Nase, wenn er lügt?</string>
     <string name="pinokkioQuest2OptionA">Sein Finger</string>
     <string name="pinokkioQuest2OptionB">Sein Zeh</string>
     <string name="pinokkioQuest2OptionC">Sein Arm</string>
     <string name="pinokkioQuest2OptionD">Seine Nase</string>
+
     <string name="pinokkioQuest3">Wer hat Lange Nase zu einem Abenteuer überredet?</string>
     <string name="pinokkioQuest3OptionA">Große Schnecke und kleiner Elefant</string>
     <string name="pinokkioQuest3OptionB">Dumme Katze und hinterhältiger Fuch</string>
     <string name="pinokkioQuest3OptionC">Kluges Kaninchen und glücklicher Hund</string>
     <string name="pinokkioQuest3OptionD">Flauschiger Bär und Psychohuhn</string>
+
+    //fairytail raponsje
     <string name="raponsje">Langes Geflecht</string>
     <string name="raponsjeQuest1">Hatte Langes Geflecht Turm eine Tür?</string>
     <string name="raponsjeQuest1Solution">Nein</string>
+
     <string name="raponsjeQuest2">Was ist mit dem Prinzen passiert, als er aus dem Turm gefallen ist?</string>
     <string name="raponsjeQuest2OptionA">Er starb</string>
     <string name="raponsjeQuest2OptionB">Er wurde gelähmt></string>
