@@ -25,6 +25,7 @@ public class OpenQuestionFragment extends Fragment {
     private Bundle bundle;
     private TextView titleview;
     private TextView descview;
+    private Bundle bundle;
     private boolean questionFinished = false;
 
     @Nullable
@@ -38,7 +39,7 @@ public class OpenQuestionFragment extends Fragment {
         this.descview = rootView.findViewById(R.id.tvOpendesc);
 
         if (!questionFinished){
-        bundle = this.getArguments();
+        Bundle bundle = this.getArguments();
         titleview.setText(bundle.getInt("title"));
         descview.setText(bundle.getInt("desc"));
         this.solution = bundle.getString("solution");

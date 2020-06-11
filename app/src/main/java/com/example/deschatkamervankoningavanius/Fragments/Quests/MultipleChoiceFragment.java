@@ -126,6 +126,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.buttonOptionC.setBackgroundResource(R.drawable.rounded_button_locked);
         this.buttonOptionD.setBackgroundResource(R.drawable.rounded_button_locked);
 
+        bundle = this.getArguments();
         this.buttonOptionA.setText(bundle.getString("optionA"));
         this.buttonOptionB.setText(bundle.getString("optionB"));
         this.buttonOptionC.setText(bundle.getString("optionC"));

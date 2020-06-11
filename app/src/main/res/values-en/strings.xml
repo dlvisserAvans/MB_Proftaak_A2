@@ -24,6 +24,7 @@
     <string name="popup_scanscreen_helptext">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
     <string name="popup_qrcode_scanner_undetected">No QR-code Detected</string>
     <string name="btn_back">Back</string>
+    <string name="btn_submit">Submit</string>
     <string name="menu_help">Help</string>
     <string name="exercises_explanation">//TODO</string>
     <string name="menu_settings">Settings</string>
