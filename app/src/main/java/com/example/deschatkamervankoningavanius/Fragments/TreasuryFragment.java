@@ -89,7 +89,6 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
         youtubeVideoRecyclerView.setAdapter(youtubeVideoAdapter);
         youtubeVideoRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        textView = (TextView) view.findViewById(R.id.tvCollectedLetters);
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(getActivity().getApplicationContext(),"tcp://maxwell.bps-software.nl:1883", clientId);
 
@@ -194,6 +193,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                     if (response.equals("true")){
 
                         Intent videoIntent = new Intent(getActivity(), VideoActivity.class);
+                        YoutubeVideo.getYoutubeVideo(1).setAvailable(true);
                         videoIntent.putExtra(EXTRA_VIDEO_REF, "s1WQTUg_2vo");
                         startActivity(videoIntent);
                         textView.setText(user.getPassword());

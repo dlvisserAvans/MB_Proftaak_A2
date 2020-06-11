@@ -22,6 +22,7 @@ import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 import com.example.deschatkamervankoningavanius.R;
+import com.example.deschatkamervankoningavanius.Video.YoutubeVideo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -65,6 +66,17 @@ public class HomeFragment extends Fragment {
         questList = user.getQuests();
 //        ArrayList<Quest> allQuestsList = new ArrayList<>();     //TODO Load all quests into this List instead of questList
         this.bundle = new Bundle();
+
+
+        for(Quest quest : questList){
+            for(YoutubeVideo video : YoutubeVideo.getYoutubeVideos()){
+                if(video.getVideoTitle().equals(getString(quest.getTitle()))){
+                    video.setAvailable(true);
+                }
+            }
+        }
+
+
 
         System.out.println("Index questionlist: " + questList.size());
         for (int i = 0; i < questList.size(); i++){
