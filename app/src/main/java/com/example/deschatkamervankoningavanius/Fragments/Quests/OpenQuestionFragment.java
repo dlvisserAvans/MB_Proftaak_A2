@@ -60,7 +60,8 @@ public class OpenQuestionFragment extends Fragment {
     }
 
     public void checkAnswer(String string){
-        if (string.equals(solution)){
+        string = string.replaceAll("\\s", "");
+        if (string.equalsIgnoreCase(solution)){
             Toast.makeText(getActivity().getApplicationContext(),"CORRECT",Toast.LENGTH_SHORT).show();
             HomeFragment.setQuestState(listValue, true);
             HomeFragment.setProgressBar();
