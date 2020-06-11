@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScanscreenActivity">
+    tools:context=".ScanscreenActivity"
+    android:background="@color/color_background">
 
     <TextView
         android:id="@+id/textView"
@@ -16,6 +17,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/startscreen_welcome"
+        android:textColor="@color/color_text"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +31,7 @@
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +47,7 @@
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
         android:text="@string/startscreen_message"
+        android:textColor="@color/color_text"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/color_background"
     tools:context=".NavFragmentBaseActivity">
 
     <FrameLayout
@@ -22,7 +22,7 @@
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/color_text"
         app:layout_constraintBottom_toTopOf="@+id/navbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/navbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/color_background"
         app:itemIconTint="@color/colorPrimaryDark"
         app:itemTextColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"

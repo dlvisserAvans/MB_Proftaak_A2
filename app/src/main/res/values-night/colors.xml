@@ -7,9 +7,9 @@
     <color name="color2">#45623b</color>
     <color name="color3">#a1C23b</color>
 
-    <color name="color_background">#FFFFFF</color>
-    <color name="color_text_background">#EFEFE8</color>
-    <color name="color_title">#000000</color>
+    <color name="color_background">#000000</color>
+    <color name="color_text_background">#40403E</color>
+    <color name="color_title">#FFFFFF</color>
     <color name="color_text">#A9A9A9</color>
 
     <color name="color_btn_pressed">#FFFFFF</color>
