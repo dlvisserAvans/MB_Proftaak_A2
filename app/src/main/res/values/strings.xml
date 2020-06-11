@@ -1,104 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     //UI elements
-    <string name="app_name">The Treasury of king Avanius</string>
-    <string name="language_setting">EN</string>
-    <string name="dark_mode">Dark mode:</string>
-    <string name="language">Language:</string>
-    <string name="startscreen_welcome">Welcome</string>
-    <string name="startscreen_message">To select the difficulty scan the QR-code with the button bellow</string>
-    <string name="password_hint">Password</string>
+    <string name="app_name">De schatkamer van koning Avanius</string>
+    <string name="language_setting">NE</string>
+    <string name="dark_mode">Nacht modes:</string>
+    <string name="language">Taal:</string>
+    <string name="startscreen_welcome">Welkom</string>
+    <string name="startscreen_message">Scan de QR-code met de onderstaande knop om de moeilijkheidsgraad te selecteren</string>
+    <string name="password_hint">Wachtwoord</string>
     <string name="startscreen_popup_enter">Enter</string>
-    <string name="choose_difficulty">"Choose difficulty "</string>
-    <string name="home_activity_title">Quests</string>
-    <string name="quest_name">Quest Name</string>
-    <string name="progress">Progress:</string>
-    <string name="treasury_activity_title">Treasure room</string>
-    <string name="treasure_room_found_letters">Found Letters:</string>
+    <string name="choose_difficulty">"Kies moeilijkheidsgraad"</string>
+    <string name="home_activity_title">Opdrachten</string>
+    <string name="quest_name">Opdracht naam</string>
+    <string name="progress">Voortgang:</string>
+    <string name="treasury_activity_title">Schatkamer</string>
+    <string name="treasure_room_found_letters">Gevonden Letters:</string>
     <string name="treasure_room_letters" translatable="false">S, P, R, K, J, E</string>
     <string name="treasury_btn_check">Check</string>
     <string name="menu_activity_title">Menu</string>
-    <string name="icon_quests">Quests</string>
-    <string name="icon_treasury">Treasury</string>
+    <string name="icon_quests">Opdrachten</string>
+    <string name="icon_treasury">Schat</string>
     <string name="icon_menu">Menu</string>
-    <string name="popup_scanscreen_helptext">If your phone doesn\'t support QR-code scanning\n Put the password below</string>
-    <string name="popup_qrcode_scanner_undetected">No QR-code Detected</string>
-    <string name="btn_back">Back</string>
+    <string name="popup_scanscreen_helptext">Als uw telefoon geen QR-codescans ondersteunt \n Voer het onderstaande wachtwoord in</string>
+    <string name="popup_qrcode_scanner_undetected">Geen QR-code gedetecteerd</string>
+    <string name="btn_back">Terug</string>
     <string name="menu_help">Help</string>
-    <string name="exercises_explanation">//TODO</string>
-    <string name="menu_settings">Settings</string>
-    <string name="pop_up_confirm">Are you sure you want to reset?</string>
-    <string name="confirm">Confirm</string>
+    <string name="exercises_explanation" translatable="false">//TODO</string>
+    <string name="menu_settings">Instellingen</string>
+    <string name="pop_up_confirm">Weet je zeker dat je wilt resetten?</string>
+    <string name="confirm">Bevestig</string>
     <string name="placeholder">//TODO</string>
-    <string name="help_howtoplay">How to play</string>
-    <string name="help_rules">What are the rules</string>
-    <string name="help_created_by">Created By</string>
-    <string name="help_howtoplay_answer">Find the answers to the questions in the forest of mysteries, when all questions are answered return to the chest and enter the right passcode by turning the knob.</string>
-    <string name="help_rules_answer">The answers to the questions can be found in the forest of mysteries, the stories are owned and copyrighted by the Essteling, sharing of answers will result in a permanent ban.</string>
+    <string name="help_howtoplay">Hoe te spelen</string>
+    <string name="help_rules">Wat zijn de regels</string>
+    <string name="help_created_by">Gemaakt door</string>
+    <string name="help_howtoplay_answer">Vind de antwoorden op de vragen in het fabelwoud, wanneer alle vragen beantwoord zijn keer terug naar de kist en vul het wachtwoord juist in door aan de knop te draaien.</string>
+    <string name="help_rules_answer">De antwoorden van de vragen kunnen gevonden worden in het fabelwoud, de sprookjes zijn eigendom en copyright van de Essteling, misbruik of delen van antwoorden kan resulteren in een permanente ban.</string>
     <string name="help_created_by_answer">Avans Hogeschool proftaakgroep A2</string>
 
     //Fairy Tale elements and quests
-    <string name="fairytail_avanius"> King Avanius lived in a kingdom far away from here. It was a great and rich kingdom. Everyone was happy and everyone had work. King Avanius took good care of his people, giving money from his own treasure house to those who needed help.
-                                        But one day there was a problem. King Avanius had forgotten the password of his treasury, he could not open it anymore! King Avanius was so sad that he could no longer help his people that he immediately set out on a great quest. For if he ever forgot the password, he had hidden clues at various places in the wonder forest. But King Avanius was already old and can no longer embark on the adventure himself. Hence, he gathered the bravest adventurers from all over the country. To find the password together and let the wealth flow back into the kingdom.</string>
-    <string name="draak">Dragon</string>
-    <string name="draakQuest1">What color has the tongue of dragon?</string>
-    <string name="draakQuest1Solution">Red</string>
-    <string name="draakQuest2">How many nails can you see of the dragon?</string>
+    <string name="fairytail_avanius"> Koning Avanius leefde in een koningkrijk hier ver ver vandaan. Het was een groot en rijk koningrijk. Iedereen was er gelukkig en iedereen had werk. Koning Avanius zorgde goed voor zijn volk door geld te
+        geven vanuit zijn eigen schatkamer aan de mensen die hulp nodig hadden. Maar op een dag was er een probleem. Koning Avanius was namelijk het wachtwoord van zijn schatkamer vergeten, hij kreeg hem niet meer open! Koning Avanius was zo verdrietig dat hij zijn volk niet meer kon helpen dat hij meteen een grote zoektocht opstelde.
+        Hij had namelijk voor als hij het ooit zou vergeten aanwijzingen bij verschillende plaatsen in het bos verstopt. Maar Koning Avanius was al oud en kan het avontuur zelf niet meer aangaan. Vandaar dat hij de dapperste avonturiers van het hele
+        land bijeen riep. Om samen het wachtwoord te vinden en de rijkdom in het koningkrijk weer te laten vloeien.</string>
+
+    <string name="draak">Draak</string>
+    <string name="draakQuest1">Welke kleur heeft de tong van draak?</string>
+    <string name="draakQuest1Solution">Rood</string>
+
+    <string name="draakQuest2">Hoeveel nagels kan je zien van draak?</string>
     <string name="draakQuest2Solution">8</string>
-    <string name="draakQuest3">With the ... you wake up dragon.</string>
-    <string name="draakQuest3Solution">Crown</string>
-    <string name="repelsteeltje">Rumpstick</string>
-    <string name="repelsteeltjeQuest1">What was the miller\'s daughter to change straw into?</string>
-    <string name="repelsteeltjeQuest1Solution">Gold</string>
-    <string name="repelsteeltjeQuest2">What did rumpstick wanted from the miller\'s daughter?</string>
-    <string name="repelsteeltjeQuest2OptionA">Her mill</string>
-    <string name="repelsteeltjeQuest2OptionB">Her stacks</string>
-    <string name="repelsteeltjeQuest2OptionC">Her first born child</string>
-    <string name="repelsteeltjeQuest2OptionD">Her dog</string>
-    <string name="zesDienaren">The Six Butlers</string>
-    <string name="zesDienarenQuest1">What were the names of the 6 butlers?</string>
+
+    <string name="draakQuest3">Met de … maak je draak wakker.</string>
+    <string name="draakQuest3Solution">Kroon</string>
+
+    <string name="repelsteeltje">Repelstokje</string>
+    <string name="repelsteeltjeQuest1">Waar moest de molenaarsdochter stro in veranderen?</string>
+    <string name="repelsteeltjeQuest1Solution">Goud</string>
+
+    <string name="repelsteeltjeQuest2">Wat wilde repelstokje van de molenaarsdochter?</string>
+    <string name="repelsteeltjeQuest2OptionA">Haar meel</string>
+    <string name="repelsteeltjeQuest2OptionB">Haar geld</string>
+    <string name="repelsteeltjeQuest2OptionC">Haar eerst geboren kind</string>
+    <string name="repelsteeltjeQuest2OptionD">Haar hond</string>
+
+    <string name="zesDienaren">De Zes Butlers</string>
+    <string name="zesDienarenQuest1">Wat waren de namen van de 6 butlers?</string>
     <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
-    <string name="doornroosje">Sleep tight</string>
-    <string name="doornroosjeQuest1">What made Sleeping tight fall asleep?</string>
-    <string name="doornroosjeQuest1OptionA">Spinning wheel</string>
-    <string name="doornroosjeQuest1OptionB">Spider</string>
-    <string name="doornroosjeQuest1OptionC">Apple</string>
-    <string name="doornroosjeQuest1OptionD">Sleeping song</string>
-    <string name="doornroosjeQuest2">How did the prince wake Sleeping tight up?</string>
-    <string name="doornroosjeQuest2OptionA">With a slap</string>
-    <string name="doornroosjeQuest2OptionB">With a gentle touch</string>
-    <string name="doornroosjeQuest2OptionC">With a song</string>
-    <string name="doornroosjeQuest2OptionD">With a kiss</string>
-    <string name="roodkapje">Little Green Riding Hood</string>
-    <string name="roodkapjeQuest1">Who did Little Green Riding Hood visit?</string>
-    <string name="roodkapjeQuest1OptionA">Her doctor</string>
-    <string name="roodkapjeQuest1OptionB">Her grandma</string>
-    <string name="roodkapjeQuest1OptionC">Her mother</string>
-    <string name="roodkapjeQuest1OptionD">Her friend</string>
-    <string name="roodkapjeQuest2">Who has eaten Green Riding Hood\'s Grandma?</string>
-    <string name="roodkapjeQuest2OptionA">The big bad bear</string>
-    <string name="roodkapjeQuest2OptionB">The big bad ape</string>
-    <string name="roodkapjeQuest2OptionC">The big bad wolf</string>
-    <string name="roodkapjeQuest2OptionD">The big bad alligator</string>
-    <string name="pinokkio">Long Nose</string>
-    <string name="pinokkioQuest1">What is the name of the carpenter who made Long nose?</string>
+
+    <string name="doornroosje">Slaapzacht</string>
+    <string name="doornroosjeQuest1">Waardoor viel Slaapzacht in slaap?</string>
+    <string name="doornroosjeQuest1OptionA">Spinnenwiel</string>
+    <string name="doornroosjeQuest1OptionB">Spin</string>
+    <string name="doornroosjeQuest1OptionC">Appel</string>
+    <string name="doornroosjeQuest1OptionD">Slaapliedje</string>
+
+    <string name="doornroosjeQuest2">Waarmee ontwaakte de prins Slaapzacht?</string>
+    <string name="doornroosjeQuest2OptionA">Met een klap</string>
+    <string name="doornroosjeQuest2OptionB">Met een zachte aanraking</string>
+    <string name="doornroosjeQuest2OptionC">Met een lied</string>
+    <string name="doornroosjeQuest2OptionD">Met een kus</string>
+
+    <string name="roodkapje">Groenkapje</string>
+    <string name="roodkapjeQuest1">Naar wie ging Groenkapje op bezoek?</string>
+    <string name="roodkapjeQuest1OptionA">Haar doctor</string>
+    <string name="roodkapjeQuest1OptionB">Haar grootmoeder</string>
+    <string name="roodkapjeQuest1OptionC">Haar moeder</string>
+    <string name="roodkapjeQuest1OptionD">Haar vriend</string>
+
+    <string name="roodkapjeQuest2">Wie heeft Groenkapjes oma opgegeten?</string>
+    <string name="roodkapjeQuest2OptionA">De grote boze beer</string>
+    <string name="roodkapjeQuest2OptionB">De grote boze aap</string>
+    <string name="roodkapjeQuest2OptionC">De grote boze wolf</string>
+    <string name="roodkapjeQuest2OptionD">De grote boze alligator</string>
+
+    <string name="pinokkio">Langneus</string>
+    <string name="pinokkioQuest1">Hoe heet de timmerman die Langneus maakte?</string>
     <string name="pinokkioQuest1Solution">Geppetto</string>
-    <string name="pinokkioQuest2">What grows with Long nose when he lies?</string>
-    <string name="pinokkioQuest2OptionA">His finger</string>
-    <string name="pinokkioQuest2OptionB">His toe</string>
-    <string name="pinokkioQuest2OptionC">His arm</string>
-    <string name="pinokkioQuest2OptionD">His nose</string>
-    <string name="pinokkioQuest3">Who persuaded Long nose to go on an adventure?</string>
-    <string name="pinokkioQuest3OptionA">Big snail and small elephant</string>
-    <string name="pinokkioQuest3OptionB">Stupid cat and sneaky fox</string>
-    <string name="pinokkioQuest3OptionC">Smart rabbit and happy dog</string>
-    <string name="pinokkioQuest3OptionD">Fluffy bear and psycho chicken</string>
-    <string name="raponsje">Long braid</string>
-    <string name="raponsjeQuest1">Did Long braid\'s tower have a door?</string>
-    <string name="raponsjeQuest1Solution">No</string>
-    <string name="raponsjeQuest2">What happened to the prince when he fell out of the tower?</string>
-    <string name="raponsjeQuest2OptionA">He died</string>
-    <string name="raponsjeQuest2OptionB">He became paralysed</string>
-    <string name="raponsjeQuest2OptionC">He became blind</string>
-    <string name="raponsjeQuest2OptionD">He became deaf</string>
+
+    <string name="pinokkioQuest2">Wat groeit er bij Langneus als hij liegt?</string>
+    <string name="pinokkioQuest2OptionA">Zijn vinger</string>
+    <string name="pinokkioQuest2OptionB">Zijn teen</string>
+    <string name="pinokkioQuest2OptionC">Zijn arm</string>
+    <string name="pinokkioQuest2OptionD">Zijn neus</string>
+
+    <string name="pinokkioQuest3">Wie haalden Langneus over om mee op avontuur te gaan?</string>
+    <string name="pinokkioQuest3OptionA">Grote slak en kleine olifant</string>
+    <string name="pinokkioQuest3OptionB">Domme kat en sluwe vos</string>
+    <string name="pinokkioQuest3OptionC">Slimme konijn en blije hond</string>
+    <string name="pinokkioQuest3OptionD">Donzige beer en psycho kip</string>
+
+    <string name="raponsje">Langvlecht</string>
+    <string name="raponsjeQuest1">Had de toren van Langvlecht een deur?</string>
+    <string name="raponsjeQuest1Solution">Nee</string>
+
+    <string name="raponsjeQuest2">Wat gebeurde er met de prins toen hij uit de toren viel?</string>
+    <string name="raponsjeQuest2OptionA">Hij stierf</string>
+    <string name="raponsjeQuest2OptionB">Hij werdt verlamd</string>
+    <string name="raponsjeQuest2OptionC">Hij werdt blind</string>
+    <string name="raponsjeQuest2OptionD">Hij werdt doof</string>
+
 </resources>
