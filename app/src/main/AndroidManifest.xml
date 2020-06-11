@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Video.VideoActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".Video.VideoActivity" android:screenOrientation="landscape" android:theme="@style/AppTheme.Video"/>
         <activity android:name=".QR_code_scanner" android:screenOrientation="portrait"/>
         <activity android:name=".FairytaleAvanius"
             android:theme="@style/AppTheme.ScanScreen"/>
