@@ -58,7 +58,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_treasury,container,false);
-        TextView textView = view.findViewById(R.id.tvCollectedLetters);
+        textView = view.findViewById(R.id.tvCollectedLetters);
         textView.setText(HomeFragment.setTextView());
 
 
@@ -192,9 +192,11 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                     Toast toast = Toast. makeText(getActivity().getApplicationContext(), response , Toast.LENGTH_SHORT);
                     toast.show();
                     if (response.equals("true")){
+
                         Intent videoIntent = new Intent(getActivity(), VideoActivity.class);
                         videoIntent.putExtra(EXTRA_VIDEO_REF, "s1WQTUg_2vo");
                         startActivity(videoIntent);
+                        textView.setText(user.getPassword());
                     }
 
                 }
