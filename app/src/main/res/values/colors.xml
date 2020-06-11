@@ -16,4 +16,6 @@
     <color name="color_btn_unpressed">#8a0e12</color>
     <color name="color_btn_locked">#8F8F8F</color>
     <color name="color_btn_unpressed_outline">#000000</color>
+
+    <color name="popup_background">#EFEFE8</color>
 </resources>

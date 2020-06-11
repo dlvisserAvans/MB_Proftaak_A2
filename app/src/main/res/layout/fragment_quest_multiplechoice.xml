@@ -58,6 +58,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
         android:text="Wat is de kleur van de tong van de draak?"
+        android:textColor="@color/color_text"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +72,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/comfortaa"
         android:text="De taak van de draak"
+        android:textColor="@color/color_text"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

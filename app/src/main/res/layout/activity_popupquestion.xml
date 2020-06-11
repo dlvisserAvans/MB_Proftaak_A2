@@ -9,8 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/color_text_background"
-        android:textColor="@color/color_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +21,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
+            android:textColor="@color/color_text"
             android:text="@string/popup_scanscreen_helptext"
             android:textSize="36sp" />
 
@@ -35,7 +34,8 @@
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:hint="@string/password_hint"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/color_text" />
 
         <Button
             android:layout_width="match_parent"
