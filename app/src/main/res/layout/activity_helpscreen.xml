@@ -9,7 +9,7 @@
     tools:context=".HelpMenuActivity">
 
 
-<TextView
+    <TextView
         android:id="@+id/tvHomeTitle3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,8 +17,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/comfortaa"
-        android:textColor="@color/color_text"
+        android:text="@string/menu_help"
         android:textAlignment="center"
+        android:textColor="@color/color_text"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
