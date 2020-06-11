@@ -64,8 +64,8 @@
     <string name="repelsteeltjeQuest2OptionD">Haar hond</string>
 
     <string name="zesDienaren">De Zes Butlers</string>
-    <string name="zesDienarenQuest1">Wat waren de namen van de 6 butlers?</string>
-    <string name="zesDienarenQuest1Solution">Putoor, Koukleum, Langnek, Heuvelbuik, Kogeloog, Springkuit</string>
+    <string name="zesDienarenQuest1">Wat is de naam van de laatste butler? Putoor, Koukleumk, Langnek, Springkuit, Heuvelbuik en...</string>
+    <string name="zesDienarenQuest1Solution">Kogeloog</string>
 
     <string name="doornroosje">Slaapzacht</string>
     <string name="doornroosjeQuest1">Waardoor viel Slaapzacht in slaap?</string>
