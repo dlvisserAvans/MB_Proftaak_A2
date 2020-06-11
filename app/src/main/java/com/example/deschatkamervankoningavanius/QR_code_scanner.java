@@ -169,6 +169,10 @@ public class QR_code_scanner extends AppCompatActivity {
         //start the intent
         startActivity(intent);
 
+        //gives an explanation about the purpose off the application
+        Intent intentExplanation = new Intent(this, ExplanationBegin.class);
+        startActivity(intentExplanation);
+
         //create intent to play intro  video
         Intent videoIntent = new Intent(this, VideoActivity.class);
         videoIntent.putExtra(EXTRA_VIDEO_REF, "W0wQ8WkFikg");
