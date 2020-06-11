@@ -1,6 +1,7 @@
 package com.example.deschatkamervankoningavanius.Fragments;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 import com.example.deschatkamervankoningavanius.R;
+import com.example.deschatkamervankoningavanius.FairytaleAvanius;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -196,5 +198,9 @@ public class HomeFragment extends Fragment {
             }
         }
         return string;
+    }
+    public void onIconBookClicked(View v) {
+        Intent intent = new Intent(getContext(), FairytaleAvanius.class);
+        startActivity(intent);
     }
 }

@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.deschatkamervankoningavanius.Data.User;
 import com.example.deschatkamervankoningavanius.R;
-import com.example.deschatkamervankoningavanius.SprookjeAvanius;
+import com.example.deschatkamervankoningavanius.FairytaleAvanius;
 import com.example.deschatkamervankoningavanius.Video.VideoActivity;
 import com.example.deschatkamervankoningavanius.Video.YoutubeVideo;
 import com.example.deschatkamervankoningavanius.Video.YoutubeVideoAdapter;
@@ -139,7 +139,7 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
         startActivity(intent);
     }
     public void onIconBookClicked(View v) {
-        Intent intent = new Intent(getContext(), SprookjeAvanius.class);
+        Intent intent = new Intent(getContext(), FairytaleAvanius.class);
         startActivity(intent);
     }
     public void onButtonCheckClicked(View view){

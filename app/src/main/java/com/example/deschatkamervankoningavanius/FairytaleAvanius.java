@@ -6,11 +6,11 @@ import android.util.DisplayMetrics;
 
 import androidx.annotation.Nullable;
 
-public class SprookjeAvanius extends Activity {
+public class FairytaleAvanius extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sprookje);
+        setContentView(R.layout.activity_fairytale);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

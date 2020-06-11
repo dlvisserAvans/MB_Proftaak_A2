@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Video.VideoActivity"/>
         <activity android:name=".QR_code_scanner" />
-        <activity android:name=".SprookjeAvanius"
+        <activity android:name=".FairytaleAvanius"
             android:theme="@style/AppTheme.ScanScreen"/>
 
         <meta-data
@@ -50,6 +50,7 @@
         <activity android:name=".SettingsMenuActivity"/>
         <activity android:name=".PopUpConfirmReset"
             android:theme="@style/AppTheme.ScanScreen"/>
+        <activity android:name=".ExplanationBegin" android:theme="@style/AppTheme.ScanScreen"/>
 
         <meta-data
             android:name="preloaded_fonts"
