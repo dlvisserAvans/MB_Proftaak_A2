@@ -1,79 +1,133 @@
 {
 	"quests":[
 		{
-		"image":"brochure",
-		"title":"draak",
-		"description":"draakQuest1"
+			"image":"brochure",
+			"title":"draak",
+			"description":"draakQuest1",
+			"answer":"draakQuest1Answer",
+			"type":"open"
 		},
 		{
-		"image":"sticker",
-		"title":"draak",
-		"description":"draakQuest2"
+			"image":"sticker",
+			"title":"draak",
+			"description":"draakQuest2",
+			"answer":"draakQuest2Answer",
+			"type":"open"
 		},
 		{
-		"image":"drama",
-		"title":"draak",
-		"description":"draakQuest3"
+			"image":"drama",
+			"title":"draak",
+			"description":"draakQuest3",
+			"answer":"draakQuest3Answer",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"repelsteeltje",
-		"description":"repelsteeltjeQuest1"
+			"image":"brochure",
+			"title":"repelsteeltje",
+			"description":"repelsteeltjeQuest1",
+			"answer":"repelsteeltjeQuest1Answer",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"repelsteeltje",
-		"description":"repelsteeltjeQuest2"
+			"image":"brochure",
+			"title":"repelsteeltje",
+			"description":"repelsteeltjeQuest2",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"zesDienaren",
-		"description":"zesDienarenQuest1"
+			"image":"brochure",
+			"title":"zesDienaren",
+			"description":"zesDienarenQuest1",
+			"answer":"zesDienarenQuest1Answer",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"doornroosje",
-		"description":"doornroosjeQuest1"
+			"image":"brochure",
+			"title":"doornroosje",
+			"description":"doornroosjeQuest1",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"doornroosje",
-		"description":"doornroosjeQuest2"
+			"image":"brochure",
+			"title":"doornroosje",
+			"description":"doornroosjeQuest2",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"roodkapje",
-		"description":"roodkapjeQuest1"
+			"image":"brochure",
+			"title":"roodkapje",
+			"description":"roodkapjeQuest1",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"roodkapje",
-		"description":"roodkapjeQuest2"
+			"image":"brochure",
+			"title":"roodkapje",
+			"description":"roodkapjeQuest2",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest1"
+			"image":"brochure",
+			"title":"pinokkio",
+			"description":"pinokkioQuest1",
+			"answer":"pinokkioQuest1Answer",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest2"
+			"image":"brochure",
+			"title":"pinokkio",
+			"description":"pinokkioQuest2",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"pinokkio",
-		"description":"pinokkioQuest3"
+			"image":"brochure",
+			"title":"pinokkio",
+			"description":"pinokkioQuest3",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		},
 		{
-		"image":"brochure",
-		"title":"raponsje",
-		"description":"raponsjeQuest1"
+			"image":"brochure",
+			"title":"raponsje",
+			"description":"raponsjeQuest1",
+			"answer":"raponsjeQuest1Answer",
+			"type":"open"
 		},
 		{
-		"image":"brochure",
-		"title":"raponsje",
-		"description":"raponsjeQuest2"
+			"image":"brochure",
+			"title":"raponsje",
+			"description":"raponsjeQuest2",
+			"answerA":"repelsteeltjeQuest2Answer",
+			"answerB":"repelsteeltjeQuest2Answer",
+			"answerC":"repelsteeltjeQuest2Answer",
+			"answerD":"repelsteeltjeQuest2Answer",
+			"type":"multipleChoice"
 		}
 	]
 
