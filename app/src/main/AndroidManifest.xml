@@ -51,7 +51,6 @@
         <activity android:name=".PopUpConfirmReset"
             android:theme="@style/AppTheme.ScanScreen"/>
         <activity android:name=".ExplanationBegin" android:theme="@style/AppTheme.ScanScreen"/>
-            android:theme="@style/AppTheme.ScanScreen" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
