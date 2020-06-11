@@ -130,5 +130,9 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         this.buttonOptionB.setText(bundle.getString("optionB"));
         this.buttonOptionC.setText(bundle.getString("optionC"));
         this.buttonOptionD.setText(bundle.getString("optionD"));
+
+        bundle = this.getArguments();
+        titleview.setText(bundle.getInt("title"));
+        descview.setText(bundle.getInt("desc"));
     }
 }

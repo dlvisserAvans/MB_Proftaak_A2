@@ -22,6 +22,7 @@ public class OpenQuestionFragment extends Fragment {
     private EditText answer;
     private String solution = "";
     private int listValue;
+    private Bundle bundle;
     private TextView titleview;
     private TextView descview;
     private boolean questionFinished = false;
@@ -37,7 +38,7 @@ public class OpenQuestionFragment extends Fragment {
         this.descview = rootView.findViewById(R.id.tvOpendesc);
 
         if (!questionFinished){
-        Bundle bundle = this.getArguments();
+        bundle = this.getArguments();
         titleview.setText(bundle.getInt("title"));
         descview.setText(bundle.getInt("desc"));
         this.solution = bundle.getString("solution");
@@ -75,5 +76,9 @@ public class OpenQuestionFragment extends Fragment {
     public void finishedQuestion(){
         this.buttonSubmit.setClickable(false);
         this.buttonSubmit.setBackgroundResource(R.drawable.rounded_button_locked);
+
+        bundle = this.getArguments();
+        titleview.setText(bundle.getInt("title"));
+        descview.setText(bundle.getInt("desc"));
     }
 }

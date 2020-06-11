@@ -91,9 +91,10 @@ public class HomeFragment extends Fragment {
                     fragments.add(new OpenQuestionFragment());
                 }
             }
+            this.currentFragment = fragments.get(0);
         }
 
-        this.currentFragment = fragments.get(0);
+
 
         //set the fragment of the first question
         if (questList.get(0).getQuestionType().equals(QuestionType.MULTIPLECHOICE)) {
