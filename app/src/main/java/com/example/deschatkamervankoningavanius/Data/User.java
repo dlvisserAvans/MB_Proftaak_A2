@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment;
 import com.example.deschatkamervankoningavanius.Difficulty;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
 import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
-import com.example.deschatkamervankoningavanius.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -31,25 +30,24 @@ public class User implements Serializable {
     }
 
     public void getQuests(Difficulty difficulty, JSONParser jsonParser){
-        List<Quest> allQuestsList = jsonParser.JsonParse();
+        List<Quest> allQuestsList = jsonParser.ParseQuests();
 //        List<Quest> allQuestsList = initQuest();
         Collections.shuffle(allQuestsList);
         ArrayList<Character> letters = new ArrayList<>();
+
+        this.password = jsonParser.parsePassword(difficulty);
 
         //Change amount of quests based on difficulty
         int questAmount = 1;
         switch (difficulty){
             case Easy:
                 questAmount = 3;
-                this.password = "hoi";
                 break;
             case Medium:
                 questAmount = 5;
-                this.password = "woord";
                 break;
             case Hard:
                 questAmount = 7;
-                this.password = "zzzzzzz";
                 break;
         }
 

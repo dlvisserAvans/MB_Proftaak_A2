@@ -137,5 +137,38 @@
 			"optionD":"raponsjeQuest2OptionD",
 			"type":"multipleChoice"
 		}
+	],
+	"passwordsEasy":[
+		{
+			"password":"gul"
+		},
+		{
+			"password":"wei"
+		},
+		{
+			"password":"non"
+		}
+	],
+	"passwordsMedium": [
+		{
+			"password":"arena"
+		},
+		{
+			"password":"motor"
+		},
+		{
+			"password":"vaten"
+		}
+	],
+	"passwordsHard": [
+		{
+			"password":"kalkoen"
+		},
+		{
+			"password":"liniaal"
+		},
+		{
+			"password":"ritueel"
+		}
 	]
 }
