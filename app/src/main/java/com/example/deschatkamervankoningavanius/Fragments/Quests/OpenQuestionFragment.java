@@ -53,7 +53,6 @@ public class OpenQuestionFragment extends Fragment {
                 }
             });
         } else {
-            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
             finishedQuestion();
         }
 
@@ -63,13 +62,13 @@ public class OpenQuestionFragment extends Fragment {
     public void checkAnswer(String string){
         string = string.replaceAll("\\s", "");
         if (string.equalsIgnoreCase(solution)){
-            Toast.makeText(getActivity().getApplicationContext(),"CORRECT",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),getString(R.string.correct),Toast.LENGTH_SHORT).show();
             HomeFragment.setQuestState(listValue, true);
             HomeFragment.setProgressBar();
             finishedQuestion();
             questionFinished = true;
         } else {
-            Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT).show();
         }
     }
 

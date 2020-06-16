@@ -38,6 +38,9 @@
     <string name="help_rules_answer">Die Antworten auf die Fragen finden Sie im Wald der Geheimnisse. Die Geschichten sind Eigentum der Essteling und urheberrechtlich geschützt. Das Teilen von Antworten führt zu einem dauerhaften Verbot.</string>
     <string name="help_created_by_answer">Avans Hogeschool proftaakgroep A2</string>
 
+    <string name="correct">richtig</string>
+    <string name="incorrect">falsch</string>
+
     //Fairy Tale elements and quests
     <string name="fairytail_avanius">König Avanius lebte in einem Königreich weit weg von hier. Es war ein großes und reiches Königreich. Alle waren glücklich und alle hatten Arbeit. König Avanius kümmerte sich gut um sein Volk, indem er Geld zur Verfügung stellte
         Geben Sie aus seinem eigenen Schatzhaus den Menschen, die Hilfe brauchten. Aber eines Tages gab es ein Problem. König Avanius hatte das Passwort seiner Schatzkammer vergessen, er konnte es nicht mehr öffnen! König Avanius war so traurig, dass er seinem Volk nicht mehr helfen konnte, dass er sich sofort auf eine große Suche machte.

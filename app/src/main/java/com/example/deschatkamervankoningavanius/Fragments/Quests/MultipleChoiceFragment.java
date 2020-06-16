@@ -71,7 +71,6 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
             this.buttonOptionC.setOnClickListener(this);
             this.buttonOptionD.setOnClickListener(this);
         } else {
-            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
             finishedQuestion();
         }
         return rootView;
@@ -95,7 +94,6 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                     break;
             }
         } else {
-//            Toast.makeText(getActivity().getApplicationContext(),"Question Finished",Toast.LENGTH_SHORT).show();
             System.out.println("You can't press the buttons");
         }
 
@@ -104,6 +102,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     public void checkAnswer(String string, Button button){
         if (string.equals(solution)){
             button.setBackgroundResource(R.color.color2);
+            Toast.makeText(getActivity().getApplicationContext(),getString(R.string.correct),Toast.LENGTH_SHORT).show();
             this.clickAmount++;
             questionFinished = true;
             System.out.println("Pogingen: " + this.clickAmount);
@@ -111,7 +110,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
             HomeFragment.setProgressBar();
             finishedQuestion();
         } else {
-            Toast.makeText(getActivity().getApplicationContext(),"WRONG",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT).show();
             this.clickAmount++;
         }
     }

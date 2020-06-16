@@ -38,6 +38,9 @@
     <string name="help_rules_answer">De antwoorden van de vragen kunnen gevonden worden in het fabelwoud, de sprookjes zijn eigendom en copyright van de Essteling, misbruik of delen van antwoorden kan resulteren in een permanente ban.</string>
     <string name="help_created_by_answer">Avans Hogeschool proftaakgroep A2</string>
 
+    <string name="correct">correct</string>
+    <string name="incorrect">fout</string>
+
     //Fairy Tale elements and quests
     <string name="fairytail_avanius"> Koning Avanius leefde in een koningkrijk hier ver ver vandaan. Het was een groot en rijk koningrijk. Iedereen was er gelukkig en iedereen had werk. Koning Avanius zorgde goed voor zijn volk door geld te
         geven vanuit zijn eigen schatkamer aan de mensen die hulp nodig hadden. Maar op een dag was er een probleem. Koning Avanius was namelijk het wachtwoord van zijn schatkamer vergeten, hij kreeg hem niet meer open! Koning Avanius was zo verdrietig dat hij zijn volk niet meer kon helpen dat hij meteen een grote zoektocht opstelde.
