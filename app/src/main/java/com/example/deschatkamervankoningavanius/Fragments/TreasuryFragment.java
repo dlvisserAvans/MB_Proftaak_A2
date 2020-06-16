@@ -186,8 +186,6 @@ public class TreasuryFragment extends Fragment implements AdapterView.OnItemClic
                     System.out.println("Topic: " + topic + " Message: " + message);
                     response = new String(message.getPayload());
                     System.out.println("Response: " + response);
-                    Toast toast = Toast. makeText(getActivity().getApplicationContext(), response , Toast.LENGTH_SHORT);
-                    toast.show();
                     if (response.equals("true")){
 
                         Intent videoIntent = new Intent(getActivity(), VideoActivity.class);

@@ -46,13 +46,8 @@ public class VPAdapter extends PagerAdapter {
         TextView title = null;
 
         imageView = view.findViewById(R.id.vpImage);
-//        title= view.findViewById(R.id.vpTitle);
-
         imageView.setImageResource(questList.get(position).getQuestImage());
-//        title.setText(questList.get(position).getTitle());
-
         container.addView(view,0);
-
         return view;
     }
 

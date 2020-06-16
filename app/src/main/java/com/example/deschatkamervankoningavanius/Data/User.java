@@ -1,10 +1,6 @@
 package com.example.deschatkamervankoningavanius.Data;
 
-import androidx.fragment.app.Fragment;
-
 import com.example.deschatkamervankoningavanius.Difficulty;
-import com.example.deschatkamervankoningavanius.Fragments.Quests.MultipleChoiceFragment;
-import com.example.deschatkamervankoningavanius.Fragments.Quests.OpenQuestionFragment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -31,7 +27,6 @@ public class User implements Serializable {
 
     public void getQuests(Difficulty difficulty, JSONParser jsonParser){
         List<Quest> allQuestsList = jsonParser.ParseQuests();
-//        List<Quest> allQuestsList = initQuest();
         Collections.shuffle(allQuestsList);
         ArrayList<Character> letters = new ArrayList<>();
 
@@ -94,11 +89,9 @@ public class User implements Serializable {
         }
     }
 
-    //TODO deze methode goed maken zodat er een video beschikbaar kan worden gesteld
     public void updateVideos(String video){
         videos.add(video);
     }
-
 
     public List<Quest> getQuests() {
         return quests;
@@ -126,44 +119,5 @@ public class User implements Serializable {
 
     public String getPassword() {
         return password;
-    }
-
-    public ArrayList<Quest> initQuest(){
-        ArrayList<Quest> quests = new ArrayList<>();
-
-//        quests.add(new OpenQuestionQuest(R.drawable.draak,R.string.draak,R.string.draakQuest1,"A"));
-//        quests.add(new OpenQuestionQuest(R.drawable.draak,R.string.draak,R.string.draakQuest2,"A"));
-//        quests.add(new OpenQuestionQuest(R.drawable.draak,R.string.draak,R.string.draakQuest3,"A"));
-//        quests.add(new OpenQuestionQuest(R.drawable.repelsteeltje,R.string.repelsteeltje,R.string.repelsteeltjeQuest2,"A"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.repelsteeltje,R.string.repelsteeltje,R.string.repelsteeltjeQuest1,"A", "A", "B", "C", "D"));
-//        quests.add(new OpenQuestionQuest(R.drawable.langnek,R.string.zesDienaren,R.string.zesDienarenQuest1,"A"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.doornroosje,R.string.doornroosje,R.string.doornroosjeQuest1,"A", "A", "B", "C", "D"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.doornroosje,R.string.doornroosje,R.string.doornroosjeQuest2,"A", "A", "B", "C", "D"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.roodkapje,R.string.roodkapje,R.string.roodkapjeQuest1,"A", "A", "B", "C", "D"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.roodkapje,R.string.roodkapje,R.string.roodkapjeQuest2,"A", "A", "B", "C", "D"));
-//        quests.add(new OpenQuestionQuest(R.drawable.pinokkio,R.string.pinokkio,R.string.pinokkioQuest1,"A"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.pinokkio,R.string.pinokkio,R.string.pinokkioQuest2,"A", "A", "B", "C", "D"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.pinokkio,R.string.pinokkio,R.string.pinokkioQuest3,"A", "A", "B", "C", "D"));
-//        quests.add(new OpenQuestionQuest(R.drawable.raponsje,R.string.raponsje,R.string.raponsjeQuest1,"A"));
-//        quests.add(new MultipleChoiceQuest(R.drawable.raponsje,R.string.raponsje,R.string.raponsjeQuest2,"A", "A", "B", "C", "D"));
-
-        return quests;
-    }
-
-    public ArrayList<Fragment> initFragments(){
-        ArrayList<Fragment> fragments = new ArrayList<>();
-
-        for (Quest quest : initQuest()){
-            if (!quest.isFinished()){
-                if (quest.getQuestionType().equals(QuestionType.MULTIPLECHOICE)){
-                    fragments.add(new MultipleChoiceFragment());
-                } else {
-                    fragments.add(new OpenQuestionFragment());
-                }
-            } else {
-
-            }
-        }
-        return fragments;
     }
 }
